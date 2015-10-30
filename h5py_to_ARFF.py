@@ -63,6 +63,9 @@ def main(argv):
             print datetime.now(), "Starting instance %d" % counter
         counter += 1
 
+        if counter > 100:
+            break
+
         features = []
         f = h5py.File(fname, 'r')
         db = f['analysis']
@@ -82,6 +85,7 @@ def main(argv):
         features.extend(get_stats(loudmax))
 
         output.write(",".join([str(i) for i in features]))
+        output.write("\n")
 
     output.close()
     print datetime.now(), "End"
