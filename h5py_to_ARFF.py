@@ -63,8 +63,6 @@ def main(argv):
             print datetime.now(), "Starting instance %d" % counter
         counter += 1
 
-        if counter > 100:
-            break
 
         features = []
         f = h5py.File(fname, 'r')
