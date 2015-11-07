@@ -25,11 +25,38 @@ def event_durations(events_start, duration, norm=False):
     else:
         return []
 
-def overall_rep_features():
+# computes overall repetition features of the input list
+# input:
+#   samples - input list of data
+# final result is ordered as follows:
+#   [max_off, max, min_off, min, mean, median, var, skew, kurtosis]
+# for:
+#   offset locations of max/min ('max_off'/'min_off'), and their values ('max'/'min')
+#   statistics for the absolute value autocorrelation result ('mean','median','var','skew','kurtosis')
+def overall_rep_features(samples):
+    return extract_ac_features(samples, stats=True)
 
-def intrasegment_rep_features():
+# computes repetition features within each section
+# input:
+#   samples - input list of data
+#   partitions - structure generated from calling partition_segments (we only need to call this once per song)
+# accumulates the overall max, and min, as well as statistics for the max and mins across all sections
+# final result is ordered as follows:
+#   [max, mean_max, var_max, skew_max, kurtosis_max, min, mean_min, var_min, skew_min, kurtosis_min]
+def intra_sect_rep_features(samples, partitions):
+# TODO: to be implemented
+    return None
 
-def intersegment_rep_features():
+# computes repetition features pairwise among sections
+# input:
+#   samples - input list of data
+#   partitions - structure generated from calling partition_segments (we only need to call this once per song)
+# accumulates the overall max, and min, as well as statistics for the max and mins across all sections
+# final result is ordered as follows:
+#   [max, mean_max, var_max, skew_max, kurtosis_max, min, mean_min, var_min, skew_min, kurtosis_min]
+def inter_sect_rep_features(samples, partitions):
+# TODO: to be implemented
+    return None
 
 # performs autocorrelation on the input list
 # outputs the following statistics in a list (as requested):
@@ -85,13 +112,14 @@ def partition_segments(sections_start, segments_start, duration):
         start = i
         end = sections_start[i_sect] * 5
         seg_start = 4 * segments_start[i]
-        seg_end = segments_end[i+1]
+        seg_end = segments_start[i+1]
         while (seg_start + seg_end) < end:
             i += 1
             seg_start = 4 * seg_end
-            seg_end = segments_end[i+1]
+            seg_end = segments_start[i+1]
         to_ret[i_sect-1] = (start, i)
     to_ret[num_sect-1] = (i, num_seg)
+    return to_ret
 
 # generates the seven statistics of the numpy array
 def gen_stats(arr, maxmin=True):
