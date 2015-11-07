@@ -2,8 +2,37 @@
 from numpy.fft import fft, ifft
 from scipy import stats
 
+# computes the length of each event (e.g. segments, sections, tatums, bars, beats, etc)
+# input:
+#   events_start - the start times of the events
+#   duration - the total duration of the track
+#   norm - if set to true, normalizes the durations by the total duration (optional, defaults to false)
+# outputs: list of same size as events_start, containing the respective length of each event in seconds
+def event_durations(events_start, duration, norm=False):
+    if events_start:
+        n = len(events_start)
+        start = events_start[0]
+        to_ret = [0.] * n
+        for i in range(1,n):
+            end = events_start[i]
+            to_ret[i-1] = end - start
+            start = end
+        to_ret[n-1] = duration - start
+        if norm:
+            for k in range(0,n):
+                to_ret[k] /= duration
+        return to_ret
+    else:
+        return []
+
+def overall_rep_features():
+
+def intrasegment_rep_features():
+
+def intersegment_rep_features():
+
 # performs autocorrelation on the input list
-# outputs the following statistics in an array (as requested):
+# outputs the following statistics in a list (as requested):
 #   offset locations of max/min ('max_off'/'min_off'), and their values ('max'/'min')
 #       set: offsets = True
 #   statistics for the absolute value autocorrelation result ('mean','median','var','skew','kurtosis')
@@ -23,7 +52,7 @@ def extract_ac_features(li, offsets=True, stats=False):
     return result
 
 # performs cross-correlation on the input lists
-# outputs the following statistics in an array (as requested):
+# outputs the following statistics in a list (as requested):
 #   offset locations of max/min ('max_off'/'min_off'), and their values ('max'/'min')
 #       set: offsets = True
 #   statistics for the absolute value cross-correlation result ('mean','median','var','skew','kurtosis')
@@ -41,6 +70,28 @@ def extract_xc_features(li1, li2, offsets=True, stats=False):
     if stats:
         result.extend(gen_stats(numpy.absolute(x), maxmin=False))
     return result
+
+# returns a list of 2-tuples, containing the first (inclusive) and last (exclusive) indices of segments within each section
+# if a segment overlaps between two sections, it is placed into the former section unless 4/5 or more of the segment lies within the latter section
+# if the first section starts at some t > 0, all segments within the interval [0,t] are included in the first section
+# if the last section ends at some t < duration, all segments within the interval [t,duration] are included in the last section
+# final output list size will correspond to the number of sections
+def partition_segments(sections_start, segments_start, duration):
+    num_sect = len(sections_start)
+    num_seg = len(segments_start)
+    to_ret = [(0,0)] * num_sect
+    i = 0
+    for i_sect in range(1,num_sect):
+        start = i
+        end = sections_start[i_sect] * 5
+        seg_start = 4 * segments_start[i]
+        seg_end = segments_end[i+1]
+        while (seg_start + seg_end) < end:
+            i += 1
+            seg_start = 4 * seg_end
+            seg_end = segments_end[i+1]
+        to_ret[i_sect-1] = (start, i)
+    to_ret[num_sect-1] = (i, num_seg)
 
 # generates the seven statistics of the numpy array
 def gen_stats(arr, maxmin=True):
