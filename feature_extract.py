@@ -2,6 +2,21 @@
 from numpy.fft import fft, ifft
 from scipy import stats
 
+# Features implemented:
+# event_durations - compute the durations of events given their start times and the overall duration
+# overall_rep_features - compute the overall repetitiveness of a single-dimensional signal
+# intra_sect_rep_features* - compute the repetitiveness within each section of a single-dimensional signal
+# inter_sect_rep_features* - compute the repetitiveness across each pair of sections of a single-dimensional signal
+# 
+# * - requires a call to partition_segments in order to partition the segments into their respective sections
+
+# predicted computational costs (benchmarked using an i5-3210M CPU @ 2.50GHz × 4):
+# test data: 10,000 tracks with 1,000 randomly generated segments and 10 randomly spaced sections each
+#   overall repetition: approximately 4 minutes to compute for all 12 timbre dimensions
+#   intra-section repetition: approximately 8 minutes to compute for all 12 timbre dimensions
+#   inter-section repetition: approximately 60 minutes to compute for all 12 timbre dimensions
+# actual results on the real dataset may vary
+
 # computes the length of each event (e.g. segments, sections, tatums, bars, beats, etc)
 # input:
 #   events_start - the start times of the events
@@ -42,10 +57,17 @@ def overall_rep_features(samples):
 #   partitions - structure generated from calling partition_segments (we only need to call this once per song)
 # accumulates the overall max, and min, as well as statistics for the max and mins across all sections
 # final result is ordered as follows:
-#   [max, mean_max, var_max, skew_max, kurtosis_max, min, mean_min, var_min, skew_min, kurtosis_min]
+#   [max_min, max_max, mean_max, var_max, skew_max, kurtosis_max, min_min, max_min, mean_min, var_min, skew_min, kurtosis_min]
 def intra_sect_rep_features(samples, partitions):
-# TODO: to be implemented
-    return None
+    num_sect = len(partitions)
+    max_vals = numpy.zeros(num_sect, dtype='f')
+    min_vals = numpy.zeros(num_sect, dtype='f')
+    for i, (start, end) in enumerate(partitions):
+        result = extract_ac_features(samples[start:end])
+        max_vals[i] = result[1]
+        min_vals[i] = result[3]
+    return [numpy.min(max_vals), numpy.max(max_vals), numpy.mean(max_vals), numpy.var(max_vals), stats.skew(max_vals), stats.kurtosis(max_vals), 
+        numpy.min(min_vals), numpy.max(min_vals), numpy.mean(min_vals), numpy.var(min_vals), stats.skew(min_vals), stats.kurtosis(min_vals)]
 
 # computes repetition features pairwise among sections
 # input:
@@ -53,10 +75,22 @@ def intra_sect_rep_features(samples, partitions):
 #   partitions - structure generated from calling partition_segments (we only need to call this once per song)
 # accumulates the overall max, and min, as well as statistics for the max and mins across all sections
 # final result is ordered as follows:
-#   [max, mean_max, var_max, skew_max, kurtosis_max, min, mean_min, var_min, skew_min, kurtosis_min]
+#   [max_min, max_max, mean_max, var_max, skew_max, kurtosis_max, min_min, max_min, mean_min, var_min, skew_min, kurtosis_min]
 def inter_sect_rep_features(samples, partitions):
-# TODO: to be implemented
-    return None
+    num_sect = len(partitions)
+    num_pairs = (num_sect * (num_sect - 1)) / 2 # num_sect choose 2
+    max_vals = numpy.zeros(num_pairs, dtype='f')
+    min_vals = numpy.zeros(num_pairs, dtype='f')
+    pair_idx = 0
+    for i, (s1, e1) in enumerate(partitions):
+        for j in range(i+1, num_sect):
+            (s2, e2) = partitions[j]
+            result = extract_xc_features(samples[s1:e1], samples[s2:e2])
+            max_vals[pair_idx] = result[1]
+            min_vals[pair_idx] = result[3]
+            pair_idx += 1
+    return [numpy.min(max_vals), numpy.max(max_vals), numpy.mean(max_vals), numpy.var(max_vals), stats.skew(max_vals), stats.kurtosis(max_vals), 
+        numpy.min(min_vals), numpy.max(min_vals), numpy.mean(min_vals), numpy.var(min_vals), stats.skew(min_vals), stats.kurtosis(min_vals)]
 
 # performs autocorrelation on the input list
 # outputs the following statistics in a list (as requested):
