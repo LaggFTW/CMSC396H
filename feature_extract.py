@@ -4,6 +4,7 @@ from scipy import stats
 
 # Features implemented:
 # event_durations - compute the durations of events given their start times and the overall duration
+# chord_features - compute the chord-based features of all segments
 # overall_rep_features - compute the overall repetitiveness of a single-dimensional signal
 # intra_sect_rep_features* - compute the repetitiveness within each section of a single-dimensional signal
 # inter_sect_rep_features* - compute the repetitiveness across each pair of sections of a single-dimensional signal
@@ -40,6 +41,38 @@ def event_durations(events_start, duration, norm=False):
     else:
         return []
 
+# computes chord-based features of the inputted segments
+# input:
+#   2-d list (list of lists) of chroma features of each segment
+#       (1st dimension: segments)
+#       (2nd dimension: the 12 chroma features of the segment)
+# computes statistics (mean, median, variance, min, max, skewness, kurtosis) of:
+#   chord "size": number of pitch classes per chord (*_size)
+#   chord frequency: number of times a given chord appears (*_freq)
+#       (only counting chords appearing at least once)
+#       also outputs a count of such chords
+# final result is a list ordered as follows:
+#   [mean_size, ... , kurtosis_size, mean_freq, ... , kurtosis_freq, count_freq]
+def chord_features(segment_pitches, threshold=1.0):
+    num_seg = len(segment_pitches)
+    index_mask = (2 ** numpy.array(range(0,12), dtype='i'))
+    chord_sizes = numpy.zeros(num_seg, dtype='i')
+    chord_freqs = numpy.zeros(4096, dtype='i') # 2^12 = 4096
+    for i in range(0, num_seg):
+        chroma = numpy.array(segment_pitches[i], dtype='f')
+        chroma_std = numpy.std(chroma)
+        if chroma_std != 0:
+            chord_vec = (chroma - numpy.mean(chroma)) >= (chroma_std * threshold)
+            chord_sizes[i] = numpy.sum(chord_vec)
+            chord_freqs[numpy.sum(chord_vec * index_mask)] += 1
+        # (exclude empty chords)
+        # else: chord_freqs[0] += 1
+    to_ret = gen_stats(chord_sizes)
+    chord_mask = chord_freqs > 0
+    to_ret.extend(gen_stats(chord_freqs[chord_mask]))
+    to_ret.append(numpy.sum(chord_mask))
+    return to_ret
+
 # computes overall repetition features of the input list
 # input:
 #   samples - input list of data
@@ -57,7 +90,7 @@ def overall_rep_features(samples):
 #   partitions - structure generated from calling partition_segments (we only need to call this once per song)
 # accumulates the overall max, and min, as well as statistics for the max and mins across all sections
 # final result is ordered as follows:
-#   [max_min, max_max, mean_max, var_max, skew_max, kurtosis_max, min_min, max_min, mean_min, var_min, skew_min, kurtosis_min]
+#   [min_max, max_max, mean_max, var_max, skew_max, kurtosis_max, min_min, max_min, mean_min, var_min, skew_min, kurtosis_min]
 def intra_sect_rep_features(samples, partitions):
     num_sect = len(partitions)
     max_vals = numpy.zeros(num_sect, dtype='f')
