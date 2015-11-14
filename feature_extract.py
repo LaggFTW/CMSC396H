@@ -120,7 +120,7 @@ def intra_sect_rep_features(samples, partitions):
 #   partitions - structure generated from calling partition_segments (we only need to call this once per song)
 # accumulates the overall max, and min, as well as statistics for the max and mins across all sections
 # final result is ordered as follows:
-#   [max_min, max_max, mean_max, var_max, skew_max, kurtosis_max, min_min, max_min, mean_min, var_min, skew_min, kurtosis_min]
+#   [min_max, max_max, mean_max, var_max, skew_max, kurtosis_max, min_min, max_min, mean_min, var_min, skew_min, kurtosis_min]
 def inter_sect_rep_features(samples, partitions):
     num_sect = len(partitions)
     num_pairs = (num_sect * (num_sect - 1)) / 2 # num_sect choose 2
