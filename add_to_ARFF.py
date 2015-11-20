@@ -1,4 +1,6 @@
-﻿import os
+﻿#Author: Matt Myers
+
+import os
 import getopt
 import sys
 import h5py
