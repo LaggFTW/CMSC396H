@@ -6,7 +6,7 @@ import h5py
 import glob
 import os
 import sys
-from getopt import getopt
+from getopt import getopt, GetoptError
 from datetime import datetime
 from csv import writer
 
