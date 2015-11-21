@@ -1,5 +1,5 @@
 ﻿import os
-from getopt import getopt
+from getopt import getopt, GetoptError
 import sys
 import h5py
 import feature_extract as ftex
