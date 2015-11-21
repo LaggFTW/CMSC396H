@@ -1,12 +1,10 @@
-﻿#Author: Matt Myers
-
-import numpy
+﻿import numpy
 from scipy import stats
 import h5py
 import glob
 import os
 import sys
-from getopt import getopt, GetoptError
+from getopt import getopt
 from datetime import datetime
 from csv import writer
 
@@ -52,11 +50,8 @@ def main(argv):
             headers.append("@ATTRIBUTE %s NUMERIC" % h1)
     output = open(ofile, 'wb')
     output.write('@RELATION song\r\n')
-    output.write('@ATTRIBUTE ID STRING\r\n')
+    output.write('@ATTRIBUTE ID string\r\n')
     output.write("\n".join(headers))
-    output.write('\r\n@ATTRIBUTE key NUMERIC\r\n')
-    output.write('@ATTRIBUTE mode NUMERIC\r\n')
-
     if g_opt:
         output.write(genres_header)
 
@@ -71,7 +66,8 @@ def main(argv):
                 files.append(os.path.join(dir, name))
 
     data = []
-
+    print len(files)
+    print len(headers)
     counter = 0
 
     # Opens the Allmusic_Genre_Subset.txt file to select only files that have genres associated with them
@@ -89,10 +85,7 @@ def main(argv):
                 valid_files.append(fname)
         files = valid_files
         os.chdir(matt_path)
-    
-    print len(files)
-    print len(headers)
-    
+
     for fname in files:
         if counter % 100 == 0:
             print datetime.now(), "Starting instance %d" % counter
@@ -109,21 +102,14 @@ def main(argv):
         loudmax = db['segments_loudness_max']
 #        loudmaxtime = db['segments_loudness_max_time'] # maybe should be relative to segment start time?
 #        length = db['segments_start']
-        
-        key = db['songs'][0][21]
-        mode = db['songs'][0][24]
 
         for i in range(12):
-            norm_pitch = (i - key + 12) % 12
-            r = get_stats([x[norm_pitch] for x in pitches])
+            r = get_stats([x[i] for x in pitches])
             features.extend(r)
         for i in range(12):
             r = get_stats([x[i] for x in timbre])
             features.extend(r)
-        
         features.extend(get_stats(loudmax))
-        features.append(key)
-        features.append(mode)
 
         if g_opt:
             features.append(genres[fname.split('.')[1].split('\\')[-1]])

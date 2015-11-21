@@ -13,6 +13,7 @@ from scipy import stats
 
 # predicted computational costs (benchmarked using an i5-3210M CPU @ 2.50GHz × 4):
 # test data: 10,000 tracks with 1,000 randomly generated segments and 10 randomly spaced sections each
+#   chord-based features: approximately 12 minutes to compute
 #   overall repetition: approximately 4 minutes to compute for all 12 timbre dimensions
 #   intra-section repetition: approximately 8 minutes to compute for all 12 timbre dimensions
 #   inter-section repetition: approximately 60 minutes to compute for all 12 timbre dimensions
@@ -43,18 +44,22 @@ def event_durations(events_start, duration, norm=False):
 
 # computes chord-based features of the inputted segments
 # input:
-#   2-d list (list of lists) of chroma features of each segment
+#   segment_pitches - 2-d list (list of lists) of chroma features of each segment
 #       (1st dimension: segments)
 #       (2nd dimension: the 12 chroma features of the segment)
+#   threshold - z-score needed for a pitch to be considered "discernible" (optional, defaults to 1.0)
 # computes statistics (mean, median, variance, min, max, skewness, kurtosis) of:
 #   chord "size": number of pitch classes per chord (*_size)
+#       (only counting segments with "discernible" pitches)
+#       also outputs the portion of excluded, "noisy" segments (noisiness)
 #   chord frequency: number of times a given chord appears (*_freq)
 #       (only counting chords appearing at least once)
-#       also outputs a count of such chords
+#       also outputs a count of such chords (count_freq)
 # final result is a list ordered as follows:
-#   [mean_size, ... , kurtosis_size, mean_freq, ... , kurtosis_freq, count_freq]
+#   [mean_size, ... , kurtosis_size, mean_freq, ... , kurtosis_freq, noisiness, count_freq]
 def chord_features(segment_pitches, threshold=1.0):
     num_seg = len(segment_pitches)
+    noisy_ct = 0
     index_mask = (2 ** numpy.array(range(0,12), dtype='i'))
     chord_sizes = numpy.zeros(num_seg, dtype='i')
     chord_freqs = numpy.zeros(4096, dtype='i') # 2^12 = 4096
@@ -64,13 +69,20 @@ def chord_features(segment_pitches, threshold=1.0):
         if chroma_std != 0:
             chord_vec = (chroma - numpy.mean(chroma)) >= (chroma_std * threshold)
             chord_sizes[i] = numpy.sum(chord_vec)
-            chord_freqs[numpy.sum(chord_vec * index_mask)] += 1
-        # (exclude empty chords)
-        # else: chord_freqs[0] += 1
-    to_ret = gen_stats(chord_sizes)
-    chord_mask = chord_freqs > 0
-    to_ret.extend(gen_stats(chord_freqs[chord_mask]))
-    to_ret.append(numpy.sum(chord_mask))
+            if chord_sizes[i] != 0:
+                chord_freqs[numpy.sum(chord_vec * index_mask)] += 1
+            else:
+                noisy_ct += 1
+        else:
+            noisy_ct += 1
+    if noisy_ct == num_seg:
+        to_ret = [0.0, 0.0, 0.0, 0, 0, 0.0, 0.0] * 2
+        to_ret.extend([1.0, 0])
+    else:
+        to_ret = gen_stats(chord_sizes[chord_sizes > 0])
+        chord_mask = chord_freqs > 0
+        to_ret.extend(gen_stats(chord_freqs[chord_mask]))
+        to_ret.extend([float(noisy_ct)/num_seg, numpy.sum(chord_mask)])
     return to_ret
 
 # computes overall repetition features of the input list
@@ -108,7 +120,7 @@ def intra_sect_rep_features(samples, partitions):
 #   partitions - structure generated from calling partition_segments (we only need to call this once per song)
 # accumulates the overall max, and min, as well as statistics for the max and mins across all sections
 # final result is ordered as follows:
-#   [max_min, max_max, mean_max, var_max, skew_max, kurtosis_max, min_min, max_min, mean_min, var_min, skew_min, kurtosis_min]
+#   [min_max, max_max, mean_max, var_max, skew_max, kurtosis_max, min_min, max_min, mean_min, var_min, skew_min, kurtosis_min]
 def inter_sect_rep_features(samples, partitions):
     num_sect = len(partitions)
     num_pairs = (num_sect * (num_sect - 1)) / 2 # num_sect choose 2
