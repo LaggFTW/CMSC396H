@@ -1,0 +1,1693 @@
+=== Run information ===
+
+Scheme:weka.classifiers.meta.AttributeSelectedClassifier -E "weka.attributeSelection.CfsSubsetEval " -S "weka.attributeSelection.BestFirst -D 1 -N 5" -W weka.classifiers.trees.J48 -- -C 0.25 -M 2
+Relation:     song-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    4011
+Attributes:   176
+[list of attributes omitted]
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+AttributeSelectedClassifier:
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Best first.
+	Start set: no attributes
+	Search direction: forward
+	Stale search after 5 node expansions
+	Total number of subsets evaluated: 8618
+	Merit of best subset found:    0.21 
+
+Attribute Subset Evaluator (supervised, Class (nominal): 176 genre):
+	CFS Subset Evaluator
+	Including locally predictive attributes
+
+Selected attributes: 1,2,9,13,24,28,48,59,73,84,86,88,92,93,95,97,100,102,104,105,106,108,111,112,113,114,117,120,121,122,123,124,125,127,129,131,132,135,136,140,143,146,150,154,155,156,157,159,160,163,164,170,173,174 : 54
+                     pitches0-mean
+                     pitches0-med
+                     pitches1-med
+                     pitches1-skw
+                     pitches3-var
+                     pitches3-krt
+                     pitches6-skw
+                     pitches8-var
+                     pitches10-var
+                     pitches11-krt
+                     timbre0-med
+                     timbre0-min
+                     timbre1-mean
+                     timbre1-med
+                     timbre1-min
+                     timbre1-skw
+                     timbre2-med
+                     timbre2-min
+                     timbre2-skw
+                     timbre2-krt
+                     timbre3-mean
+                     timbre3-var
+                     timbre3-skw
+                     timbre3-krt
+                     timbre4-mean
+                     timbre4-med
+                     timbre4-max
+                     timbre5-mean
+                     timbre5-med
+                     timbre5-var
+                     timbre5-min
+                     timbre5-max
+                     timbre5-skw
+                     timbre6-mean
+                     timbre6-var
+                     timbre6-max
+                     timbre6-skw
+                     timbre7-med
+                     timbre7-var
+                     timbre7-krt
+                     timbre8-var
+                     timbre8-skw
+                     timbre9-var
+                     timbre9-krt
+                     timbre10-mean
+                     timbre10-med
+                     timbre10-var
+                     timbre10-max
+                     timbre10-skw
+                     timbre11-med
+                     timbre11-var
+                     loudmax-med
+                     loudmax-max
+                     loudmax-skw
+
+
+Header of reduced data:
+@relation 'song-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Remove-V-R1-2,9,13,24,28,48,59,73,84,86,88,92-93,95,97,100,102,104-106,108,111-114,117,120-125,127,129,131-132,135-136,140,143,146,150,154-157,159-160,163-164,170,173-174,176'
+
+@attribute pitches0-mean numeric
+@attribute pitches0-med numeric
+@attribute pitches1-med numeric
+@attribute pitches1-skw numeric
+@attribute pitches3-var numeric
+@attribute pitches3-krt numeric
+@attribute pitches6-skw numeric
+@attribute pitches8-var numeric
+@attribute pitches10-var numeric
+@attribute pitches11-krt numeric
+@attribute timbre0-med numeric
+@attribute timbre0-min numeric
+@attribute timbre1-mean numeric
+@attribute timbre1-med numeric
+@attribute timbre1-min numeric
+@attribute timbre1-skw numeric
+@attribute timbre2-med numeric
+@attribute timbre2-min numeric
+@attribute timbre2-skw numeric
+@attribute timbre2-krt numeric
+@attribute timbre3-mean numeric
+@attribute timbre3-var numeric
+@attribute timbre3-skw numeric
+@attribute timbre3-krt numeric
+@attribute timbre4-mean numeric
+@attribute timbre4-med numeric
+@attribute timbre4-max numeric
+@attribute timbre5-mean numeric
+@attribute timbre5-med numeric
+@attribute timbre5-var numeric
+@attribute timbre5-min numeric
+@attribute timbre5-max numeric
+@attribute timbre5-skw numeric
+@attribute timbre6-mean numeric
+@attribute timbre6-var numeric
+@attribute timbre6-max numeric
+@attribute timbre6-skw numeric
+@attribute timbre7-med numeric
+@attribute timbre7-var numeric
+@attribute timbre7-krt numeric
+@attribute timbre8-var numeric
+@attribute timbre8-skw numeric
+@attribute timbre9-var numeric
+@attribute timbre9-krt numeric
+@attribute timbre10-mean numeric
+@attribute timbre10-med numeric
+@attribute timbre10-var numeric
+@attribute timbre10-max numeric
+@attribute timbre10-skw numeric
+@attribute timbre11-med numeric
+@attribute timbre11-var numeric
+@attribute loudmax-med numeric
+@attribute loudmax-max numeric
+@attribute loudmax-skw numeric
+@attribute genre {Pop_Rock,Electronic,Rap,Jazz,Latin,RnB,International,Country,Religious,Reggae,Blues,Vocal,Folk,New,Comedy_Spoken,Stage,Easy_Listening,Avant_Garde,Classical,Children,Holiday}
+
+@data
+
+
+Classifier Model
+J48 pruned tree
+------------------
+
+timbre5-mean <= -8.68719
+|   timbre1-med <= -41.606
+|   |   timbre5-var <= 295.807
+|   |   |   timbre2-min <= -38.399
+|   |   |   |   timbre4-max <= 68.61: Pop_Rock (5.0/1.0)
+|   |   |   |   timbre4-max > 68.61
+|   |   |   |   |   pitches0-med <= 0.2805
+|   |   |   |   |   |   timbre1-mean <= -127.885: New (10.0/1.0)
+|   |   |   |   |   |   timbre1-mean > -127.885
+|   |   |   |   |   |   |   timbre3-mean <= -30.9372: Pop_Rock (3.0)
+|   |   |   |   |   |   |   timbre3-mean > -30.9372
+|   |   |   |   |   |   |   |   timbre11-med <= 7.434
+|   |   |   |   |   |   |   |   |   timbre4-max <= 80.389: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre4-max > 80.389: Stage (9.0)
+|   |   |   |   |   |   |   |   timbre11-med > 7.434: New (9.0/1.0)
+|   |   |   |   |   pitches0-med > 0.2805
+|   |   |   |   |   |   timbre0-min <= 0.157: Jazz (3.0/2.0)
+|   |   |   |   |   |   timbre0-min > 0.157
+|   |   |   |   |   |   |   timbre5-skw <= 0.467854: Avant_Garde (2.0)
+|   |   |   |   |   |   |   timbre5-skw > 0.467854: Pop_Rock (4.0)
+|   |   |   timbre2-min > -38.399
+|   |   |   |   pitches3-var <= 0.016118: Electronic (3.0/1.0)
+|   |   |   |   pitches3-var > 0.016118: Pop_Rock (4.0/1.0)
+|   |   timbre5-var > 295.807
+|   |   |   timbre4-med <= -25.535
+|   |   |   |   timbre3-mean <= 10.1792: Pop_Rock (21.0/1.0)
+|   |   |   |   timbre3-mean > 10.1792: Electronic (2.0)
+|   |   |   timbre4-med > -25.535
+|   |   |   |   pitches1-med <= 0.42
+|   |   |   |   |   pitches3-var <= 0.012462
+|   |   |   |   |   |   timbre11-var <= 266.55
+|   |   |   |   |   |   |   pitches0-mean <= 0.238813: International (2.0)
+|   |   |   |   |   |   |   pitches0-mean > 0.238813: Religious (2.0/1.0)
+|   |   |   |   |   |   timbre11-var > 266.55
+|   |   |   |   |   |   |   timbre2-krt <= 0.822314: New (8.0)
+|   |   |   |   |   |   |   timbre2-krt > 0.822314: Electronic (2.0)
+|   |   |   |   |   pitches3-var > 0.012462
+|   |   |   |   |   |   timbre0-med <= 40.895
+|   |   |   |   |   |   |   pitches3-var <= 0.120263
+|   |   |   |   |   |   |   |   timbre5-min <= -71.276
+|   |   |   |   |   |   |   |   |   pitches8-var <= 0.022944
+|   |   |   |   |   |   |   |   |   |   pitches8-var <= 0.015603: Electronic (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches8-var > 0.015603
+|   |   |   |   |   |   |   |   |   |   |   timbre0-med <= 37.9615: Folk (2.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre0-med > 37.9615: New (3.0)
+|   |   |   |   |   |   |   |   |   pitches8-var > 0.022944
+|   |   |   |   |   |   |   |   |   |   timbre3-skw <= 0.531255
+|   |   |   |   |   |   |   |   |   |   |   timbre2-min <= -196.902
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean <= 10.4932: Pop_Rock (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean > 10.4932
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.27609: New (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.27609: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre2-min > -196.902
+|   |   |   |   |   |   |   |   |   |   |   |   timbre10-med <= 4.744
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-skw <= -0.250407
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-var <= 643.093
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-krt <= 6.237461: Country (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-krt > 6.237461
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.031836: Latin (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-var > 0.031836: Vocal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-var > 643.093
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.355122: Folk (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.355122: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-skw > -0.250407
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-skw <= 0.612195
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var <= 0.057631: Country (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var > 0.057631: New (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-skw > 0.612195
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max <= 61.589: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max > 61.589: Jazz (26.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre10-med > 4.744
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max <= 66.11
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.052783: New (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-var > 0.052783: Latin (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max > 66.11
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw <= 1.629588: Electronic (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw > 1.629588: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   timbre3-skw > 0.531255
+|   |   |   |   |   |   |   |   |   |   |   timbre9-krt <= 1.287661
+|   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 0.489: Jazz (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 0.489: International (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre9-krt > 1.287661: Pop_Rock (8.0/1.0)
+|   |   |   |   |   |   |   |   timbre5-min > -71.276
+|   |   |   |   |   |   |   |   |   timbre6-mean <= -0.263742
+|   |   |   |   |   |   |   |   |   |   timbre5-med <= -17.471
+|   |   |   |   |   |   |   |   |   |   |   timbre5-var <= 531.129
+|   |   |   |   |   |   |   |   |   |   |   |   timbre1-min <= -215.095: Pop_Rock (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre1-min > -215.095: New (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre5-var > 531.129
+|   |   |   |   |   |   |   |   |   |   |   |   timbre10-med <= 0.086: Vocal (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre10-med > 0.086: New (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre5-med > -17.471
+|   |   |   |   |   |   |   |   |   |   |   timbre2-skw <= 0.010884
+|   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 0.001
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-max <= 138.524: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-max > 138.524: International (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 0.001: Stage (2.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre2-skw > 0.010884: Religious (6.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre6-mean > -0.263742
+|   |   |   |   |   |   |   |   |   |   pitches6-skw <= 1.74365: International (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches6-skw > 1.74365: Jazz (3.0)
+|   |   |   |   |   |   |   pitches3-var > 0.120263
+|   |   |   |   |   |   |   |   timbre10-var <= 252.04: New (11.0/1.0)
+|   |   |   |   |   |   |   |   timbre10-var > 252.04: Jazz (3.0/1.0)
+|   |   |   |   |   |   timbre0-med > 40.895
+|   |   |   |   |   |   |   timbre1-min <= -165.693
+|   |   |   |   |   |   |   |   timbre1-skw <= 0.28832: Pop_Rock (21.0/2.0)
+|   |   |   |   |   |   |   |   timbre1-skw > 0.28832
+|   |   |   |   |   |   |   |   |   timbre8-var <= 471
+|   |   |   |   |   |   |   |   |   |   timbre5-mean <= -15.7595
+|   |   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.078249: Latin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches3-var > 0.078249: Religious (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre5-mean > -15.7595
+|   |   |   |   |   |   |   |   |   |   |   timbre1-skw <= 0.352548: Religious (2.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre1-skw > 0.352548: Pop_Rock (8.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre8-var > 471: Country (4.0/2.0)
+|   |   |   |   |   |   |   timbre1-min > -165.693
+|   |   |   |   |   |   |   |   pitches1-med <= 0.164: Religious (2.0/1.0)
+|   |   |   |   |   |   |   |   pitches1-med > 0.164: Blues (2.0)
+|   |   |   |   pitches1-med > 0.42
+|   |   |   |   |   pitches3-krt <= 2.889921
+|   |   |   |   |   |   timbre7-var <= 314.391: New (2.0)
+|   |   |   |   |   |   timbre7-var > 314.391
+|   |   |   |   |   |   |   timbre0-med <= 40.0345: Electronic (13.0/1.0)
+|   |   |   |   |   |   |   timbre0-med > 40.0345: Pop_Rock (5.0/1.0)
+|   |   |   |   |   pitches3-krt > 2.889921
+|   |   |   |   |   |   timbre3-skw <= 0.478737: Jazz (4.0)
+|   |   |   |   |   |   timbre3-skw > 0.478737: International (4.0/1.0)
+|   timbre1-med > -41.606
+|   |   timbre4-mean <= -8.73545
+|   |   |   timbre3-mean <= 6.18036
+|   |   |   |   timbre0-med <= 46.72
+|   |   |   |   |   timbre11-var <= 473.262
+|   |   |   |   |   |   timbre3-var <= 1186.72
+|   |   |   |   |   |   |   timbre3-skw <= 4.294108
+|   |   |   |   |   |   |   |   pitches8-var <= 0.112078
+|   |   |   |   |   |   |   |   |   timbre0-min <= 31.747
+|   |   |   |   |   |   |   |   |   |   loudmax-max <= -8.144
+|   |   |   |   |   |   |   |   |   |   |   timbre11-var <= 244.709: Pop_Rock (24.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre11-var > 244.709
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-med <= 18.6585: Pop_Rock (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-med > 18.6585: Latin (4.0)
+|   |   |   |   |   |   |   |   |   |   loudmax-max > -8.144: Pop_Rock (72.0/4.0)
+|   |   |   |   |   |   |   |   |   timbre0-min > 31.747: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   pitches8-var > 0.112078
+|   |   |   |   |   |   |   |   |   timbre0-min <= 0.157: Pop_Rock (4.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre0-min > 0.157: Rap (3.0/2.0)
+|   |   |   |   |   |   |   timbre3-skw > 4.294108: Latin (2.0/1.0)
+|   |   |   |   |   |   timbre3-var > 1186.72
+|   |   |   |   |   |   |   pitches8-var <= 0.069291
+|   |   |   |   |   |   |   |   timbre5-skw <= 0.395963: Religious (2.0/1.0)
+|   |   |   |   |   |   |   |   timbre5-skw > 0.395963
+|   |   |   |   |   |   |   |   |   timbre2-min <= -136.975: Pop_Rock (18.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre2-min > -136.975
+|   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.057655: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   pitches3-var > 0.057655: Blues (2.0)
+|   |   |   |   |   |   |   pitches8-var > 0.069291
+|   |   |   |   |   |   |   |   timbre5-mean <= -16.3912
+|   |   |   |   |   |   |   |   |   pitches1-med <= 0.4055: Jazz (2.0)
+|   |   |   |   |   |   |   |   |   pitches1-med > 0.4055: Electronic (7.0/1.0)
+|   |   |   |   |   |   |   |   timbre5-mean > -16.3912
+|   |   |   |   |   |   |   |   |   timbre0-min <= 1.058: Rap (4.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre0-min > 1.058: Religious (2.0/1.0)
+|   |   |   |   |   timbre11-var > 473.262
+|   |   |   |   |   |   timbre0-min <= 2.961
+|   |   |   |   |   |   |   pitches8-var <= 0.068551: Jazz (3.0/1.0)
+|   |   |   |   |   |   |   pitches8-var > 0.068551: Blues (3.0/1.0)
+|   |   |   |   |   |   timbre0-min > 2.961: Pop_Rock (3.0/1.0)
+|   |   |   |   timbre0-med > 46.72
+|   |   |   |   |   timbre5-mean <= -13.5146: Pop_Rock (573.0/25.0)
+|   |   |   |   |   timbre5-mean > -13.5146
+|   |   |   |   |   |   timbre2-med <= -6.337
+|   |   |   |   |   |   |   pitches3-var <= 0.053707: Pop_Rock (4.0/1.0)
+|   |   |   |   |   |   |   pitches3-var > 0.053707
+|   |   |   |   |   |   |   |   pitches10-var <= 0.071051: Blues (2.0)
+|   |   |   |   |   |   |   |   pitches10-var > 0.071051: Electronic (2.0/1.0)
+|   |   |   |   |   |   timbre2-med > -6.337
+|   |   |   |   |   |   |   pitches10-var <= 0.039934
+|   |   |   |   |   |   |   |   timbre5-min <= -105.274: International (3.0)
+|   |   |   |   |   |   |   |   timbre5-min > -105.274
+|   |   |   |   |   |   |   |   |   pitches0-med <= 0.161: Religious (2.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches0-med > 0.161
+|   |   |   |   |   |   |   |   |   |   timbre10-skw <= -0.521258
+|   |   |   |   |   |   |   |   |   |   |   pitches3-krt <= 1.471937: Latin (3.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches3-krt > 1.471937: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre10-skw > -0.521258: Pop_Rock (12.0/1.0)
+|   |   |   |   |   |   |   pitches10-var > 0.039934
+|   |   |   |   |   |   |   |   timbre3-krt <= 1.749407
+|   |   |   |   |   |   |   |   |   pitches3-krt <= 1.000356: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   |   pitches3-krt > 1.000356: Country (3.0/1.0)
+|   |   |   |   |   |   |   |   timbre3-krt > 1.749407
+|   |   |   |   |   |   |   |   |   timbre3-skw <= 4.294108: Pop_Rock (66.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre3-skw > 4.294108
+|   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.484765: Religious (2.0)
+|   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.484765: Pop_Rock (2.0)
+|   |   |   timbre3-mean > 6.18036
+|   |   |   |   timbre2-med <= 1.429
+|   |   |   |   |   timbre2-min <= -134.487
+|   |   |   |   |   |   timbre10-med <= 0.5905
+|   |   |   |   |   |   |   timbre1-min <= -150.164: Pop_Rock (8.0)
+|   |   |   |   |   |   |   timbre1-min > -150.164: Electronic (4.0/1.0)
+|   |   |   |   |   |   timbre10-med > 0.5905: Electronic (9.0)
+|   |   |   |   |   timbre2-min > -134.487
+|   |   |   |   |   |   pitches0-mean <= 0.556382: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   pitches0-mean > 0.556382: Latin (2.0/1.0)
+|   |   |   |   timbre2-med > 1.429
+|   |   |   |   |   timbre9-krt <= 0.193292
+|   |   |   |   |   |   pitches0-mean <= 0.592558: Electronic (2.0/1.0)
+|   |   |   |   |   |   pitches0-mean > 0.592558: Religious (2.0)
+|   |   |   |   |   timbre9-krt > 0.193292
+|   |   |   |   |   |   timbre3-mean <= 6.90759
+|   |   |   |   |   |   |   timbre3-var <= 1351.3: Pop_Rock (5.0/1.0)
+|   |   |   |   |   |   |   timbre3-var > 1351.3: RnB (4.0/1.0)
+|   |   |   |   |   |   timbre3-mean > 6.90759
+|   |   |   |   |   |   |   pitches0-med <= 0.092: Rap (2.0/1.0)
+|   |   |   |   |   |   |   pitches0-med > 0.092
+|   |   |   |   |   |   |   |   timbre9-var <= 383.246
+|   |   |   |   |   |   |   |   |   timbre2-skw <= -1.604888: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre2-skw > -1.604888
+|   |   |   |   |   |   |   |   |   |   timbre8-skw <= -0.420774
+|   |   |   |   |   |   |   |   |   |   |   pitches8-var <= 0.053662: Pop_Rock (6.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches8-var > 0.053662: Electronic (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre8-skw > -0.420774: Pop_Rock (42.0)
+|   |   |   |   |   |   |   |   timbre9-var > 383.246
+|   |   |   |   |   |   |   |   |   pitches8-var <= 0.068009
+|   |   |   |   |   |   |   |   |   |   pitches11-krt <= -0.079128: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   pitches11-krt > -0.079128: Latin (2.0)
+|   |   |   |   |   |   |   |   |   pitches8-var > 0.068009: Blues (2.0)
+|   |   timbre4-mean > -8.73545
+|   |   |   timbre10-med <= 5.146
+|   |   |   |   loudmax-med <= -14.2695
+|   |   |   |   |   timbre10-var <= 364.458
+|   |   |   |   |   |   timbre5-min <= -62.145
+|   |   |   |   |   |   |   timbre0-min <= 9.517
+|   |   |   |   |   |   |   |   pitches11-krt <= -1.280477
+|   |   |   |   |   |   |   |   |   pitches0-mean <= 0.441784: International (3.0)
+|   |   |   |   |   |   |   |   |   pitches0-mean > 0.441784: Folk (2.0/1.0)
+|   |   |   |   |   |   |   |   pitches11-krt > -1.280477
+|   |   |   |   |   |   |   |   |   timbre3-var <= 873.736
+|   |   |   |   |   |   |   |   |   |   timbre10-med <= 1.563
+|   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= 0.286614: Pop_Rock (7.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre2-krt > 0.286614
+|   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= -0.521838: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > -0.521838: Latin (4.0)
+|   |   |   |   |   |   |   |   |   |   timbre10-med > 1.563
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.219: Pop_Rock (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.219: New (4.0)
+|   |   |   |   |   |   |   |   |   timbre3-var > 873.736
+|   |   |   |   |   |   |   |   |   |   timbre5-var <= 529.31
+|   |   |   |   |   |   |   |   |   |   |   timbre9-var <= 217.663: Pop_Rock (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre9-var > 217.663
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.367702
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var <= 0.050987: Electronic (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var > 0.050987: Vocal (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.367702
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.446503: Religious (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.446503: Folk (2.0)
+|   |   |   |   |   |   |   |   |   |   timbre5-var > 529.31
+|   |   |   |   |   |   |   |   |   |   |   timbre9-krt <= 0.515641
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.172
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-med <= 37.9285: RnB (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-med > 37.9285: Country (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.172
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw <= -0.357246: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw > -0.357246: Jazz (12.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre9-krt > 0.515641
+|   |   |   |   |   |   |   |   |   |   |   |   timbre8-var <= 555.603
+|   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-med <= -17.488
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-med <= -8.41: Pop_Rock (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-med > -8.41
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.147: Country (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.147: Latin (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-med > -17.488
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-krt <= 4.707982
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= -0.4192: Religious (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt > -0.4192
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-med <= -15.091
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= 0.026738
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean <= -6.7378: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean > -6.7378
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-krt <= 1.869437: Jazz (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-krt > 1.869437: Country (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt > 0.026738: Pop_Rock (16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-med > -15.091: Country (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-krt > 4.707982: Religious (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre8-var > 555.603
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var <= 294.047: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var > 294.047: RnB (5.0)
+|   |   |   |   |   |   |   timbre0-min > 9.517
+|   |   |   |   |   |   |   |   timbre1-med <= -19.346
+|   |   |   |   |   |   |   |   |   timbre2-skw <= 0.381915: Religious (4.0)
+|   |   |   |   |   |   |   |   |   timbre2-skw > 0.381915: Latin (3.0/2.0)
+|   |   |   |   |   |   |   |   timbre1-med > -19.346
+|   |   |   |   |   |   |   |   |   pitches1-med <= 0.2275: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   |   pitches1-med > 0.2275: Blues (3.0/2.0)
+|   |   |   |   |   |   timbre5-min > -62.145
+|   |   |   |   |   |   |   timbre5-max <= 82.655
+|   |   |   |   |   |   |   |   timbre1-skw <= 0.402164: Stage (5.0)
+|   |   |   |   |   |   |   |   timbre1-skw > 0.402164: Jazz (2.0/1.0)
+|   |   |   |   |   |   |   timbre5-max > 82.655
+|   |   |   |   |   |   |   |   timbre3-skw <= -0.168158: Religious (4.0/1.0)
+|   |   |   |   |   |   |   |   timbre3-skw > -0.168158: Pop_Rock (4.0)
+|   |   |   |   |   timbre10-var > 364.458
+|   |   |   |   |   |   timbre5-min <= -102.187: Electronic (5.0)
+|   |   |   |   |   |   timbre5-min > -102.187: Rap (3.0/1.0)
+|   |   |   |   loudmax-med > -14.2695
+|   |   |   |   |   timbre8-var <= 213.908
+|   |   |   |   |   |   timbre4-max <= 104.055
+|   |   |   |   |   |   |   timbre1-mean <= -23.2144: Electronic (3.0/2.0)
+|   |   |   |   |   |   |   timbre1-mean > -23.2144
+|   |   |   |   |   |   |   |   timbre1-min <= -5.525: Pop_Rock (50.0/2.0)
+|   |   |   |   |   |   |   |   timbre1-min > -5.525
+|   |   |   |   |   |   |   |   |   pitches0-mean <= 0.517895: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   pitches0-mean > 0.517895: Electronic (2.0)
+|   |   |   |   |   |   timbre4-max > 104.055
+|   |   |   |   |   |   |   pitches3-krt <= 0.434248
+|   |   |   |   |   |   |   |   timbre9-var <= 197.945: Electronic (6.0)
+|   |   |   |   |   |   |   |   timbre9-var > 197.945
+|   |   |   |   |   |   |   |   |   timbre7-var <= 377.055: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   |   timbre7-var > 377.055: Electronic (3.0)
+|   |   |   |   |   |   |   pitches3-krt > 0.434248
+|   |   |   |   |   |   |   |   pitches3-var <= 0.041981: New (2.0)
+|   |   |   |   |   |   |   |   pitches3-var > 0.041981: Pop_Rock (3.0)
+|   |   |   |   |   timbre8-var > 213.908
+|   |   |   |   |   |   timbre5-min <= -89.062
+|   |   |   |   |   |   |   timbre7-krt <= 1.028148
+|   |   |   |   |   |   |   |   timbre7-med <= -13.696: Electronic (8.0/1.0)
+|   |   |   |   |   |   |   |   timbre7-med > -13.696
+|   |   |   |   |   |   |   |   |   pitches1-skw <= 0.476162
+|   |   |   |   |   |   |   |   |   |   timbre5-mean <= -17.0314
+|   |   |   |   |   |   |   |   |   |   |   timbre6-mean <= -2.41237: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre6-mean > -2.41237
+|   |   |   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.094512
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max <= 85.533: Rap (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max > 85.533
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.481: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.481: Electronic (9.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches3-var > 0.094512: Rap (3.0)
+|   |   |   |   |   |   |   |   |   |   timbre5-mean > -17.0314
+|   |   |   |   |   |   |   |   |   |   |   timbre11-med <= 9.2635
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.8085
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var <= 344.156
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-med <= -11.009: Reggae (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-med > -11.009: Pop_Rock (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var > 344.156
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw <= 0.104747: Reggae (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw > 0.104747: Rap (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.8085
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.580564: RnB (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.580564: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre11-med > 9.2635: Latin (2.0)
+|   |   |   |   |   |   |   |   |   pitches1-skw > 0.476162
+|   |   |   |   |   |   |   |   |   |   timbre4-max <= 189.446
+|   |   |   |   |   |   |   |   |   |   |   timbre6-max <= 56.921: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre6-max > 56.921: Pop_Rock (19.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre4-max > 189.446: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   timbre7-krt > 1.028148
+|   |   |   |   |   |   |   |   timbre1-min <= -187.668
+|   |   |   |   |   |   |   |   |   loudmax-skw <= -3.204429
+|   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.074946: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches3-var > 0.074946: Religious (2.0)
+|   |   |   |   |   |   |   |   |   loudmax-skw > -3.204429
+|   |   |   |   |   |   |   |   |   |   timbre1-skw <= -1.116045
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.242: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.242: Electronic (7.0)
+|   |   |   |   |   |   |   |   |   |   timbre1-skw > -1.116045
+|   |   |   |   |   |   |   |   |   |   |   timbre4-med <= 19.374
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= 0.462061
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= -0.025806: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt > -0.025806: Electronic (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt > 0.462061: Pop_Rock (16.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre4-med > 19.374
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw <= 0.457833: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw > 0.457833: Religious (2.0)
+|   |   |   |   |   |   |   |   timbre1-min > -187.668
+|   |   |   |   |   |   |   |   |   timbre2-min <= -211.436
+|   |   |   |   |   |   |   |   |   |   timbre5-var <= 943.423: RnB (4.0)
+|   |   |   |   |   |   |   |   |   |   timbre5-var > 943.423
+|   |   |   |   |   |   |   |   |   |   |   pitches6-skw <= 0.789566: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches6-skw > 0.789566: Rap (2.0)
+|   |   |   |   |   |   |   |   |   timbre2-min > -211.436
+|   |   |   |   |   |   |   |   |   |   timbre1-mean <= 55.8245
+|   |   |   |   |   |   |   |   |   |   |   loudmax-skw <= -1.127212
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-var <= 876.868
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-skw <= 0.474059
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= 4.3353
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean <= -17.6913: Latin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean > -17.6913
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-skw <= 1.739755
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-var <= 866.483
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-var <= 505.878: Pop_Rock (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-var > 505.878
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-med <= 47.755: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-med > 47.755: International (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-var > 866.483
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-med <= 11.951
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-skw <= 0.181793
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-var <= 335.48
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-mean <= -10.2105: Latin (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-mean > -10.2105: Religious (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-var > 335.48: International (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-skw > 0.181793
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-var <= 501.288: Religious (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-var > 501.288
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-max <= -3.285
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-krt <= 21.990429: Religious (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-krt > 21.990429: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-max > -3.285
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw <= -0.182798
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.46044: Religious (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.46044: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw > -0.182798: Pop_Rock (17.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-med > 11.951: Latin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-skw > 1.739755
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-med <= -19.492: Pop_Rock (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-med > -19.492: Country (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > 4.3353
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.314955: Country (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.314955: International (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-skw > 0.474059
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw <= 0.156784: Electronic (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw > 0.156784: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-var > 876.868
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-med <= 0.372: Pop_Rock (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-med > 0.372
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.409: Electronic (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.409: Country (2.0)
+|   |   |   |   |   |   |   |   |   |   |   loudmax-skw > -1.127212
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.49007
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-mean <= -17.5044: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-mean > -17.5044: Latin (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.49007
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.043154: Rap (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-var > 0.043154: Electronic (2.0)
+|   |   |   |   |   |   |   |   |   |   timbre1-mean > 55.8245
+|   |   |   |   |   |   |   |   |   |   |   timbre3-krt <= 1.616061: RnB (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre3-krt > 1.616061
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.525184: Pop_Rock (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.525184
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var <= 0.059789: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var > 0.059789: Electronic (9.0)
+|   |   |   |   |   |   timbre5-min > -89.062
+|   |   |   |   |   |   |   timbre3-var <= 1311.05
+|   |   |   |   |   |   |   |   pitches10-var <= 0.02206
+|   |   |   |   |   |   |   |   |   pitches0-mean <= 0.373286: Pop_Rock (7.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches0-mean > 0.373286
+|   |   |   |   |   |   |   |   |   |   pitches6-skw <= 1.305735: Vocal (2.0)
+|   |   |   |   |   |   |   |   |   |   pitches6-skw > 1.305735: Folk (2.0/1.0)
+|   |   |   |   |   |   |   |   pitches10-var > 0.02206
+|   |   |   |   |   |   |   |   |   pitches1-skw <= -0.155988
+|   |   |   |   |   |   |   |   |   |   pitches10-var <= 0.089025
+|   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= 0.282471: Reggae (2.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre2-krt > 0.282471
+|   |   |   |   |   |   |   |   |   |   |   |   timbre10-med <= 2.0445: Pop_Rock (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre10-med > 2.0445: Electronic (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches10-var > 0.089025: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches1-skw > -0.155988
+|   |   |   |   |   |   |   |   |   |   timbre8-var <= 594.466
+|   |   |   |   |   |   |   |   |   |   |   timbre5-mean <= -19.4594
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-med <= -24.9815: Rap (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-med > -24.9815
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-med <= 26.696
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw <= -0.823365: Pop_Rock (16.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw > -0.823365
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-min <= -150.788: Religious (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-min > -150.788
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var <= 228.189
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-var <= 404.529
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-med <= -23.8865: Pop_Rock (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-med > -23.8865
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-krt <= 0.566595: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-krt > 0.566595: Religious (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-var > 404.529: Religious (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var > 228.189: Pop_Rock (14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-med > 26.696: Pop_Rock (22.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre5-mean > -19.4594
+|   |   |   |   |   |   |   |   |   |   |   |   pitches10-var <= 0.106514
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 0.139
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 0.024
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-var <= 284.835: Pop_Rock (25.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-var > 284.835
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-med <= -6.6115
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-med <= 0.363
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-krt <= 1.967615: Country (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-krt > 1.967615
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw <= 0.902544: Latin (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw > 0.902544: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-med > 0.363
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-krt <= 20.588939
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-skw <= 0.464701
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-max <= 134.122: Pop_Rock (22.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-max > 134.122: Religious (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-skw > 0.464701: Latin (4.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-krt > 20.588939: Religious (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-med > -6.6115
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-min <= -59.159
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-mean <= 31.7171: Country (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-mean > 31.7171: Pop_Rock (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-min > -59.159: International (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 0.024
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-skw <= -3.556898
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-med <= 48.4905: RnB (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-med > 48.4905: Blues (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-skw > -3.556898: Pop_Rock (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 0.139
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw <= -1.144556: Electronic (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw > -1.144556
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= 0.058015
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-min <= -95.292
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.36: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.36
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= -0.620785: New (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > -0.620785: Rap (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-min > -95.292: Religious (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt > 0.058015
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var <= 0.060346: Pop_Rock (27.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var > 0.060346
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-max <= 100.869
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= 2.180204: Latin (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt > 2.180204: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-max > 100.869
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var <= 0.084986: Pop_Rock (12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var > 0.084986: Latin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches10-var > 0.106514
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-max <= 98.225
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-krt <= 0.655237: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-krt > 0.655237: Country (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-max > 98.225
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-med <= -9.747: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-med > -9.747: Pop_Rock (9.0)
+|   |   |   |   |   |   |   |   |   |   timbre8-var > 594.466
+|   |   |   |   |   |   |   |   |   |   |   pitches6-skw <= 0.9785: Electronic (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches6-skw > 0.9785
+|   |   |   |   |   |   |   |   |   |   |   |   timbre3-skw <= -0.211658: Religious (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre3-skw > -0.211658: Pop_Rock (7.0/1.0)
+|   |   |   |   |   |   |   timbre3-var > 1311.05
+|   |   |   |   |   |   |   |   timbre6-var <= 1003.08
+|   |   |   |   |   |   |   |   |   pitches1-med <= 0.165
+|   |   |   |   |   |   |   |   |   |   timbre2-skw <= -0.158067: Religious (3.0)
+|   |   |   |   |   |   |   |   |   |   timbre2-skw > -0.158067: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches1-med > 0.165
+|   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.073098
+|   |   |   |   |   |   |   |   |   |   |   timbre4-med <= 30.966
+|   |   |   |   |   |   |   |   |   |   |   |   pitches3-krt <= 0.591699: Rap (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches3-krt > 0.591699: Pop_Rock (16.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre4-med > 30.966: Jazz (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   pitches3-var > 0.073098
+|   |   |   |   |   |   |   |   |   |   |   timbre5-skw <= 1.30118
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw <= 0.363551: RnB (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw > 0.363551: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre5-skw > 1.30118
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-var <= 565.315: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-var > 565.315: Religious (5.0)
+|   |   |   |   |   |   |   |   timbre6-var > 1003.08
+|   |   |   |   |   |   |   |   |   pitches3-var <= 0.08596: Rap (3.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches3-var > 0.08596: Electronic (2.0/1.0)
+|   |   |   timbre10-med > 5.146
+|   |   |   |   timbre5-var <= 278.763
+|   |   |   |   |   pitches1-med <= 0.4105: Stage (2.0/1.0)
+|   |   |   |   |   pitches1-med > 0.4105: New (2.0)
+|   |   |   |   timbre5-var > 278.763
+|   |   |   |   |   timbre3-mean <= -13.7844
+|   |   |   |   |   |   pitches8-var <= 0.049313: Jazz (2.0/1.0)
+|   |   |   |   |   |   pitches8-var > 0.049313: New (2.0)
+|   |   |   |   |   timbre3-mean > -13.7844
+|   |   |   |   |   |   timbre6-var <= 973.481
+|   |   |   |   |   |   |   timbre4-max <= 91.756
+|   |   |   |   |   |   |   |   timbre5-med <= -12.673
+|   |   |   |   |   |   |   |   |   pitches3-var <= 0.062983
+|   |   |   |   |   |   |   |   |   |   timbre3-mean <= 25.8852: Pop_Rock (12.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre3-mean > 25.8852: Jazz (2.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches3-var > 0.062983: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   timbre5-med > -12.673: International (2.0)
+|   |   |   |   |   |   |   timbre4-max > 91.756
+|   |   |   |   |   |   |   |   timbre0-min <= 0.693
+|   |   |   |   |   |   |   |   |   timbre8-skw <= 0.163377
+|   |   |   |   |   |   |   |   |   |   pitches11-krt <= 4.012: Pop_Rock (24.0/4.0)
+|   |   |   |   |   |   |   |   |   |   pitches11-krt > 4.012: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre8-skw > 0.163377
+|   |   |   |   |   |   |   |   |   |   timbre0-med <= 47.468: Electronic (8.0)
+|   |   |   |   |   |   |   |   |   |   timbre0-med > 47.468: Pop_Rock (5.0/2.0)
+|   |   |   |   |   |   |   |   timbre0-min > 0.693
+|   |   |   |   |   |   |   |   |   timbre1-med <= 68.254
+|   |   |   |   |   |   |   |   |   |   timbre6-skw <= -0.353254
+|   |   |   |   |   |   |   |   |   |   |   pitches0-med <= 0.743: Pop_Rock (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches0-med > 0.743: Electronic (2.0)
+|   |   |   |   |   |   |   |   |   |   timbre6-skw > -0.353254: Electronic (16.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre1-med > 68.254: Rap (2.0)
+|   |   |   |   |   |   timbre6-var > 973.481
+|   |   |   |   |   |   |   pitches11-krt <= -0.977558: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   pitches11-krt > -0.977558: Jazz (3.0)
+timbre5-mean > -8.68719
+|   timbre7-var <= 706.257
+|   |   timbre1-med <= -14.288
+|   |   |   timbre1-med <= -96.469
+|   |   |   |   pitches10-var <= 0.018456
+|   |   |   |   |   pitches1-med <= 0.102
+|   |   |   |   |   |   pitches1-med <= 0.032: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   pitches1-med > 0.032: Latin (2.0)
+|   |   |   |   |   pitches1-med > 0.102
+|   |   |   |   |   |   pitches0-mean <= 0.205987: New (3.0)
+|   |   |   |   |   |   pitches0-mean > 0.205987: Religious (2.0/1.0)
+|   |   |   |   pitches10-var > 0.018456
+|   |   |   |   |   timbre10-var <= 207.341
+|   |   |   |   |   |   timbre1-mean <= -126.799
+|   |   |   |   |   |   |   pitches0-mean <= 0.516556: Jazz (3.0/1.0)
+|   |   |   |   |   |   |   pitches0-mean > 0.516556: Religious (2.0)
+|   |   |   |   |   |   timbre1-mean > -126.799
+|   |   |   |   |   |   |   timbre2-skw <= -0.294668: New (3.0)
+|   |   |   |   |   |   |   timbre2-skw > -0.294668: Country (2.0/1.0)
+|   |   |   |   |   timbre10-var > 207.341
+|   |   |   |   |   |   timbre8-var <= 343.181
+|   |   |   |   |   |   |   timbre2-krt <= -0.262195: Jazz (4.0/1.0)
+|   |   |   |   |   |   |   timbre2-krt > -0.262195
+|   |   |   |   |   |   |   |   pitches8-var <= 0.080787
+|   |   |   |   |   |   |   |   |   pitches10-var <= 0.048918: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   pitches10-var > 0.048918: Blues (3.0)
+|   |   |   |   |   |   |   |   pitches8-var > 0.080787: International (4.0/1.0)
+|   |   |   |   |   |   timbre8-var > 343.181
+|   |   |   |   |   |   |   timbre6-max <= 111.433
+|   |   |   |   |   |   |   |   timbre11-var <= 263.468: Blues (10.0)
+|   |   |   |   |   |   |   |   timbre11-var > 263.468
+|   |   |   |   |   |   |   |   |   timbre9-var <= 218.494: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre9-var > 218.494
+|   |   |   |   |   |   |   |   |   |   timbre10-med <= 8.019
+|   |   |   |   |   |   |   |   |   |   |   loudmax-max <= -13.484: Blues (3.0)
+|   |   |   |   |   |   |   |   |   |   |   loudmax-max > -13.484
+|   |   |   |   |   |   |   |   |   |   |   |   timbre4-mean <= -38.1272: Blues (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre4-mean > -38.1272: Country (18.0/2.0)
+|   |   |   |   |   |   |   |   |   |   timbre10-med > 8.019: Pop_Rock (2.0)
+|   |   |   |   |   |   |   timbre6-max > 111.433
+|   |   |   |   |   |   |   |   pitches8-var <= 0.079426: New (2.0)
+|   |   |   |   |   |   |   |   pitches8-var > 0.079426: Jazz (2.0)
+|   |   |   timbre1-med > -96.469
+|   |   |   |   timbre3-var <= 2674.85
+|   |   |   |   |   timbre5-var <= 1089.35
+|   |   |   |   |   |   timbre2-skw <= -0.419631
+|   |   |   |   |   |   |   timbre5-var <= 998.771
+|   |   |   |   |   |   |   |   loudmax-med <= -17.867
+|   |   |   |   |   |   |   |   |   pitches11-krt <= 3.083508: Easy_Listening (4.0)
+|   |   |   |   |   |   |   |   |   pitches11-krt > 3.083508
+|   |   |   |   |   |   |   |   |   |   pitches1-skw <= 1.257781: International (2.0)
+|   |   |   |   |   |   |   |   |   |   pitches1-skw > 1.257781: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   loudmax-med > -17.867
+|   |   |   |   |   |   |   |   |   timbre9-krt <= 2.576829
+|   |   |   |   |   |   |   |   |   |   timbre7-krt <= 0.705628: Electronic (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   timbre7-krt > 0.705628
+|   |   |   |   |   |   |   |   |   |   |   pitches6-skw <= 0.523094: Country (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches6-skw > 0.523094
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw <= -0.985757: Folk (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw > -0.985757
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.521576: Pop_Rock (12.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.521576: Jazz (4.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre9-krt > 2.576829
+|   |   |   |   |   |   |   |   |   |   timbre2-med <= 41.564: Jazz (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   timbre2-med > 41.564: Religious (5.0)
+|   |   |   |   |   |   |   timbre5-var > 998.771
+|   |   |   |   |   |   |   |   pitches1-med <= 0.2695: Blues (2.0/1.0)
+|   |   |   |   |   |   |   |   pitches1-med > 0.2695: International (3.0/1.0)
+|   |   |   |   |   |   timbre2-skw > -0.419631
+|   |   |   |   |   |   |   timbre3-skw <= 0.649918
+|   |   |   |   |   |   |   |   timbre5-min <= -68.799
+|   |   |   |   |   |   |   |   |   timbre7-krt <= 0.445138
+|   |   |   |   |   |   |   |   |   |   timbre5-mean <= -3.919
+|   |   |   |   |   |   |   |   |   |   |   pitches3-krt <= 1.072837: Reggae (2.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches3-krt > 1.072837: RnB (2.0)
+|   |   |   |   |   |   |   |   |   |   timbre5-mean > -3.919
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.2305: International (2.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.2305: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre7-krt > 0.445138
+|   |   |   |   |   |   |   |   |   |   timbre9-var <= 289.724
+|   |   |   |   |   |   |   |   |   |   |   timbre3-var <= 1705
+|   |   |   |   |   |   |   |   |   |   |   |   timbre7-var <= 332.059: Folk (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre7-var > 332.059
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-min <= -74.856
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw <= -0.030534: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw > -0.030534: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-min > -74.856
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= 0.311385: International (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > 0.311385: Blues (4.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre3-var > 1705
+|   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw <= 0.397734: RnB (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw > 0.397734: Pop_Rock (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   timbre9-var > 289.724
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.094
+|   |   |   |   |   |   |   |   |   |   |   |   timbre0-med <= 41.0285: Latin (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre0-med > 41.0285: Blues (2.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.094
+|   |   |   |   |   |   |   |   |   |   |   |   timbre4-med <= 11.252
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var <= 509.857
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-skw <= -0.572447: Latin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-skw > -0.572447
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-min <= -137.714
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-med <= 0.12: Country (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-med > 0.12
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.109435
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean <= -20.3025: Country (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean > -20.3025
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max <= 101.573
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-krt <= 0.528299: Country (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-krt > 0.528299: Pop_Rock (23.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max > 101.573: Country (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-var > 0.109435
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-krt <= -0.050233: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-krt > -0.050233: RnB (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-min > -137.714: Country (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var > 509.857: RnB (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre4-med > 11.252
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw <= 1.830609
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-med <= -13.022: RnB (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-med > -13.022
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-var <= 1297.25: Latin (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-var > 1297.25: Pop_Rock (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw > 1.830609: Vocal (2.0/1.0)
+|   |   |   |   |   |   |   |   timbre5-min > -68.799
+|   |   |   |   |   |   |   |   |   timbre2-med <= -1.618
+|   |   |   |   |   |   |   |   |   |   timbre1-min <= -148.302: Pop_Rock (10.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre1-min > -148.302: Folk (3.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre2-med > -1.618
+|   |   |   |   |   |   |   |   |   |   timbre11-med <= 19.355
+|   |   |   |   |   |   |   |   |   |   |   timbre3-var <= 1104.99
+|   |   |   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.088484
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-var <= 236.281: Pop_Rock (13.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-var > 236.281: Blues (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches3-var > 0.088484: Jazz (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre3-var > 1104.99
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean <= -30.5988: Blues (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean > -30.5988
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var <= 0.14335
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-max <= 89.457: Religious (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-max > 89.457
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-max <= 61.394
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.236797: Pop_Rock (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.236797
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-max <= -4.628: Country (18.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-max > -4.628: Religious (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-max > 61.394
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-med <= 13.078: Country (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-med > 13.078: Pop_Rock (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var > 0.14335: RnB (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre11-med > 19.355: Jazz (3.0/1.0)
+|   |   |   |   |   |   |   timbre3-skw > 0.649918
+|   |   |   |   |   |   |   |   timbre7-krt <= 3.695526
+|   |   |   |   |   |   |   |   |   timbre2-min <= -169.683: New (2.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre2-min > -169.683
+|   |   |   |   |   |   |   |   |   |   timbre4-mean <= 10.7786
+|   |   |   |   |   |   |   |   |   |   |   pitches0-med <= 0.2055
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw <= 1.327037: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw > 1.327037: Jazz (3.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches0-med > 0.2055
+|   |   |   |   |   |   |   |   |   |   |   |   timbre5-skw <= 0.103133: International (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre5-skw > 0.103133
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= 0.127584: International (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt > 0.127584: Pop_Rock (10.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre4-mean > 10.7786
+|   |   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.077034: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches3-var > 0.077034: Blues (2.0)
+|   |   |   |   |   |   |   |   timbre7-krt > 3.695526
+|   |   |   |   |   |   |   |   |   timbre0-min <= 18.204
+|   |   |   |   |   |   |   |   |   |   pitches11-krt <= 1.405302
+|   |   |   |   |   |   |   |   |   |   |   timbre4-max <= 77.374: Country (5.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre4-max > 77.374: Vocal (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches11-krt > 1.405302
+|   |   |   |   |   |   |   |   |   |   |   timbre7-med <= -5.507: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre7-med > -5.507: Religious (3.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre0-min > 18.204: Jazz (2.0)
+|   |   |   |   |   timbre5-var > 1089.35
+|   |   |   |   |   |   timbre5-skw <= 0.61635
+|   |   |   |   |   |   |   timbre8-skw <= -0.141504
+|   |   |   |   |   |   |   |   pitches0-med <= 0.179: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   pitches0-med > 0.179: Jazz (6.0)
+|   |   |   |   |   |   |   timbre8-skw > -0.141504
+|   |   |   |   |   |   |   |   pitches1-skw <= 1.097738
+|   |   |   |   |   |   |   |   |   timbre10-mean <= -2.57199: Latin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre10-mean > -2.57199: International (7.0/1.0)
+|   |   |   |   |   |   |   |   pitches1-skw > 1.097738
+|   |   |   |   |   |   |   |   |   pitches0-mean <= 0.353795: New (2.0)
+|   |   |   |   |   |   |   |   |   pitches0-mean > 0.353795: Blues (2.0/1.0)
+|   |   |   |   |   |   timbre5-skw > 0.61635
+|   |   |   |   |   |   |   timbre5-med <= -7.0435
+|   |   |   |   |   |   |   |   timbre2-krt <= 0.222603
+|   |   |   |   |   |   |   |   |   timbre7-med <= 4.4825
+|   |   |   |   |   |   |   |   |   |   timbre3-mean <= 2.83995: RnB (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre3-mean > 2.83995: Jazz (10.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre7-med > 4.4825: Blues (2.0)
+|   |   |   |   |   |   |   |   timbre2-krt > 0.222603
+|   |   |   |   |   |   |   |   |   timbre0-min <= 0.028
+|   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.082149: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   pitches3-var > 0.082149: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre0-min > 0.028: Latin (3.0/2.0)
+|   |   |   |   |   |   |   timbre5-med > -7.0435
+|   |   |   |   |   |   |   |   timbre3-skw <= 0.193714
+|   |   |   |   |   |   |   |   |   pitches8-var <= 0.042717
+|   |   |   |   |   |   |   |   |   |   timbre1-mean <= -41.5657: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre1-mean > -41.5657: Blues (7.0)
+|   |   |   |   |   |   |   |   |   pitches8-var > 0.042717
+|   |   |   |   |   |   |   |   |   |   timbre7-var <= 607.182
+|   |   |   |   |   |   |   |   |   |   |   timbre5-mean <= 11.7474
+|   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw <= 0.20784: Latin (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw > 0.20784
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 0.022: Pop_Rock (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 0.022: Latin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre5-mean > 11.7474: Country (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre7-var > 607.182
+|   |   |   |   |   |   |   |   |   |   |   pitches0-med <= 0.156: Country (2.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches0-med > 0.156: Blues (3.0/1.0)
+|   |   |   |   |   |   |   |   timbre3-skw > 0.193714
+|   |   |   |   |   |   |   |   |   timbre0-med <= 40.304: Jazz (4.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre0-med > 40.304
+|   |   |   |   |   |   |   |   |   |   timbre5-min <= -82.029: International (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre5-min > -82.029: Pop_Rock (6.0)
+|   |   |   |   timbre3-var > 2674.85
+|   |   |   |   |   timbre2-med <= 27.408
+|   |   |   |   |   |   pitches1-skw <= 0.64681
+|   |   |   |   |   |   |   pitches1-med <= 0.458: Jazz (3.0/1.0)
+|   |   |   |   |   |   |   pitches1-med > 0.458: Reggae (2.0)
+|   |   |   |   |   |   pitches1-skw > 0.64681
+|   |   |   |   |   |   |   timbre5-max <= 148.215
+|   |   |   |   |   |   |   |   pitches3-var <= 0.050982: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   pitches3-var > 0.050982: Reggae (2.0)
+|   |   |   |   |   |   |   timbre5-max > 148.215
+|   |   |   |   |   |   |   |   timbre1-mean <= -39.3118: Blues (8.0/1.0)
+|   |   |   |   |   |   |   |   timbre1-mean > -39.3118: Pop_Rock (3.0/1.0)
+|   |   |   |   |   timbre2-med > 27.408
+|   |   |   |   |   |   timbre1-med <= -50.5175
+|   |   |   |   |   |   |   pitches1-med <= 0.174: International (3.0/2.0)
+|   |   |   |   |   |   |   pitches1-med > 0.174: Vocal (4.0/1.0)
+|   |   |   |   |   |   timbre1-med > -50.5175
+|   |   |   |   |   |   |   timbre0-min <= 1.499
+|   |   |   |   |   |   |   |   timbre10-var <= 465.305: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   timbre10-var > 465.305: Jazz (5.0)
+|   |   |   |   |   |   |   timbre0-min > 1.499: Rap (2.0)
+|   |   timbre1-med > -14.288
+|   |   |   timbre4-med <= -27.0735
+|   |   |   |   timbre1-mean <= 77.7986
+|   |   |   |   |   timbre0-med <= 41.066
+|   |   |   |   |   |   timbre1-med <= -0.6345
+|   |   |   |   |   |   |   timbre4-max <= 59.485
+|   |   |   |   |   |   |   |   timbre2-skw <= -0.386758: Vocal (3.0/1.0)
+|   |   |   |   |   |   |   |   timbre2-skw > -0.386758: Latin (3.0)
+|   |   |   |   |   |   |   timbre4-max > 59.485: Blues (2.0)
+|   |   |   |   |   |   timbre1-med > -0.6345
+|   |   |   |   |   |   |   pitches8-var <= 0.064835: RnB (3.0/1.0)
+|   |   |   |   |   |   |   pitches8-var > 0.064835
+|   |   |   |   |   |   |   |   timbre3-skw <= 0.085441: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   timbre3-skw > 0.085441: Electronic (3.0)
+|   |   |   |   |   timbre0-med > 41.066
+|   |   |   |   |   |   timbre4-med <= -29.041
+|   |   |   |   |   |   |   timbre5-med <= -3.1925
+|   |   |   |   |   |   |   |   timbre6-var <= 659.181: Pop_Rock (38.0)
+|   |   |   |   |   |   |   |   timbre6-var > 659.181
+|   |   |   |   |   |   |   |   |   pitches0-mean <= 0.514865: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   |   pitches0-mean > 0.514865: Latin (3.0)
+|   |   |   |   |   |   |   timbre5-med > -3.1925
+|   |   |   |   |   |   |   |   timbre10-skw <= 0.378857
+|   |   |   |   |   |   |   |   |   timbre0-med <= 46.808
+|   |   |   |   |   |   |   |   |   |   timbre6-mean <= 11.7306
+|   |   |   |   |   |   |   |   |   |   |   timbre5-max <= 171.651: Pop_Rock (9.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre5-max > 171.651
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.3745: Religious (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.3745: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   timbre6-mean > 11.7306: Rap (2.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre0-med > 46.808
+|   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.612445: RnB (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.612445: Rap (2.0)
+|   |   |   |   |   |   |   |   timbre10-skw > 0.378857: Reggae (3.0/1.0)
+|   |   |   |   |   |   timbre4-med > -29.041
+|   |   |   |   |   |   |   pitches8-var <= 0.072027
+|   |   |   |   |   |   |   |   pitches1-med <= 0.432: Blues (4.0)
+|   |   |   |   |   |   |   |   pitches1-med > 0.432: Rap (2.0)
+|   |   |   |   |   |   |   pitches8-var > 0.072027: Pop_Rock (3.0)
+|   |   |   |   timbre1-mean > 77.7986
+|   |   |   |   |   pitches0-mean <= 0.548376: Avant_Garde (4.0)
+|   |   |   |   |   pitches0-mean > 0.548376: Pop_Rock (2.0)
+|   |   |   timbre4-med > -27.0735
+|   |   |   |   timbre0-med <= 39.2845
+|   |   |   |   |   timbre7-krt <= 2.766925
+|   |   |   |   |   |   timbre6-var <= 705.881
+|   |   |   |   |   |   |   timbre9-krt <= 3.607204
+|   |   |   |   |   |   |   |   timbre3-skw <= -0.078079
+|   |   |   |   |   |   |   |   |   timbre2-med <= -25.0475: Rap (3.0)
+|   |   |   |   |   |   |   |   |   timbre2-med > -25.0475: Pop_Rock (8.0)
+|   |   |   |   |   |   |   |   timbre3-skw > -0.078079
+|   |   |   |   |   |   |   |   |   pitches0-mean <= 0.331708
+|   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.31723: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.31723: Blues (2.0)
+|   |   |   |   |   |   |   |   |   pitches0-mean > 0.331708
+|   |   |   |   |   |   |   |   |   |   pitches3-krt <= 0.324459
+|   |   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.079632: Jazz (7.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches3-var > 0.079632: Latin (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches3-krt > 0.324459
+|   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= -0.4192: Jazz (2.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre2-krt > -0.4192: Pop_Rock (6.0)
+|   |   |   |   |   |   |   timbre9-krt > 3.607204: International (2.0)
+|   |   |   |   |   |   timbre6-var > 705.881
+|   |   |   |   |   |   |   timbre6-max <= 93.054
+|   |   |   |   |   |   |   |   timbre6-mean <= -8.29953
+|   |   |   |   |   |   |   |   |   pitches8-var <= 0.042188: International (2.0)
+|   |   |   |   |   |   |   |   |   pitches8-var > 0.042188: Religious (3.0/1.0)
+|   |   |   |   |   |   |   |   timbre6-mean > -8.29953
+|   |   |   |   |   |   |   |   |   pitches1-med <= 0.333: RnB (4.0)
+|   |   |   |   |   |   |   |   |   pitches1-med > 0.333: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   timbre6-max > 93.054
+|   |   |   |   |   |   |   |   loudmax-skw <= -2.090022
+|   |   |   |   |   |   |   |   |   timbre4-max <= 130.769: Reggae (5.0)
+|   |   |   |   |   |   |   |   |   timbre4-max > 130.769: Rap (2.0)
+|   |   |   |   |   |   |   |   loudmax-skw > -2.090022: Jazz (5.0/1.0)
+|   |   |   |   |   timbre7-krt > 2.766925
+|   |   |   |   |   |   timbre0-min <= 0
+|   |   |   |   |   |   |   pitches0-mean <= 0.275664: Vocal (2.0/1.0)
+|   |   |   |   |   |   |   pitches0-mean > 0.275664: Jazz (3.0/2.0)
+|   |   |   |   |   |   timbre0-min > 0: Comedy_Spoken (3.0/1.0)
+|   |   |   |   timbre0-med > 39.2845
+|   |   |   |   |   timbre0-med <= 49.594
+|   |   |   |   |   |   timbre10-mean <= -3.9923
+|   |   |   |   |   |   |   timbre10-skw <= 0.005257
+|   |   |   |   |   |   |   |   timbre3-mean <= -15.5789
+|   |   |   |   |   |   |   |   |   pitches1-skw <= 1.360021: Country (3.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches1-skw > 1.360021: RnB (2.0/1.0)
+|   |   |   |   |   |   |   |   timbre3-mean > -15.5789
+|   |   |   |   |   |   |   |   |   pitches3-krt <= -0.628776
+|   |   |   |   |   |   |   |   |   |   timbre9-var <= 348.569
+|   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.413301: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.413301: RnB (3.0)
+|   |   |   |   |   |   |   |   |   |   timbre9-var > 348.569
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.387: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.387: International (3.0)
+|   |   |   |   |   |   |   |   |   pitches3-krt > -0.628776
+|   |   |   |   |   |   |   |   |   |   timbre10-max <= 77.093
+|   |   |   |   |   |   |   |   |   |   |   timbre2-med <= -5.3955
+|   |   |   |   |   |   |   |   |   |   |   |   pitches10-var <= 0.063519
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw <= 0.958067: RnB (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw > 0.958067: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches10-var > 0.063519
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= 0.368528: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > 0.368528: Rap (3.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre2-med > -5.3955
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean <= -4.97954
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw <= 0.288463
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 0.406: Latin (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 0.406: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw > 0.288463: Religious (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean > -4.97954
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 4.469
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var <= 0.078798: Pop_Rock (12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var > 0.078798: Latin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 4.469: Latin (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   timbre10-max > 77.093
+|   |   |   |   |   |   |   |   |   |   |   pitches6-skw <= 1.263045: Reggae (4.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches6-skw > 1.263045: Latin (3.0/1.0)
+|   |   |   |   |   |   |   timbre10-skw > 0.005257
+|   |   |   |   |   |   |   |   timbre5-mean <= -1.6155
+|   |   |   |   |   |   |   |   |   pitches11-krt <= -0.069098: Rap (4.0)
+|   |   |   |   |   |   |   |   |   pitches11-krt > -0.069098
+|   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.457389: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.457389: Electronic (3.0/2.0)
+|   |   |   |   |   |   |   |   timbre5-mean > -1.6155
+|   |   |   |   |   |   |   |   |   timbre5-var <= 806.115: International (2.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre5-var > 806.115
+|   |   |   |   |   |   |   |   |   |   pitches11-krt <= 0.910358: Reggae (15.0)
+|   |   |   |   |   |   |   |   |   |   pitches11-krt > 0.910358
+|   |   |   |   |   |   |   |   |   |   |   timbre9-krt <= 0.292983: Latin (6.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre9-krt > 0.292983
+|   |   |   |   |   |   |   |   |   |   |   |   pitches10-var <= 0.072527: Reggae (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches10-var > 0.072527: Religious (2.0)
+|   |   |   |   |   |   timbre10-mean > -3.9923
+|   |   |   |   |   |   |   timbre7-med <= -13.462
+|   |   |   |   |   |   |   |   pitches8-var <= 0.097698
+|   |   |   |   |   |   |   |   |   timbre7-var <= 673.381
+|   |   |   |   |   |   |   |   |   |   timbre10-mean <= 7.78269
+|   |   |   |   |   |   |   |   |   |   |   timbre6-var <= 780.886: Pop_Rock (17.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre6-var > 780.886: Country (2.0)
+|   |   |   |   |   |   |   |   |   |   timbre10-mean > 7.78269: Jazz (3.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre7-var > 673.381: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   pitches8-var > 0.097698
+|   |   |   |   |   |   |   |   |   pitches8-var <= 0.104081
+|   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.403: New (2.0)
+|   |   |   |   |   |   |   |   |   |   pitches1-med > 0.403: Jazz (2.0)
+|   |   |   |   |   |   |   |   |   pitches8-var > 0.104081
+|   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.3025: International (2.0)
+|   |   |   |   |   |   |   |   |   |   pitches1-med > 0.3025: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   timbre7-med > -13.462
+|   |   |   |   |   |   |   |   timbre1-min <= -226.525
+|   |   |   |   |   |   |   |   |   timbre4-mean <= -0.619884: Electronic (6.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre4-mean > -0.619884
+|   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.058782: Latin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches3-var > 0.058782: Jazz (3.0)
+|   |   |   |   |   |   |   |   timbre1-min > -226.525
+|   |   |   |   |   |   |   |   |   timbre2-min <= -205.617
+|   |   |   |   |   |   |   |   |   |   pitches3-krt <= 5.363747
+|   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= 2.686887
+|   |   |   |   |   |   |   |   |   |   |   |   timbre1-min <= -139.759: Pop_Rock (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre1-min > -139.759: Reggae (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches11-krt > 2.686887: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches3-krt > 5.363747: Blues (2.0)
+|   |   |   |   |   |   |   |   |   timbre2-min > -205.617
+|   |   |   |   |   |   |   |   |   |   timbre4-max <= 149.912
+|   |   |   |   |   |   |   |   |   |   |   timbre4-med <= 25.635
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-skw <= -0.534575
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.480763
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-var <= 344.985
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-med <= -3.9575: Pop_Rock (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-med > -3.9575: International (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-var > 344.985
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 0.011: Folk (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 0.011
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.267066: Country (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.267066: Latin (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.480763
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-mean <= 6.40245: Pop_Rock (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-mean > 6.40245: Electronic (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-skw > -0.534575
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-mean <= 21.4244
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-mean <= 4.01804
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-max <= 67.021
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var <= 359.486
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var <= 204.82: Latin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var > 204.82
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-med <= -7.498
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-var <= 293.527
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-skw <= -4.697222: Country (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-skw > -4.697222
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var <= 0.038265: Country (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var > 0.038265: Pop_Rock (14.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-var > 293.527
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.472659: Blues (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.472659: Country (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-med > -7.498: Blues (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var > 359.486
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-med <= 0.277: Latin (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-med > 0.277: Jazz (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-max > 67.021
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= -1.48344
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-min <= -130.996: Jazz (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-min > -130.996: Country (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > -1.48344
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var <= 228.819
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw <= -0.655576: Blues (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw > -0.655576
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-var <= 1447.02
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-med <= -8.901: Latin (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-med > -8.901
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-skw <= 0.983788
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean <= 0.903659
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var <= 180.256: Latin (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var > 180.256
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-med <= 3.281
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw <= 0.941472: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw > 0.941472: Religious (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-med > 3.281
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-min <= -95.959
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.342179: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.342179: Latin (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-min > -95.959: Pop_Rock (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean > 0.903659: Jazz (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-skw > 0.983788: Pop_Rock (16.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-var > 1447.02: Blues (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var > 228.819
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var <= 549.361
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var <= 188.03
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var <= 0.062273: International (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var > 0.062273: Pop_Rock (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var > 188.03
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-skw <= 0.511507
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-skw <= -0.491602: Country (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-skw > -0.491602
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var <= 377.039
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-krt <= 10.296531
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw <= 1.282596
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-mean <= 17.4541: International (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-mean > 17.4541: Latin (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw > 1.282596: Latin (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-krt > 10.296531: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var > 377.039
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.065327: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches3-var > 0.065327: Religious (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-skw > 0.511507
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.644014
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-max <= -8.204
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= 1.360864: Pop_Rock (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > 1.360864: Reggae (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-max > -8.204
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var <= 0.087942
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max <= 95.526
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-min <= -164.544
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-krt <= 0.492799: Pop_Rock (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-krt > 0.492799: Religious (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-min > -164.544
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= -0.297877: RnB (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt > -0.297877
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-mean <= 0.118144
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-med <= -4.412
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 0.37
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-krt <= 0.648144: Religious (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-krt > 0.648144
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-mean <= -9.41933: Country (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-mean > -9.41933: Pop_Rock (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 0.37
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.301903: Latin (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.301903: Religious (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-med > -4.412
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-med <= 47.9975
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw <= -0.542172: Religious (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw > -0.542172: Latin (12.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-med > 47.9975: Religious (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-mean > 0.118144
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-var <= 707.532
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-min <= -65.837
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-skw <= -3.075005
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw <= 0.81098: Latin (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-skw > 0.81098: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-skw > -3.075005
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var <= 0.081341: Pop_Rock (11.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var > 0.081341: RnB (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-min > -65.837: International (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-var > 707.532: Country (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max > 95.526
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-mean <= 29.958: Reggae (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-mean > 29.958
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.52269: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.52269: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var > 0.087942
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= 3.921971
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max <= 63.032: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max > 63.032
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-krt <= 0.724291: RnB (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre7-krt > 0.724291
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 1.93: Religious (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 1.93: RnB (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > 3.921971: Pop_Rock (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.644014
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-max <= 167.31: Religious (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-max > 167.31: International (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var > 549.361: International (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-mean > 4.01804
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var <= 0.056648
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var <= 244.459: International (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre9-var > 244.459
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-var <= 263.582
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw <= 0.96721: Electronic (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw > 0.96721: Jazz (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-var > 263.582: Pop_Rock (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var > 0.056648
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-mean <= -6.10746
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.564695: Religious (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.564695: Jazz (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-mean > -6.10746: RnB (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-mean > 21.4244
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-med <= 54.616
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= 3.759204
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-skw <= -0.135489
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 1.561: Jazz (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 1.561: Electronic (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-skw > -0.135489
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var <= 0.089998: Pop_Rock (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches10-var > 0.089998: Jazz (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > 3.759204: International (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-med > 54.616
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw <= 1.173025: International (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw > 1.173025: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre4-med > 25.635
+|   |   |   |   |   |   |   |   |   |   |   |   timbre10-mean <= 3.79557
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-skw <= 0.231977
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-krt <= 2.031586: Latin (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-krt > 2.031586: Pop_Rock (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-skw > 0.231977: Latin (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre10-mean > 3.79557: Blues (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre4-max > 149.912
+|   |   |   |   |   |   |   |   |   |   |   timbre0-med <= 47.075
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean <= 17.9457
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt <= 0.543524: Religious (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-krt > 0.543524: RnB (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean > 17.9457: Reggae (2.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre0-med > 47.075
+|   |   |   |   |   |   |   |   |   |   |   |   timbre5-mean <= 2.20914: Latin (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre5-mean > 2.20914: International (2.0/1.0)
+|   |   |   |   |   timbre0-med > 49.594
+|   |   |   |   |   |   timbre4-mean <= -1.55064
+|   |   |   |   |   |   |   timbre11-med <= 11.9645
+|   |   |   |   |   |   |   |   timbre1-mean <= 69.2754
+|   |   |   |   |   |   |   |   |   timbre8-skw <= 0.654553
+|   |   |   |   |   |   |   |   |   |   timbre5-skw <= 1.012944
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.43: Pop_Rock (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.43: Latin (5.0)
+|   |   |   |   |   |   |   |   |   |   timbre5-skw > 1.012944: Pop_Rock (21.0)
+|   |   |   |   |   |   |   |   |   timbre8-skw > 0.654553: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   timbre1-mean > 69.2754: Rap (3.0/1.0)
+|   |   |   |   |   |   |   timbre11-med > 11.9645: Comedy_Spoken (2.0)
+|   |   |   |   |   |   timbre4-mean > -1.55064
+|   |   |   |   |   |   |   timbre5-mean <= -5.9234
+|   |   |   |   |   |   |   |   pitches1-med <= 0.4005
+|   |   |   |   |   |   |   |   |   pitches0-mean <= 0.370642: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches0-mean > 0.370642: Country (4.0)
+|   |   |   |   |   |   |   |   pitches1-med > 0.4005: Rap (5.0/1.0)
+|   |   |   |   |   |   |   timbre5-mean > -5.9234
+|   |   |   |   |   |   |   |   pitches0-mean <= 0.664739: Latin (13.0/2.0)
+|   |   |   |   |   |   |   |   pitches0-mean > 0.664739: Pop_Rock (2.0/1.0)
+|   timbre7-var > 706.257
+|   |   pitches1-skw <= 0.480634
+|   |   |   timbre2-krt <= -0.436718
+|   |   |   |   timbre2-med <= 12.714
+|   |   |   |   |   timbre10-max <= 77.178: Reggae (5.0/1.0)
+|   |   |   |   |   timbre10-max > 77.178
+|   |   |   |   |   |   pitches1-skw <= -0.057023: Electronic (5.0)
+|   |   |   |   |   |   pitches1-skw > -0.057023: Rap (2.0/1.0)
+|   |   |   |   timbre2-med > 12.714
+|   |   |   |   |   timbre6-mean <= -9.66322: Comedy_Spoken (14.0)
+|   |   |   |   |   timbre6-mean > -9.66322: Pop_Rock (3.0/1.0)
+|   |   |   timbre2-krt > -0.436718
+|   |   |   |   timbre10-med <= -2.788
+|   |   |   |   |   timbre2-med <= 37.0075
+|   |   |   |   |   |   loudmax-med <= -16.924
+|   |   |   |   |   |   |   timbre1-min <= -159.628
+|   |   |   |   |   |   |   |   timbre0-min <= 0.288
+|   |   |   |   |   |   |   |   |   pitches1-med <= 0.4755: Religious (2.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches1-med > 0.4755: Reggae (2.0)
+|   |   |   |   |   |   |   |   timbre0-min > 0.288: Country (3.0)
+|   |   |   |   |   |   |   timbre1-min > -159.628
+|   |   |   |   |   |   |   |   timbre0-min <= 3.93: Pop_Rock (6.0/1.0)
+|   |   |   |   |   |   |   |   timbre0-min > 3.93: Rap (3.0)
+|   |   |   |   |   |   loudmax-med > -16.924
+|   |   |   |   |   |   |   timbre1-skw <= -0.306225
+|   |   |   |   |   |   |   |   pitches11-krt <= 0.211602
+|   |   |   |   |   |   |   |   |   timbre10-mean <= -4.27366: Rap (7.0)
+|   |   |   |   |   |   |   |   |   timbre10-mean > -4.27366: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   pitches11-krt > 0.211602: Pop_Rock (6.0/1.0)
+|   |   |   |   |   |   |   timbre1-skw > -0.306225
+|   |   |   |   |   |   |   |   timbre7-med <= 2.175
+|   |   |   |   |   |   |   |   |   timbre9-krt <= 0.002204: Reggae (7.0)
+|   |   |   |   |   |   |   |   |   timbre9-krt > 0.002204
+|   |   |   |   |   |   |   |   |   |   timbre2-med <= 6.902
+|   |   |   |   |   |   |   |   |   |   |   timbre0-med <= 41.569
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.515841
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw <= 0.736161: Reggae (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   pitches6-skw > 0.736161: Rap (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.515841: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre0-med > 41.569
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw <= -0.081496
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-skw <= -0.092734: Reggae (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-skw > -0.092734
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-min <= -256.135: Reggae (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre2-min > -256.135: Rap (14.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre2-skw > -0.081496: Rap (29.0/3.0)
+|   |   |   |   |   |   |   |   |   |   timbre2-med > 6.902
+|   |   |   |   |   |   |   |   |   |   |   pitches3-krt <= -0.908332: Rap (2.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches3-krt > -0.908332: Reggae (8.0)
+|   |   |   |   |   |   |   |   timbre7-med > 2.175
+|   |   |   |   |   |   |   |   |   pitches0-mean <= 0.320942: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches0-mean > 0.320942
+|   |   |   |   |   |   |   |   |   |   timbre5-skw <= 0.727674
+|   |   |   |   |   |   |   |   |   |   |   timbre4-max <= 151.774: Rap (30.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre4-max > 151.774
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.502579: International (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.502579: Rap (2.0)
+|   |   |   |   |   |   |   |   |   |   timbre5-skw > 0.727674
+|   |   |   |   |   |   |   |   |   |   |   timbre3-krt <= 3.544043
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-med <= 0.555: Rap (13.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches0-med > 0.555: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre3-krt > 3.544043: Pop_Rock (6.0/1.0)
+|   |   |   |   |   timbre2-med > 37.0075
+|   |   |   |   |   |   timbre3-skw <= -0.185024
+|   |   |   |   |   |   |   pitches0-mean <= 0.50018: Religious (3.0/1.0)
+|   |   |   |   |   |   |   pitches0-mean > 0.50018: Comedy_Spoken (3.0)
+|   |   |   |   |   |   timbre3-skw > -0.185024
+|   |   |   |   |   |   |   timbre0-min <= 0.51: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   timbre0-min > 0.51: Rap (3.0/1.0)
+|   |   |   |   timbre10-med > -2.788
+|   |   |   |   |   timbre5-mean <= 20.3209
+|   |   |   |   |   |   timbre9-var <= 806.713
+|   |   |   |   |   |   |   timbre1-med <= -37.484
+|   |   |   |   |   |   |   |   timbre3-krt <= 0.921842
+|   |   |   |   |   |   |   |   |   pitches10-var <= 0.066072: Reggae (3.0)
+|   |   |   |   |   |   |   |   |   pitches10-var > 0.066072
+|   |   |   |   |   |   |   |   |   |   pitches11-krt <= 0.820046: Latin (3.0)
+|   |   |   |   |   |   |   |   |   |   pitches11-krt > 0.820046: Jazz (2.0)
+|   |   |   |   |   |   |   |   timbre3-krt > 0.921842
+|   |   |   |   |   |   |   |   |   pitches6-skw <= 1.155718: Country (2.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches6-skw > 1.155718: Pop_Rock (5.0)
+|   |   |   |   |   |   |   timbre1-med > -37.484
+|   |   |   |   |   |   |   |   timbre5-skw <= 1.063178
+|   |   |   |   |   |   |   |   |   timbre1-skw <= -0.631641
+|   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.052428: Pop_Rock (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches3-var > 0.052428: Electronic (4.0)
+|   |   |   |   |   |   |   |   |   timbre1-skw > -0.631641
+|   |   |   |   |   |   |   |   |   |   timbre9-var <= 376.435: Electronic (3.0/2.0)
+|   |   |   |   |   |   |   |   |   |   timbre9-var > 376.435
+|   |   |   |   |   |   |   |   |   |   |   pitches10-var <= 0.049324
+|   |   |   |   |   |   |   |   |   |   |   |   timbre10-max <= 82.009: RnB (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre10-max > 82.009: Reggae (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches10-var > 0.049324
+|   |   |   |   |   |   |   |   |   |   |   |   timbre3-mean <= 32.9843
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-skw <= -0.317627
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-mean <= 1.54381
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.419082: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.419082: Jazz (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-mean > 1.54381: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-skw > -0.317627
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-max <= -7.338
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.665: Reggae (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.665: Rap (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-max > -7.338
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= 0.556583
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-med <= -0.1065: Rap (13.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre10-med > -0.1065
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var <= 0.095209
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw <= 0.777894: Rap (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre1-skw > 0.777894: Pop_Rock (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var > 0.095209: Pop_Rock (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > 0.556583
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-mean <= 10.789: RnB (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre4-mean > 10.789: Rap (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre3-mean > 32.9843
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var <= 267.916
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= -0.571061: Rap (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > -0.571061: Electronic (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre11-var > 267.916
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean <= 0.605723: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches0-mean > 0.605723: Electronic (2.0/1.0)
+|   |   |   |   |   |   |   |   timbre5-skw > 1.063178
+|   |   |   |   |   |   |   |   |   timbre5-min <= -99.909
+|   |   |   |   |   |   |   |   |   |   timbre2-skw <= 0.168699: RnB (8.0)
+|   |   |   |   |   |   |   |   |   |   timbre2-skw > 0.168699: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   |   timbre5-min > -99.909
+|   |   |   |   |   |   |   |   |   |   timbre10-mean <= 3.06893: Pop_Rock (8.0)
+|   |   |   |   |   |   |   |   |   |   timbre10-mean > 3.06893: Rap (2.0/1.0)
+|   |   |   |   |   |   timbre9-var > 806.713
+|   |   |   |   |   |   |   timbre1-mean <= -48.7651: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   timbre1-mean > -48.7651: Electronic (8.0)
+|   |   |   |   |   timbre5-mean > 20.3209
+|   |   |   |   |   |   pitches3-krt <= -0.467035: Comedy_Spoken (3.0/1.0)
+|   |   |   |   |   |   pitches3-krt > -0.467035: Electronic (3.0/1.0)
+|   |   pitches1-skw > 0.480634
+|   |   |   pitches6-skw <= 0.993496
+|   |   |   |   timbre7-krt <= 1.983432
+|   |   |   |   |   timbre3-skw <= -0.333115
+|   |   |   |   |   |   timbre0-min <= 2.68
+|   |   |   |   |   |   |   pitches0-mean <= 0.297405: Pop_Rock (2.0)
+|   |   |   |   |   |   |   pitches0-mean > 0.297405: International (2.0/1.0)
+|   |   |   |   |   |   timbre0-min > 2.68
+|   |   |   |   |   |   |   pitches3-krt <= -0.275955: Latin (2.0/1.0)
+|   |   |   |   |   |   |   pitches3-krt > -0.275955: Religious (2.0)
+|   |   |   |   |   timbre3-skw > -0.333115
+|   |   |   |   |   |   timbre10-mean <= -4.25343
+|   |   |   |   |   |   |   timbre11-med <= 7.819
+|   |   |   |   |   |   |   |   timbre10-skw <= -0.387205
+|   |   |   |   |   |   |   |   |   pitches1-med <= 0.368: Country (2.0)
+|   |   |   |   |   |   |   |   |   pitches1-med > 0.368: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   timbre10-skw > -0.387205
+|   |   |   |   |   |   |   |   |   timbre8-var <= 852.463
+|   |   |   |   |   |   |   |   |   |   timbre3-krt <= -0.027695: Reggae (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre3-krt > -0.027695: Rap (19.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre8-var > 852.463: Reggae (2.0/1.0)
+|   |   |   |   |   |   |   timbre11-med > 7.819
+|   |   |   |   |   |   |   |   pitches0-mean <= 0.390631: Pop_Rock (3.0)
+|   |   |   |   |   |   |   |   pitches0-mean > 0.390631: Rap (2.0/1.0)
+|   |   |   |   |   |   timbre10-mean > -4.25343
+|   |   |   |   |   |   |   timbre11-var <= 618.978
+|   |   |   |   |   |   |   |   timbre5-mean <= 10.6756
+|   |   |   |   |   |   |   |   |   timbre3-skw <= 0.501352: Pop_Rock (13.0)
+|   |   |   |   |   |   |   |   |   timbre3-skw > 0.501352: Rap (3.0/2.0)
+|   |   |   |   |   |   |   |   timbre5-mean > 10.6756: Reggae (6.0/3.0)
+|   |   |   |   |   |   |   timbre11-var > 618.978: Latin (2.0/1.0)
+|   |   |   |   timbre7-krt > 1.983432
+|   |   |   |   |   timbre2-krt <= 0.671902
+|   |   |   |   |   |   timbre10-var <= 412.946
+|   |   |   |   |   |   |   pitches3-var <= 0.070844: Rap (2.0)
+|   |   |   |   |   |   |   pitches3-var > 0.070844: Comedy_Spoken (5.0)
+|   |   |   |   |   |   timbre10-var > 412.946
+|   |   |   |   |   |   |   timbre1-min <= -177.264
+|   |   |   |   |   |   |   |   pitches0-mean <= 0.52894: Religious (2.0/1.0)
+|   |   |   |   |   |   |   |   pitches0-mean > 0.52894: Electronic (2.0)
+|   |   |   |   |   |   |   timbre1-min > -177.264: Folk (5.0)
+|   |   |   |   |   timbre2-krt > 0.671902
+|   |   |   |   |   |   pitches1-skw <= 1.143074: Pop_Rock (3.0)
+|   |   |   |   |   |   pitches1-skw > 1.143074: Latin (2.0/1.0)
+|   |   |   pitches6-skw > 0.993496
+|   |   |   |   timbre4-med <= 11.1745
+|   |   |   |   |   timbre2-med <= 40.119
+|   |   |   |   |   |   loudmax-med <= -20.642
+|   |   |   |   |   |   |   timbre5-var <= 1053.27
+|   |   |   |   |   |   |   |   pitches10-var <= 0.066801: Country (2.0/1.0)
+|   |   |   |   |   |   |   |   pitches10-var > 0.066801: Vocal (3.0)
+|   |   |   |   |   |   |   timbre5-var > 1053.27
+|   |   |   |   |   |   |   |   pitches1-med <= 0.196: Pop_Rock (10.0/1.0)
+|   |   |   |   |   |   |   |   pitches1-med > 0.196
+|   |   |   |   |   |   |   |   |   timbre2-krt <= 0.068224: Jazz (3.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre2-krt > 0.068224: Easy_Listening (3.0/1.0)
+|   |   |   |   |   |   loudmax-med > -20.642
+|   |   |   |   |   |   |   pitches1-med <= 0.352
+|   |   |   |   |   |   |   |   timbre7-var <= 1312.68
+|   |   |   |   |   |   |   |   |   timbre4-max <= 105.615
+|   |   |   |   |   |   |   |   |   |   pitches3-krt <= -1.543885: Blues (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   pitches3-krt > -1.543885
+|   |   |   |   |   |   |   |   |   |   |   loudmax-max <= -7.056: Country (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   loudmax-max > -7.056
+|   |   |   |   |   |   |   |   |   |   |   |   timbre8-var <= 290.608
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min <= 1.596: Latin (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre0-min > 1.596: Pop_Rock (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre8-var > 290.608
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean <= -6.12386
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-skw <= -0.225832: Country (6.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-skw > -0.225832
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-var <= 673.221: Pop_Rock (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre8-var > 673.221: Country (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-mean > -6.12386
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-min <= -80.836
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var <= 0.060082: Blues (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   pitches8-var > 0.060082
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max <= 97.872: Pop_Rock (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre6-max > 97.872: Reggae (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   timbre5-min > -80.836: Pop_Rock (15.0)
+|   |   |   |   |   |   |   |   |   timbre4-max > 105.615
+|   |   |   |   |   |   |   |   |   |   timbre10-med <= -3.727
+|   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= 0.520427
+|   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt <= -0.570502: Pop_Rock (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches11-krt > -0.570502: Religious (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches11-krt > 0.520427
+|   |   |   |   |   |   |   |   |   |   |   |   pitches3-var <= 0.036215: Country (2.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches3-var > 0.036215: RnB (3.0)
+|   |   |   |   |   |   |   |   |   |   timbre10-med > -3.727
+|   |   |   |   |   |   |   |   |   |   |   pitches0-med <= 0.483
+|   |   |   |   |   |   |   |   |   |   |   |   timbre0-med <= 37.28: Latin (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   timbre0-med > 37.28
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-mean <= 7.67271
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-max <= -3.535: Pop_Rock (10.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   loudmax-max > -3.535: Blues (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   timbre3-mean > 7.67271: Jazz (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   pitches0-med > 0.483: Electronic (2.0)
+|   |   |   |   |   |   |   |   timbre7-var > 1312.68
+|   |   |   |   |   |   |   |   |   pitches6-skw <= 1.422669: Rap (3.0)
+|   |   |   |   |   |   |   |   |   pitches6-skw > 1.422669: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   pitches1-med > 0.352
+|   |   |   |   |   |   |   |   timbre0-min <= 0.003
+|   |   |   |   |   |   |   |   |   pitches3-var <= 0.042854: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   |   pitches3-var > 0.042854: RnB (2.0)
+|   |   |   |   |   |   |   |   timbre0-min > 0.003: International (2.0/1.0)
+|   |   |   |   |   timbre2-med > 40.119
+|   |   |   |   |   |   timbre2-krt <= -0.09959: Blues (4.0)
+|   |   |   |   |   |   timbre2-krt > -0.09959
+|   |   |   |   |   |   |   pitches0-mean <= 0.382561: International (2.0)
+|   |   |   |   |   |   |   pitches0-mean > 0.382561: Vocal (3.0/1.0)
+|   |   |   |   timbre4-med > 11.1745
+|   |   |   |   |   timbre5-min <= -60.694
+|   |   |   |   |   |   timbre11-med <= -2.886
+|   |   |   |   |   |   |   pitches1-med <= 0.245: Children (3.0/1.0)
+|   |   |   |   |   |   |   pitches1-med > 0.245: Latin (3.0)
+|   |   |   |   |   |   timbre11-med > -2.886
+|   |   |   |   |   |   |   timbre6-var <= 756.847
+|   |   |   |   |   |   |   |   pitches1-skw <= 1.095458
+|   |   |   |   |   |   |   |   |   pitches3-var <= 0.086154: Jazz (5.0)
+|   |   |   |   |   |   |   |   |   pitches3-var > 0.086154: Pop_Rock (2.0/1.0)
+|   |   |   |   |   |   |   |   pitches1-skw > 1.095458
+|   |   |   |   |   |   |   |   |   timbre3-skw <= -0.243562: International (2.0)
+|   |   |   |   |   |   |   |   |   timbre3-skw > -0.243562: Pop_Rock (8.0)
+|   |   |   |   |   |   |   timbre6-var > 756.847
+|   |   |   |   |   |   |   |   timbre10-skw <= -0.521634: Pop_Rock (4.0/1.0)
+|   |   |   |   |   |   |   |   timbre10-skw > -0.521634
+|   |   |   |   |   |   |   |   |   timbre1-mean <= -36.2606
+|   |   |   |   |   |   |   |   |   |   timbre0-min <= 0.619: Jazz (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre0-min > 0.619: Latin (2.0/1.0)
+|   |   |   |   |   |   |   |   |   timbre1-mean > -36.2606
+|   |   |   |   |   |   |   |   |   |   timbre5-mean <= 10.4808
+|   |   |   |   |   |   |   |   |   |   |   timbre7-var <= 768.333: RnB (7.0)
+|   |   |   |   |   |   |   |   |   |   |   timbre7-var > 768.333
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-med <= 0.195: Religious (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   pitches1-med > 0.195: International (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   timbre5-mean > 10.4808: Reggae (3.0)
+|   |   |   |   |   timbre5-min > -60.694
+|   |   |   |   |   |   pitches1-med <= 0.126: Folk (2.0/1.0)
+|   |   |   |   |   |   pitches1-med > 0.126: Religious (3.0)
+
+Number of Leaves  : 	736
+
+Size of the tree : 	1471
+
+
+Time taken to build model: 8.14 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1605               40.015  %
+Incorrectly Classified Instances      2406               59.985  %
+Kappa statistic                          0.1851
+Mean absolute error                      0.0593
+Root mean squared error                  0.2264
+Relative absolute error                 83.184  %
+Root relative squared error            120.0057 %
+Total Number of Instances             4011     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.661     0.358      0.63      0.661     0.646      0.651    Pop_Rock
+                 0.241     0.047      0.236     0.241     0.239      0.578    Electronic
+                 0.373     0.047      0.333     0.373     0.352      0.651    Rap
+                 0.145     0.042      0.134     0.145     0.139      0.512    Jazz
+                 0.125     0.059      0.126     0.125     0.125      0.485    Latin
+                 0.083     0.031      0.083     0.083     0.083      0.504    RnB
+                 0.082     0.031      0.09      0.082     0.086      0.45     International
+                 0.143     0.035      0.155     0.143     0.149      0.513    Country
+                 0.076     0.044      0.082     0.076     0.079      0.487    Religious
+                 0.1       0.02       0.132     0.1       0.114      0.564    Reggae
+                 0.127     0.025      0.14      0.127     0.133      0.507    Blues
+                 0.028     0.006      0.042     0.028     0.033      0.477    Vocal
+                 0.042     0.01       0.047     0.042     0.044      0.492    Folk
+                 0.232     0.017      0.247     0.232     0.239      0.607    New
+                 0.256     0.007      0.256     0.256     0.256      0.613    Comedy_Spoken
+                 0.167     0.003      0.294     0.167     0.213      0.547    Stage
+                 0         0.003      0         0         0          0.516    Easy_Listening
+                 0         0.002      0         0         0          0.529    Avant_Garde
+                 0         0.001      0         0         0          0.497    Classical
+                 0         0.001      0         0         0          0.498    Children
+                 0         0          0         0         0          0.498    Holiday
+Weighted Avg.    0.4       0.191      0.386     0.4       0.393      0.59 
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e    f    g    h    i    j    k    l    m    n    o    p    q    r    s    t    u   <-- classified as
+ 1274   87   66   65   96   45   51   50   60   24   37    7   15   21    9    6    6    5    0    2    0 |    a = Pop_Rock
+   89   55   14    8   14    6    5    5   12    6    2    1    2    7    2    0    0    0    0    0    0 |    b = Electronic
+   80   12   88    8    3    6    3    8    8   14    2    0    0    1    3    0    0    0    0    0    0 |    c = Rap
+   56   15    7   25   10   13    9    4    8    5    3    3    3    8    1    1    2    0    0    0    0 |    d = Jazz
+  101   20    8   14   32    9   10   15   15   10   14    0    1    6    1    0    0    0    1    0    0 |    e = Latin
+   43    3   12   12   12   11   11    9   11    2    2    1    1    1    0    0    0    0    0    1    0 |    f = RnB
+   53    7   10    9   15    6   12    7   12    1    7    0    5    1    1    0    1    0    0    0    0 |    g = International
+   63    1    3    4   17    6    6   25   17    2   13    4    4    4    4    0    1    0    1    0    0 |    h = Country
+   85   11   10    6   25    8    6   12   15    5    3    2    3    2    4    1    0    0    0    0    0 |    i = Religious
+   25    4   33    9    7   10    6    4    4   12    4    0    0    1    1    0    0    0    0    0    0 |    j = Reggae
+   45    7    2    8    8    5    5   12   10    3   16    2    1    1    0    0    0    1    0    0    0 |    k = Blues
+   15    0    2    3    3    2    1    2    1    1    2    1    1    2    0    0    0    0    0    0    0 |    l = Vocal
+   18    2    0    2    5    3    2    3    2    1    2    1    2    2    1    0    1    0    1    0    0 |    m = Folk
+   34    5    4    7    3    1    5    1    3    0    2    2    1   22    1    2    1    1    0    0    0 |    n = New
+   12    0    4    1    1    0    1    0    2    5    1    0    2    0   10    0    0    0    0    0    0 |    o = Comedy_Spoken
+    9    1    0    1    1    2    0    2    0    0    0    0    1    7    0    5    0    1    0    0    0 |    p = Stage
+    9    1    0    1    0    0    0    2    2    0    1    0    0    3    1    0    0    0    0    0    0 |    q = Easy_Listening
+    6    1    0    0    0    0    0    0    1    0    1    0    0    0    0    1    0    0    0    0    0 |    r = Avant_Garde
+    3    1    0    0    0    0    0    0    0    0    0    0    1    0    0    1    0    0    0    0    0 |    s = Classical
+    1    0    1    2    0    0    0    0    0    0    2    0    0    0    0    0    0    0    1    0    0 |    t = Children
+    0    0    0    1    1    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 |    u = Holiday
+
