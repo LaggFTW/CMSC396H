@@ -60,7 +60,7 @@ def main(argv):
     if g_opt:
         output.write(genres_header)
 
-    output.write("\r\n@DATA\n")
+    output.write("@DATA\n")
 
 
     #Collects files in the current directory

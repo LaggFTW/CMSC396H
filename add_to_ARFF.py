@@ -3,6 +3,8 @@ from getopt import getopt, GetoptError
 import sys
 import h5py
 import feature_extract as ftex
+import numpy 
+from datetime import datetime
 
 matt_path = 'C:\\Users\\Matt\\Documents\\-5- Fall 2015\\CMSC396h project\\MillionSongSubset\\data\\'
 
@@ -32,10 +34,14 @@ def main(argv):
     for opt, arg in opts:
         pass
 
+    print datetime.now(), "Start"
+
+
     output = open('modified_data.arff', 'wb')
     additional_headers = []
     headers_done = False
-    
+    fname = argv[0] 
+
     ###### headers for each feature are appended here
     
     # segment duration statistics (7 features)
@@ -61,31 +67,39 @@ def main(argv):
     ###### Change this value to the path to your MillionSongSubset/data folder
     os.chdir(matt_path)
     files = {}
+
     for dir, paths, names in os.walk("."):
         for name in names:
             if name.endswith('.h5'):
-                files[fname.split('.')[1].split('\\')[-1]] = os.path.join(dir, name)
+                files[name.split('.')[0].split('\\')[-1]] = os.path.join(dir, name)
 
+    c = 0
 
     for line in ifile:
-        if not headers_done and line[0] == '@':
+        if not headers_done and (line[0] == '@' or line[0] == '\n' or line[0] == ' '):
+            output.write(line)
             continue
         else:
             if not headers_done:
                 # We just finished the header lines, so we add the new headers
                 headers_done = True
                 output.write('\n'.join(additional_headers))
+                output.write('\r\n\n@DATA\r\n')
             elif len(line.split(',')) < 2:
-                # We're at the lines between headers and data, so copy them over
-                output.write('%s\n' % line)            
+                # We're between headers and data, so pass (already wrote @DATA)
+                pass
             else:
+                c += 1
+                if c % 100 == 0:
+                    quit()
+
                 # Adding data to instances
                 id = line.split(',')[0]
                 f = h5py.File(files[id], 'r')
                 db = f['analysis']
                 
-                key = db['key']
-                duration = db['duration']
+                key = db['songs'][0][21]
+                duration = db['songs'][0][3]
                 pitches = db['segments_pitches'] # TODO: perform key / mode normalization here
                 timbre = db['segments_timbre']
                 seg_start = db['segments_start']
@@ -111,7 +125,7 @@ def main(argv):
 
                 output.write(line)
                 output.write(',')
-                output.write(','.join(additional_data))
+                output.write(','.join([str(i) for i in additional_data]))
                 output.write('\n')
 
     output.close()
