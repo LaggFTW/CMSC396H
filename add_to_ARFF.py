@@ -1,12 +1,24 @@
-﻿#Author: Matt Myers
-
-import os
-import getopt
+﻿import os
+from getopt import getopt, GetoptError
 import sys
 import h5py
+import feature_extract as ftex
 
 matt_path = 'C:\\Users\\Matt\\Documents\\-5- Fall 2015\\CMSC396h project\\MillionSongSubset\\data\\'
+
 # Takes in an existing ARFF file, finds the matching HDF5 file for each instance, does additional analysis to generate more features, and creates a new ARFF file with the additional features appended to the header and to each instance
+
+# auxiliary functions
+def generate_headers(s):
+    return ["%s-mean" % s,"%s-med" % s,"%s-var" % s,
+            "%s-min" % s,"%s-max" % s,"%s-skw" % s,"%s-krt" % s]
+def generate_rep_headers(s, sectwise=False):
+    if sectwise:
+        return ["%s-posmin" % s, "%s-posmax" % s, "%s-posmean" % s, "%s-posvar" % s, "%s-posskw" % s, "%s-poskrt" % s,
+                "%s-negmin" % s, "%s-negmax" % s, "%s-negmean" % s, "%s-negvar" % s, "%s-negskw" % s, "%s-negkrt" % s]
+    else:
+        return ["%s-argmax" % s, "%s-max" % s, "%s-argmin" % s, "%s-min" % s,
+                "%s-mean" % s, "%s-med" % s, "%s-var" % s, "%s-skw" % s,"%s-krt" % s]
 
 def main(argv):
     def usage():
@@ -23,6 +35,28 @@ def main(argv):
     output = open('modified_data.arff', 'wb')
     additional_headers = []
     headers_done = False
+    
+    ###### headers for each feature are appended here
+    
+    # segment duration statistics (7 features)
+    additional_headers.extend(generate_headers('seglen'))
+    
+    # section duration statistics (7 features)
+    additional_headers.extend(generate_headers('sectlen'))
+    
+    # chord-based features (7 + 7 + 2 = 16 features)
+    additional_headers.extend(generate_headers('chordsize'))
+    additional_headers.extend(generate_headers('chordfreq'))
+    additional_headers.extend(['noisiness','uniqchord-ct'])
+    
+    # repetition features (12 * (9 + 12 + 12) = 396 features)
+    for i in range(0,12):
+        additional_headers.extend(generate_rep_headers('rep%i' % i)) # overall
+        additional_headers.extend(generate_rep_headers('intra%i' % i, sectwise=True)) # intra-section
+        additional_headers.extend(generate_rep_headers('inter%i' % i, sectwise=True)) # inter-section
+    
+    ## add attribute tags
+    additional_headers = map(lambda x: "@ATTRIBUTE %s NUMERIC" % x, additional_headers)
 
     ###### Change this value to the path to your MillionSongSubset/data folder
     os.chdir(matt_path)
@@ -48,11 +82,32 @@ def main(argv):
                 # Adding data to instances
                 id = line.split(',')[0]
                 f = h5py.File(files[id], 'r')
+                db = f['analysis']
                 
+                key = db['key']
+                duration = db['duration']
+                pitches = db['segments_pitches'] # TODO: perform key / mode normalization here
+                timbre = db['segments_timbre']
+                seg_start = db['segments_start']
+                sect_start = db['sections_start']
+                
+                ###### compute additional data here
                 additional_data = []
-                #Create additional data here
                 
-                #
+                # segment duration statistics
+                additional_data.extend(ftex.gen_stats(numpy.array(ftex.event_durations(seg_start, duration, norm=True), dtype='f')))
+                # section duration statistics
+                additional_data.extend(ftex.gen_stats(numpy.array(ftex.event_durations(sect_start, duration, norm=True), dtype='f')))
+                # chord-based features
+                additional_data.extend(ftex.chord_features(pitches))
+                # repetition features
+                sect_parts = ftex.partition_segments(sect_start, seg_start, duration)
+                for i in range(0,12):
+                    t_i = [x[i] for x in timbre]
+                    additional_data.extend(ftex.overall_rep_features(t_i))
+                    additional_data.extend(ftex.intra_sect_rep_features(t_i, sect_parts))
+                    additional_data.extend(ftex.inter_sect_rep_features(t_i, sect_parts))
+                # 
 
                 output.write(line)
                 output.write(',')
@@ -65,3 +120,4 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
+
