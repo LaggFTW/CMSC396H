@@ -254,7 +254,12 @@ def xcorre(x, y):
 # TODO: perhaps do this up to k-th order as well?
 def ac_offsets(x):
     a = x[1:x.size]
-    return (numpy.argmax(a) + 1, numpy.argmin(a) + 1)
+    if len(a) > 0:
+        return (numpy.argmax(a) + 1, numpy.argmin(a) + 1)
+    else:
+        ########## What would be a good default value here? running into
+        ########## cases where the parameter array x has 0 elements
+        return None
 
 # generates max/min + offsets for a cross-correlation result
 # note: for the final statistics output, these offsets should be normalized:
