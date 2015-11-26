@@ -94,6 +94,8 @@ def chord_features(segment_pitches, threshold=1.0):
 #   offset locations of max/min ('max_off'/'min_off'), and their values ('max'/'min')
 #   statistics for the absolute value autocorrelation result ('mean','median','var','skew','kurtosis')
 def overall_rep_features(samples):
+    if len(samples) < 2:
+        return [0, 0.0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, -3.0]
     return extract_ac_features(samples, stats=True)
 
 # computes repetition features within each section
@@ -104,6 +106,7 @@ def overall_rep_features(samples):
 # final result is ordered as follows:
 #   [min_max, max_max, mean_max, var_max, skew_max, kurtosis_max, min_min, max_min, mean_min, var_min, skew_min, kurtosis_min]
 def intra_sect_rep_features(samples, partitions):
+    partitions = [(a,b) for (a,b) in partitions if (b - a) > 1] # omit any sections only containing one segment
     num_sect = len(partitions)
     max_vals = numpy.zeros(num_sect, dtype='f')
     min_vals = numpy.zeros(num_sect, dtype='f')
@@ -122,6 +125,7 @@ def intra_sect_rep_features(samples, partitions):
 # final result is ordered as follows:
 #   [min_max, max_max, mean_max, var_max, skew_max, kurtosis_max, min_min, max_min, mean_min, var_min, skew_min, kurtosis_min]
 def inter_sect_rep_features(samples, partitions):
+    partitions = [(a,b) for (a,b) in partitions if b > a] # omit any sections not containing any segments
     num_sect = len(partitions)
     num_pairs = (num_sect * (num_sect - 1)) / 2 # num_sect choose 2
     max_vals = numpy.zeros(num_pairs, dtype='f')
@@ -254,12 +258,7 @@ def xcorre(x, y):
 # TODO: perhaps do this up to k-th order as well?
 def ac_offsets(x):
     a = x[1:x.size]
-    if len(a) > 0:
-        return (numpy.argmax(a) + 1, numpy.argmin(a) + 1)
-    else:
-        ########## What would be a good default value here? running into
-        ########## cases where the parameter array x has 0 elements
-        return None
+    return (numpy.argmax(a) + 1, numpy.argmin(a) + 1)
 
 # generates max/min + offsets for a cross-correlation result
 # note: for the final statistics output, these offsets should be normalized:
