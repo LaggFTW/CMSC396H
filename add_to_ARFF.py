@@ -74,7 +74,7 @@ def main(argv):
                 files[name.split('.')[0].split('\\')[-1]] = os.path.join(dir, name)
 
     c = 0
-
+    broken = 0
     for line in ifile:
         if not headers_done and (line[0] == '@' or line[0] == '\n' or line[0] == ' '):
             output.write(line)
@@ -91,7 +91,7 @@ def main(argv):
             else:
                 c += 1
                 if c % 100 == 0:
-                    quit()
+                    print datetime.now(), "Beginning instance %d" % c
 
                 # Adding data to instances
                 id = line.split(',')[0]
@@ -116,6 +116,9 @@ def main(argv):
                 additional_data.extend(ftex.chord_features(pitches))
                 # repetition features
                 sect_parts = ftex.partition_segments(sect_start, seg_start, duration)
+                if len(sect_parts) == 0: 
+                    broken += 1
+                    continue
                 for i in range(0,12):
                     t_i = [x[i] for x in timbre]
                     additional_data.extend(ftex.overall_rep_features(t_i))
@@ -123,14 +126,13 @@ def main(argv):
                     additional_data.extend(ftex.inter_sect_rep_features(t_i, sect_parts))
                 # 
 
-                output.write(line)
-                output.write(',')
-                output.write(','.join([str(i) for i in additional_data]))
+                output.write("%s,%s" % (line.rstrip(), ','.join([str(i) for i in additional_data])))
                 output.write('\n')
 
     output.close()
 
-
+    print datetime.now(), "End"
+    print "broken = %d" % broken
 
 if __name__ == "__main__":
     main(sys.argv[1:])

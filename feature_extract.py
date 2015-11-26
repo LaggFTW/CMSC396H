@@ -26,7 +26,7 @@ from scipy import stats
 #   norm - if set to true, normalizes the durations by the total duration (optional, defaults to false)
 # outputs: list of same size as events_start, containing the respective length of each event in seconds
 def event_durations(events_start, duration, norm=False):
-    if events_start:
+    if events_start and len(events_start) > 0:
         n = len(events_start)
         start = events_start[0]
         to_ret = [0.] * n
@@ -192,10 +192,14 @@ def extract_xc_features(li1, li2, offsets=True, stats=False):
 # final output list size will correspond to the number of sections
 def partition_segments(sections_start, segments_start, duration):
     num_sect = len(sections_start)
+    if num_sect == 0:
+        return []
+    elif num_sect == 1:
+        return [(0, len(segments_start) - 1)]
     num_seg = len(segments_start)
     to_ret = [(0,0)] * num_sect
     i = 0
-    for i_sect in range(1,num_sect):
+    for i_sect in range(1,num_sect-1):
         start = i
         end = sections_start[i_sect] * 5
         seg_start = 4 * segments_start[i]
@@ -205,11 +209,17 @@ def partition_segments(sections_start, segments_start, duration):
             seg_start = 4 * seg_end
             seg_end = segments_start[i+1]
         to_ret[i_sect-1] = (start, i)
+
     to_ret[num_sect-1] = (i, num_seg)
     return to_ret
 
 # generates the seven statistics of the numpy array
 def gen_stats(arr, maxmin=True):
+    if len(arr) == 0:
+        if maxmin:
+            return [0, 0, 0, 0, 0, 0, 0]
+        else:
+            return [0, 0, 0, 0, 0]
     to_ret = [numpy.mean(arr), numpy.median(arr), numpy.var(arr)]
     if maxmin:
         to_ret.extend([numpy.min(arr), numpy.max(arr)])
