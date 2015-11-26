@@ -95,7 +95,7 @@ def chord_features(segment_pitches, threshold=1.0):
 #   statistics for the absolute value autocorrelation result ('mean','median','var','skew','kurtosis')
 def overall_rep_features(samples):
     if len(samples) < 2:
-        return [0, 0.0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, -3.0]
+        return [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -3.0]
     return extract_ac_features(samples, stats=True)
 
 # computes repetition features within each section
@@ -108,6 +108,8 @@ def overall_rep_features(samples):
 def intra_sect_rep_features(samples, partitions):
     partitions = [(a,b) for (a,b) in partitions if (b - a) > 1] # omit any sections only containing one segment
     num_sect = len(partitions)
+    if num_sect == 0:
+        return [0.0, 0.0, 0.0, 0.0, 0.0, -3.0, 0.0, 0.0, 0.0, 0.0, 0.0, -3.0]
     max_vals = numpy.zeros(num_sect, dtype='f')
     min_vals = numpy.zeros(num_sect, dtype='f')
     for i, (start, end) in enumerate(partitions):
@@ -128,6 +130,8 @@ def inter_sect_rep_features(samples, partitions):
     partitions = [(a,b) for (a,b) in partitions if b > a] # omit any sections not containing any segments
     num_sect = len(partitions)
     num_pairs = (num_sect * (num_sect - 1)) / 2 # num_sect choose 2
+    if num_pairs == 0:
+        return [0.0, 0.0, 0.0, 0.0, 0.0, -3.0, 0.0, 0.0, 0.0, 0.0, 0.0, -3.0]
     max_vals = numpy.zeros(num_pairs, dtype='f')
     min_vals = numpy.zeros(num_pairs, dtype='f')
     pair_idx = 0
