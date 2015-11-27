@@ -194,23 +194,20 @@ def partition_segments(sections_start, segments_start, duration):
     num_sect = len(sections_start)
     if num_sect == 0:
         return []
-    elif num_sect == 1:
-        return [(0, len(segments_start) - 1)]
     num_seg = len(segments_start)
     to_ret = [(0,0)] * num_sect
     i = 0
-    for i_sect in range(1,num_sect-1):
+    for i_sect in range(1,num_sect+1):
         start = i
-        end = sections_start[i_sect] * 5
-        seg_start = 4 * segments_start[i]
-        seg_end = segments_start[i+1]
-        while (seg_start + seg_end) < end:
-            i += 1
-            seg_start = 4 * seg_end
-            seg_end = segments_start[i+1]
+        if i < num_seg:
+            end = 5 * (sections_start[i_sect] if i_sect < num_sect else duration)
+            seg_start = 4 * segments_start[i]
+            seg_end = segments_start[i+1] if i < (num_seg - 1) else duration
+            while (seg_start + seg_end) < end and i < num_seg:
+                i += 1
+                seg_start = 4 * seg_end
+                seg_end = segments_start[i+1] if i < (num_seg - 1) else duration
         to_ret[i_sect-1] = (start, i)
-
-    to_ret[num_sect-1] = (i, num_seg)
     return to_ret
 
 # generates the seven statistics of the numpy array
