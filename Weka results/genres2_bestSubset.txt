@@ -1,0 +1,65 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.CfsSubsetEval 
+Search:weka.attributeSelection.LinearForwardSelection -D 0 -N 5 -I -K 50 -T 0
+Relation:     song-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    4011
+Attributes:   178
+[list of attributes omitted]
+Evaluation mode:evaluate on all training data
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Linear Forward Selection.
+	Start set: no attributes
+	Forward selection method: forward selection
+	Stale search after 5 node expansions
+	Linear Forward Selection Type: fixed-set
+	Number of top-ranked attributes that are used: 50
+	Total number of subsets evaluated: 1380
+	Merit of best subset found:    0.2  
+
+Attribute Subset Evaluator (supervised, Class (nominal): 178 genre):
+	CFS Subset Evaluator
+	Including locally predictive attributes
+
+Selected attributes: 16,73,86,92,93,95,99,105,106,108,112,113,114,117,120,121,122,124,125,129,136,140,143,146,150,154,155,156,157,159,160,164,169,173,174 : 35
+                     pitches2-med
+                     pitches10-var
+                     timbre0-med
+                     timbre1-mean
+                     timbre1-med
+                     timbre1-min
+                     timbre2-mean
+                     timbre2-krt
+                     timbre3-mean
+                     timbre3-var
+                     timbre3-krt
+                     timbre4-mean
+                     timbre4-med
+                     timbre4-max
+                     timbre5-mean
+                     timbre5-med
+                     timbre5-var
+                     timbre5-max
+                     timbre5-skw
+                     timbre6-var
+                     timbre7-var
+                     timbre7-krt
+                     timbre8-var
+                     timbre8-skw
+                     timbre9-var
+                     timbre9-krt
+                     timbre10-mean
+                     timbre10-med
+                     timbre10-var
+                     timbre10-max
+                     timbre10-skw
+                     timbre11-var
+                     loudmax-mean
+                     loudmax-max
+                     loudmax-skw
+
