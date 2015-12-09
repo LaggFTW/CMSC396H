@@ -1,0 +1,2204 @@
+=== Run information ===
+
+Scheme:weka.classifiers.meta.AttributeSelectedClassifier -E "weka.attributeSelection.CfsSubsetEval " -S "weka.attributeSelection.LinearForwardSelection -D 0 -N 5 -I -K 50 -T 0" -W weka.classifiers.functions.MultilayerPerceptron -- -L 0.3 -M 0.2 -N 600 -V 0 -S 0 -E 20 -H a -D
+Relation:     song-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    3997
+Attributes:   604
+[list of attributes omitted]
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+AttributeSelectedClassifier:
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Linear Forward Selection.
+	Start set: no attributes
+	Forward selection method: forward selection
+	Stale search after 5 node expansions
+	Linear Forward Selection Type: fixed-set
+	Number of top-ranked attributes that are used: 50
+	Total number of subsets evaluated: 1762
+	Merit of best subset found:    0.222
+
+Attribute Subset Evaluator (supervised, Class (nominal): 178 genre):
+	CFS Subset Evaluator
+	Including locally predictive attributes
+
+Selected attributes: 3,86,92,93,108,112,118,120,121,129,132,136,143,150,155,157,164,170,179,180,181,193,200,202,210,217,219,225,265,271,304,337,349,385,390,436,441,589,601 : 39
+                     pitches0-var
+                     timbre0-med
+                     timbre1-mean
+                     timbre1-med
+                     timbre3-var
+                     timbre3-krt
+                     timbre4-skw
+                     timbre5-mean
+                     timbre5-med
+                     timbre6-var
+                     timbre6-skw
+                     timbre7-var
+                     timbre8-var
+                     timbre9-var
+                     timbre10-mean
+                     timbre10-var
+                     timbre11-var
+                     loudmax-med
+                     seglen-mean
+                     seglen-med
+                     seglen-var
+                     chordsize-mean
+                     chordfreq-mean
+                     chordfreq-var
+                     rep0-max
+                     rep0-krt
+                     intra0-posmax
+                     intra0-negmax
+                     inter1-posmean
+                     inter1-negmean
+                     inter2-negmean
+                     inter3-negmean
+                     rep4-krt
+                     intra5-posmean
+                     intra5-negmax
+                     inter6-negmean
+                     rep7-max
+                     intra11-negmean
+                     inter11-negmean
+
+
+Header of reduced data:
+@relation 'song-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Remove-V-R3,86,92-93,108,112,118,120-121,129,132,136,143,150,155,157,164,170,179-181,193,200,202,210,217,219,225,265,271,304,337,349,385,390,436,441,589,601,178'
+
+@attribute pitches0-var numeric
+@attribute timbre0-med numeric
+@attribute timbre1-mean numeric
+@attribute timbre1-med numeric
+@attribute timbre3-var numeric
+@attribute timbre3-krt numeric
+@attribute timbre4-skw numeric
+@attribute timbre5-mean numeric
+@attribute timbre5-med numeric
+@attribute timbre6-var numeric
+@attribute timbre6-skw numeric
+@attribute timbre7-var numeric
+@attribute timbre8-var numeric
+@attribute timbre9-var numeric
+@attribute timbre10-mean numeric
+@attribute timbre10-var numeric
+@attribute timbre11-var numeric
+@attribute loudmax-med numeric
+@attribute seglen-mean numeric
+@attribute seglen-med numeric
+@attribute seglen-var numeric
+@attribute chordsize-mean numeric
+@attribute chordfreq-mean numeric
+@attribute chordfreq-var numeric
+@attribute rep0-max numeric
+@attribute rep0-krt numeric
+@attribute intra0-posmax numeric
+@attribute intra0-negmax numeric
+@attribute inter1-posmean numeric
+@attribute inter1-negmean numeric
+@attribute inter2-negmean numeric
+@attribute inter3-negmean numeric
+@attribute rep4-krt numeric
+@attribute intra5-posmean numeric
+@attribute intra5-negmax numeric
+@attribute inter6-negmean numeric
+@attribute rep7-max numeric
+@attribute intra11-negmean numeric
+@attribute inter11-negmean numeric
+@attribute genre {Pop_Rock,Electronic,Rap,Jazz,Latin,RnB,International,Country,Religious,Reggae,Blues,Vocal,Folk,New,Comedy_Spoken,Stage,Easy_Listening,Avant_Garde,Classical,Children,Holiday}
+
+@data
+
+
+Classifier Model
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    0.08132318686130988
+    Node 21    -0.747301930142755
+    Node 22    0.8282929589617908
+    Node 23    1.767293848824165
+    Node 24    0.15835199403255706
+    Node 25    -0.652289397024087
+    Node 26    0.09825025775534514
+    Node 27    0.2249205739872496
+    Node 28    -1.5670147148926292
+    Node 29    0.8391701334351693
+    Node 30    -0.09128751822919919
+    Node 31    0.5074128892990473
+    Node 32    -1.0090664895991783
+    Node 33    1.153559427383405
+    Node 34    0.41770377561154926
+    Node 35    -0.28635861339363033
+    Node 36    -1.4683977960099317
+    Node 37    0.4506026521142879
+    Node 38    -0.7074507493877484
+    Node 39    -0.6749044708540217
+    Node 40    0.3246660156761049
+    Node 41    -1.1431626592211692
+    Node 42    -0.11966107310533634
+    Node 43    -0.7415736331311051
+    Node 44    -0.604175008571723
+    Node 45    -0.5909782285313759
+    Node 46    0.4190030524953993
+    Node 47    0.048532978683634154
+    Node 48    0.8143917716363345
+    Node 49    -0.29081289061283666
+    Node 50    -0.9297151624320165
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -0.19534421958456089
+    Node 21    0.17620632346069845
+    Node 22    1.399812819692027
+    Node 23    0.2262653011809982
+    Node 24    -0.3319442149053978
+    Node 25    0.5664185229037676
+    Node 26    0.43316999389645855
+    Node 27    -0.5222500013291559
+    Node 28    -0.5743774076002052
+    Node 29    -0.22893806632136507
+    Node 30    -0.7317761199473575
+    Node 31    0.5352453301178207
+    Node 32    0.43633175206457697
+    Node 33    -1.070186382063715
+    Node 34    -1.1934797664073675
+    Node 35    -0.35493707832164756
+    Node 36    0.05524015454618147
+    Node 37    -2.0686128534987365
+    Node 38    0.8428842094468724
+    Node 39    -0.09543484450720112
+    Node 40    -0.818535313354259
+    Node 41    0.018084824679629328
+    Node 42    -0.4398368102212862
+    Node 43    -0.4423637243273555
+    Node 44    -0.4402081693569284
+    Node 45    0.806820088013231
+    Node 46    -1.6765208974283745
+    Node 47    -1.4469930668375033
+    Node 48    -0.3566500563817731
+    Node 49    -0.007681630760788613
+    Node 50    0.8905721070960221
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    0.25525194148751834
+    Node 21    -0.49909811231065365
+    Node 22    -0.25457660904448987
+    Node 23    -0.010390302524672526
+    Node 24    -0.7766343804443046
+    Node 25    -0.2679337653140717
+    Node 26    -0.5273698948982514
+    Node 27    -0.7425152334863465
+    Node 28    -1.8280706791736339
+    Node 29    -0.4328273837291756
+    Node 30    0.37738546737808676
+    Node 31    -1.099955741821309
+    Node 32    -1.093256574365082
+    Node 33    0.2995551016494332
+    Node 34    -0.13972072515627645
+    Node 35    -0.4345527982703812
+    Node 36    2.265246787701172
+    Node 37    0.43527954456045587
+    Node 38    -0.5025403685019739
+    Node 39    -0.5597731091824615
+    Node 40    -0.3304886903546397
+    Node 41    1.340324972270395
+    Node 42    -0.8314236219387746
+    Node 43    -0.9618684600107181
+    Node 44    -0.8355769937442271
+    Node 45    0.5280123996021762
+    Node 46    -1.9102067303110766
+    Node 47    -1.478322183502573
+    Node 48    0.146050653008119
+    Node 49    -0.3277015893967704
+    Node 50    -0.13004898342626614
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -0.3899931183423507
+    Node 21    0.028000489568550835
+    Node 22    -0.5604841817217918
+    Node 23    -0.9182174742938974
+    Node 24    -0.5491147011225941
+    Node 25    0.08997487787636615
+    Node 26    -0.21460652218069998
+    Node 27    -0.3169580177353709
+    Node 28    0.6497610627922502
+    Node 29    -0.5854269587284102
+    Node 30    -0.5228818194196879
+    Node 31    0.05758195802823556
+    Node 32    0.19553948584875333
+    Node 33    -0.8659295154338977
+    Node 34    -0.5336124273796601
+    Node 35    -0.22135976185621264
+    Node 36    -0.8592084715691678
+    Node 37    -0.6859133972153262
+    Node 38    0.002569783880981835
+    Node 39    0.09143269841672658
+    Node 40    -0.45036128645780477
+    Node 41    -0.5675880448937467
+    Node 42    -0.2078151310077993
+    Node 43    0.35010764407817063
+    Node 44    -0.04479374631916928
+    Node 45    -0.09488775736892208
+    Node 46    -0.07834566674207132
+    Node 47    0.08552159991424449
+    Node 48    -0.7409818556655443
+    Node 49    -0.15975007700092603
+    Node 50    0.2548172245831414
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -0.26846058065473244
+    Node 21    -0.4734897392618116
+    Node 22    -0.34693243713894917
+    Node 23    -0.5335731881397918
+    Node 24    -0.4057089736705335
+    Node 25    -0.491418597846347
+    Node 26    -0.3775951956848936
+    Node 27    -0.3152392462576614
+    Node 28    -0.2959380493292163
+    Node 29    -0.39235639273656764
+    Node 30    0.11307373273496889
+    Node 31    -0.2634083168189233
+    Node 32    -0.47040053405286103
+    Node 33    -0.23497181162661993
+    Node 34    -0.013106706931676072
+    Node 35    -0.18006288767170342
+    Node 36    -0.3676501179106615
+    Node 37    0.1721997502489736
+    Node 38    -0.4138132856992721
+    Node 39    -0.2981046252842558
+    Node 40    -0.015009791943638353
+    Node 41    -0.16992860378663185
+    Node 42    -0.33118523331244387
+    Node 43    -0.2583104980887792
+    Node 44    -0.12180806445284978
+    Node 45    -0.24781656669269606
+    Node 46    0.08225791626418012
+    Node 47    -0.1622248453489591
+    Node 48    -0.152325287679247
+    Node 49    -0.2684377484331663
+    Node 50    -0.20821239476723138
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -0.3594709053808442
+    Node 21    -0.2771667056919828
+    Node 22    -0.4623615530548996
+    Node 23    -0.5350644867371137
+    Node 24    -0.4276361451394849
+    Node 25    -0.2891265440228901
+    Node 26    -0.37638069801056423
+    Node 27    -0.3623250599590167
+    Node 28    -0.3197489571475841
+    Node 29    -0.39508101862913064
+    Node 30    -0.09179507954741961
+    Node 31    -0.431802528392562
+    Node 32    -0.4157353841186195
+    Node 33    -0.30177495708368507
+    Node 34    -0.12249431278912352
+    Node 35    -0.17972101983632027
+    Node 36    -0.14639631732682865
+    Node 37    -0.10911281581148469
+    Node 38    -0.2923895801798177
+    Node 39    -0.15669305655233884
+    Node 40    -0.1680027916182029
+    Node 41    -0.13765397071296942
+    Node 42    -0.3545953718434082
+    Node 43    -0.14995784512089805
+    Node 44    -0.1051235255677015
+    Node 45    -0.18531600697197487
+    Node 46    -0.22371529051209663
+    Node 47    -0.3050995398608424
+    Node 48    -0.33081986175323075
+    Node 49    -0.26276275716728864
+    Node 50    -0.18069104548632528
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -0.38404125360513186
+    Node 21    -0.20682506532462078
+    Node 22    -0.2898197098464647
+    Node 23    -0.5225628636042869
+    Node 24    -0.3975037930529759
+    Node 25    -0.18988817074695574
+    Node 26    -0.32732963958392114
+    Node 27    -0.32936924604845796
+    Node 28    0.02603471328437308
+    Node 29    -0.3587109250858432
+    Node 30    -0.30352457834826824
+    Node 31    -0.2662802699482561
+    Node 32    -0.13985851478698147
+    Node 33    -0.5101706271277813
+    Node 34    -0.32107895033309036
+    Node 35    -0.2195942743759885
+    Node 36    -0.29138676151757387
+    Node 37    -0.4081167115471835
+    Node 38    -0.1521453529395557
+    Node 39    -0.21394752500490696
+    Node 40    -0.24595742376845628
+    Node 41    -0.23488074571172887
+    Node 42    -0.25386156830882417
+    Node 43    -0.01673219757588806
+    Node 44    -0.04750488537363259
+    Node 45    -0.19746649172675418
+    Node 46    -0.24324554224676703
+    Node 47    -0.21178792261447232
+    Node 48    -0.3496064344175793
+    Node 49    -0.21719814041728908
+    Node 50    0.03307430550317356
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -0.5132034872284424
+    Node 21    -0.35875443998896467
+    Node 22    -1.0182136604600298
+    Node 23    -0.8752704517707875
+    Node 24    -0.4266230947409037
+    Node 25    -0.3738633569221639
+    Node 26    -0.5966220199959541
+    Node 27    -0.24252239913179974
+    Node 28    0.26606433515985206
+    Node 29    -0.4639130949569614
+    Node 30    -0.042295276363921025
+    Node 31    -0.45516204003912836
+    Node 32    -0.45736537486539575
+    Node 33    -0.29386474117288963
+    Node 34    0.07761546138477325
+    Node 35    -0.18785116599053528
+    Node 36    -0.9117077087686157
+    Node 37    0.3457146276305209
+    Node 38    -0.4720500170484287
+    Node 39    -0.24729078045625397
+    Node 40    0.08057155054512334
+    Node 41    -0.6900951361995233
+    Node 42    -0.13540814290173023
+    Node 43    -0.03479714736238101
+    Node 44    0.11654205382034875
+    Node 45    -0.5403714050917131
+    Node 46    0.4453347986570435
+    Node 47    0.36660931125692525
+    Node 48    -0.5483095507469753
+    Node 49    -0.21083265706053367
+    Node 50    -0.5165072860881198
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -0.5170350466516478
+    Node 21    -0.1972543209469762
+    Node 22    -0.4699885148923903
+    Node 23    -0.5047774391591446
+    Node 24    -0.057588990778457944
+    Node 25    -0.3829113306220605
+    Node 26    -0.32506634934247824
+    Node 27    -0.03516153086702391
+    Node 28    -0.25875554217583613
+    Node 29    -0.3158099836577428
+    Node 30    -0.11182322202646934
+    Node 31    -0.12574597604378
+    Node 32    -0.2461462453299019
+    Node 33    -0.14140372301359433
+    Node 34    0.07244280962773553
+    Node 35    -0.20355630518435316
+    Node 36    -0.48038667871738694
+    Node 37    0.15653219944826807
+    Node 38    -0.3689185951855972
+    Node 39    -0.24902156044138168
+    Node 40    -0.167932309105863
+    Node 41    -0.42387125444149487
+    Node 42    -0.13846083260630734
+    Node 43    -0.3020406794460699
+    Node 44    -0.2910286241053295
+    Node 45    -0.3795826720357074
+    Node 46    -0.01437480290090579
+    Node 47    -0.0858201868371006
+    Node 48    -0.23146001887302034
+    Node 49    -0.26197134664540833
+    Node 50    -0.4886016855510631
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -0.22656786236139562
+    Node 21    -0.34846169591343545
+    Node 22    -1.086716128096063
+    Node 23    -0.8137367273128302
+    Node 24    -0.7696322103353278
+    Node 25    -0.0929348416003481
+    Node 26    -0.6481312258087597
+    Node 27    -0.7874359858768036
+    Node 28    -0.2270195293377345
+    Node 29    -0.6212703860244588
+    Node 30    0.19011219042224692
+    Node 31    -1.0815873409301855
+    Node 32    -0.5719534047997615
+    Node 33    -0.7136247902870836
+    Node 34    -0.3251998335995389
+    Node 35    -0.22444143716149406
+    Node 36    0.7846487859163402
+    Node 37    -0.0856230599258608
+    Node 38    -0.16634569679525474
+    Node 39    0.004100439256953426
+    Node 40    -0.3080827841045538
+    Node 41    0.6488447005610722
+    Node 42    -0.560931188724505
+    Node 43    0.06162032067005248
+    Node 44    0.1579865876359765
+    Node 45    0.15940934614467195
+    Node 46    -0.47579410618027673
+    Node 47    -0.5711041294020242
+    Node 48    -0.6980383340245238
+    Node 49    -0.2635531151532441
+    Node 50    0.3667360106037948
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -0.4703458798392082
+    Node 21    -0.29222787650120535
+    Node 22    -0.8516865324869167
+    Node 23    -0.743401587372801
+    Node 24    -0.4524195264190135
+    Node 25    -0.2861063877382515
+    Node 26    -0.5439915963563072
+    Node 27    -0.3682278447025498
+    Node 28    0.37489511602696457
+    Node 29    -0.46939598948665767
+    Node 30    -0.2825479460465995
+    Node 31    -0.4731335080423822
+    Node 32    -0.31801023581197263
+    Node 33    -0.442760981131946
+    Node 34    -0.1864466110783047
+    Node 35    -0.14977652984041692
+    Node 36    -0.7317174280258134
+    Node 37    -0.11114932118335137
+    Node 38    -0.3330782378515284
+    Node 39    -0.19936979360384668
+    Node 40    -0.12400462811125343
+    Node 41    -0.5189645248164974
+    Node 42    -0.17710638039920454
+    Node 43    0.14278492890757538
+    Node 44    0.10897704783140506
+    Node 45    -0.4072863782778739
+    Node 46    0.28413117889110384
+    Node 47    0.26401128698285353
+    Node 48    -0.523513063316925
+    Node 49    -0.24837392821905527
+    Node 50    -0.2731372522456919
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -0.7122739101968247
+    Node 21    -0.2164194895632587
+    Node 22    -0.4094061779382805
+    Node 23    -0.4336663993944735
+    Node 24    -0.40659016999371256
+    Node 25    -0.378930243964083
+    Node 26    -0.4367886320725613
+    Node 27    -0.29962951691624085
+    Node 28    -0.21844751449596572
+    Node 29    -0.33991220986318804
+    Node 30    -0.3993753763395627
+    Node 31    -0.3629894455761164
+    Node 32    -0.2718334430217055
+    Node 33    -0.333568239842022
+    Node 34    -0.3117343133242526
+    Node 35    -0.32422551504113145
+    Node 36    -0.34663046480968945
+    Node 37    -0.3585327015762254
+    Node 38    -0.28405524798589915
+    Node 39    -0.3899372391935002
+    Node 40    -0.39047814921198115
+    Node 41    -0.3765038152303634
+    Node 42    -0.29868235298254686
+    Node 43    -0.3296637527513005
+    Node 44    -0.2615348146510561
+    Node 45    -0.33231683990326566
+    Node 46    -0.2909182557552566
+    Node 47    -0.3494211857669057
+    Node 48    -0.3526441825941536
+    Node 49    -0.349521397015093
+    Node 50    -0.3936017691070016
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -0.7127189673493018
+    Node 21    -0.19512292013357108
+    Node 22    -0.3568100217995585
+    Node 23    -0.34311248853438503
+    Node 24    -0.39204299510080043
+    Node 25    -0.370568409002017
+    Node 26    -0.32980910555668097
+    Node 27    -0.2884316752698758
+    Node 28    -0.20415492374717464
+    Node 29    -0.3314571256478804
+    Node 30    -0.3346241361888278
+    Node 31    -0.29955246806181524
+    Node 32    -0.2632804292094612
+    Node 33    -0.37955489311542356
+    Node 34    -0.3133563354299005
+    Node 35    -0.3476155086731042
+    Node 36    -0.3270637260512851
+    Node 37    -0.39183710711464115
+    Node 38    -0.28402202831542867
+    Node 39    -0.35517118542212406
+    Node 40    -0.3803821656916781
+    Node 41    -0.406505592290516
+    Node 42    -0.2516873008419403
+    Node 43    -0.3245243372417946
+    Node 44    -0.24848231824695313
+    Node 45    -0.2799649970488375
+    Node 46    -0.2856965145308926
+    Node 47    -0.27069501432104764
+    Node 48    -0.36794590420542966
+    Node 49    -0.27919993214903527
+    Node 50    -0.38393503041969274
+Sigmoid Node 13
+    Inputs    Weights
+    Threshold    -0.9729982818738864
+    Node 21    0.5822789114333313
+    Node 22    -0.3833280041116
+    Node 23    -0.7062779212814349
+    Node 24    0.0060529184990669865
+    Node 25    0.019508597557446508
+    Node 26    -0.20754565041181622
+    Node 27    -0.004630188560879171
+    Node 28    0.9964660376127396
+    Node 29    -0.49393464016958305
+    Node 30    -1.0893330991548886
+    Node 31    0.2147923672519076
+    Node 32    0.8152668405692696
+    Node 33    -1.0101038051344304
+    Node 34    -0.7608190616374038
+    Node 35    -0.2379887312123694
+    Node 36    -1.096256552928743
+    Node 37    -1.3301471960111557
+    Node 38    0.17954217862092542
+    Node 39    -0.05314507370772901
+    Node 40    -0.7205230445952484
+    Node 41    -0.9876009776775535
+    Node 42    0.1615363727827048
+    Node 43    0.23309152855800072
+    Node 44    -0.07279459518300024
+    Node 45    -0.756488218135714
+    Node 46    0.1265077438579207
+    Node 47    0.22511611001576892
+    Node 48    -0.9080673165836107
+    Node 49    -0.16962839319291562
+    Node 50    -0.3009507424780475
+Sigmoid Node 14
+    Inputs    Weights
+    Threshold    -0.6318583714705275
+    Node 21    -0.2813966178377731
+    Node 22    -0.46827553313929593
+    Node 23    -0.5014401805016862
+    Node 24    -0.46394774251648707
+    Node 25    -0.26899939171921594
+    Node 26    -0.4316283787675966
+    Node 27    -0.3896349746535584
+    Node 28    -0.24488411182553294
+    Node 29    -0.46222530999146766
+    Node 30    -0.2372526261826756
+    Node 31    -0.4827102839117087
+    Node 32    -0.39379903671412897
+    Node 33    -0.3894644495888268
+    Node 34    -0.34313070080346275
+    Node 35    -0.299501247833172
+    Node 36    -0.15823713680988746
+    Node 37    -0.2955965685377127
+    Node 38    -0.2774649847882102
+    Node 39    -0.27910027411349886
+    Node 40    -0.3533256554835248
+    Node 41    -0.18592943123549
+    Node 42    -0.3103747462820976
+    Node 43    -0.23564471237622706
+    Node 44    -0.230427685189642
+    Node 45    -0.17183776135416595
+    Node 46    -0.427500655190821
+    Node 47    -0.36660594639114336
+    Node 48    -0.4347634108952183
+    Node 49    -0.3022241111490766
+    Node 50    -0.22877327157334604
+Sigmoid Node 15
+    Inputs    Weights
+    Threshold    -0.8534219899765814
+    Node 21    -0.2471481077462632
+    Node 22    -0.31975247239802207
+    Node 23    -0.39713438657477784
+    Node 24    -0.4029341927871905
+    Node 25    -0.4457826133652196
+    Node 26    -0.44213140611292384
+    Node 27    -0.3139171425077617
+    Node 28    -0.3019505634112671
+    Node 29    -0.38323548506402905
+    Node 30    -0.462179147442609
+    Node 31    -0.326673813256172
+    Node 32    -0.27812485359548167
+    Node 33    -0.4195872072515267
+    Node 34    -0.3889945844977029
+    Node 35    -0.40076992942434475
+    Node 36    -0.46047293387572935
+    Node 37    -0.4325736241171148
+    Node 38    -0.3480925546367599
+    Node 39    -0.44134806219170764
+    Node 40    -0.3799199258976684
+    Node 41    -0.39623154187512055
+    Node 42    -0.3196469908370997
+    Node 43    -0.3869906495516075
+    Node 44    -0.30518641853348155
+    Node 45    -0.33759702471274855
+    Node 46    -0.34125968424198894
+    Node 47    -0.3964341723785642
+    Node 48    -0.39463966338309686
+    Node 49    -0.4058893801811277
+    Node 50    -0.4862571753906084
+Sigmoid Node 16
+    Inputs    Weights
+    Threshold    -0.8660386158386537
+    Node 21    -0.29748373684944807
+    Node 22    -0.3960852767425718
+    Node 23    -0.4309396357540867
+    Node 24    -0.42665067667926704
+    Node 25    -0.3850236690562346
+    Node 26    -0.3943227050447256
+    Node 27    -0.413118451261916
+    Node 28    -0.30995374835395895
+    Node 29    -0.3761799711269772
+    Node 30    -0.4530402129233065
+    Node 31    -0.39967729308460825
+    Node 32    -0.32535100881399354
+    Node 33    -0.41607183395923847
+    Node 34    -0.34164557426531555
+    Node 35    -0.40599656418120245
+    Node 36    -0.4267090404941811
+    Node 37    -0.39737063651318294
+    Node 38    -0.3478844710334304
+    Node 39    -0.3791157732333624
+    Node 40    -0.3676124159740721
+    Node 41    -0.4153784303483892
+    Node 42    -0.32938857958087087
+    Node 43    -0.3994812718721893
+    Node 44    -0.3045741475252822
+    Node 45    -0.34115096762223523
+    Node 46    -0.38806771593939093
+    Node 47    -0.39102122025207753
+    Node 48    -0.43413559589462913
+    Node 49    -0.3828659200802707
+    Node 50    -0.4344416678032919
+Sigmoid Node 17
+    Inputs    Weights
+    Threshold    -0.9109583449348504
+    Node 21    -0.32711695865555707
+    Node 22    -0.4272091013693662
+    Node 23    -0.35505589475232036
+    Node 24    -0.4800437945401287
+    Node 25    -0.41488405330844336
+    Node 26    -0.4342680477963864
+    Node 27    -0.3769648355880983
+    Node 28    -0.3698570578607512
+    Node 29    -0.404972223915608
+    Node 30    -0.47779058851283474
+    Node 31    -0.41008319607420873
+    Node 32    -0.4296246417482826
+    Node 33    -0.4324645358476137
+    Node 34    -0.3639357082829522
+    Node 35    -0.4078017685845381
+    Node 36    -0.46454276223268115
+    Node 37    -0.44021893073781776
+    Node 38    -0.3599565129985808
+    Node 39    -0.4924062280608366
+    Node 40    -0.4604886614701472
+    Node 41    -0.3738569639343027
+    Node 42    -0.3978496856676372
+    Node 43    -0.37832168096302865
+    Node 44    -0.34339319902005006
+    Node 45    -0.3970252885820395
+    Node 46    -0.4173703563366544
+    Node 47    -0.4316110419829755
+    Node 48    -0.40963045229215544
+    Node 49    -0.3534400301586887
+    Node 50    -0.4652870217195787
+Sigmoid Node 18
+    Inputs    Weights
+    Threshold    -0.8910584052260782
+    Node 21    -0.3237057065897619
+    Node 22    -0.448209668311845
+    Node 23    -0.39928909657193806
+    Node 24    -0.41861816941765134
+    Node 25    -0.46768402679411125
+    Node 26    -0.4744339694169498
+    Node 27    -0.44095210720499883
+    Node 28    -0.4044461204379092
+    Node 29    -0.3909378325457179
+    Node 30    -0.4035952483381097
+    Node 31    -0.4787505554200988
+    Node 32    -0.34763597227846094
+    Node 33    -0.4406073596556153
+    Node 34    -0.3978973980382746
+    Node 35    -0.3679184712991208
+    Node 36    -0.3743213541730172
+    Node 37    -0.5238962567281309
+    Node 38    -0.44332410817674217
+    Node 39    -0.45017736773573225
+    Node 40    -0.45579400440955864
+    Node 41    -0.4110579887239632
+    Node 42    -0.4091942791991353
+    Node 43    -0.4151300248037297
+    Node 44    -0.37157062495079296
+    Node 45    -0.3918560944019211
+    Node 46    -0.4386393842890687
+    Node 47    -0.4916975793448441
+    Node 48    -0.3995022988158854
+    Node 49    -0.3517422499452746
+    Node 50    -0.41894236179874167
+Sigmoid Node 19
+    Inputs    Weights
+    Threshold    -0.8931825982829829
+    Node 21    -0.3007653760439557
+    Node 22    -0.4368522213240285
+    Node 23    -0.3986892857531013
+    Node 24    -0.4830752713906488
+    Node 25    -0.43416611531828764
+    Node 26    -0.4924966061528263
+    Node 27    -0.41809789797398234
+    Node 28    -0.33180471468098616
+    Node 29    -0.44633279977332435
+    Node 30    -0.39855663516132905
+    Node 31    -0.41837399339485604
+    Node 32    -0.4277336848699716
+    Node 33    -0.44675483908760616
+    Node 34    -0.38811291150447785
+    Node 35    -0.4124079534025807
+    Node 36    -0.35989067880864617
+    Node 37    -0.48335903903988836
+    Node 38    -0.35907030108626586
+    Node 39    -0.46586555510995487
+    Node 40    -0.4048254790863101
+    Node 41    -0.3662442721795221
+    Node 42    -0.3661308395216469
+    Node 43    -0.43737654356884326
+    Node 44    -0.3284769931281776
+    Node 45    -0.32108753404926904
+    Node 46    -0.5073012397468679
+    Node 47    -0.4099734773886208
+    Node 48    -0.39895351674165497
+    Node 49    -0.42458636031823355
+    Node 50    -0.42732087518138623
+Sigmoid Node 20
+    Inputs    Weights
+    Threshold    -0.8763532624248267
+    Node 21    -0.3543025804621264
+    Node 22    -0.40327928493014303
+    Node 23    -0.38372733187951374
+    Node 24    -0.43171462844947367
+    Node 25    -0.4567416703605293
+    Node 26    -0.4303220492361738
+    Node 27    -0.39751719174183137
+    Node 28    -0.3835272910712755
+    Node 29    -0.3780268738684657
+    Node 30    -0.47684583373912
+    Node 31    -0.45837367812662866
+    Node 32    -0.44005502465768104
+    Node 33    -0.46442824397724475
+    Node 34    -0.4029111558037753
+    Node 35    -0.44439735639769745
+    Node 36    -0.4341815183153343
+    Node 37    -0.49538553334590196
+    Node 38    -0.43977365976366267
+    Node 39    -0.4640866062565946
+    Node 40    -0.4897189584446644
+    Node 41    -0.3931025670868586
+    Node 42    -0.38178372160056145
+    Node 43    -0.46795565690380553
+    Node 44    -0.406954141914303
+    Node 45    -0.35217997247502575
+    Node 46    -0.48856439661451123
+    Node 47    -0.4322566431793371
+    Node 48    -0.44925596388177835
+    Node 49    -0.41658089660680325
+    Node 50    -0.468168624537437
+Sigmoid Node 21
+    Inputs    Weights
+    Threshold    0.1630764152237687
+    Attrib pitches0-var    -0.11962598083901625
+    Attrib timbre0-med    -0.43615259105672805
+    Attrib timbre1-mean    -0.13592455631646247
+    Attrib timbre1-med    -0.1711698150223552
+    Attrib timbre3-var    0.10935618035075746
+    Attrib timbre3-krt    -0.07262697877939425
+    Attrib timbre4-skw    -0.02882647013289057
+    Attrib timbre5-mean    -0.11681690821860262
+    Attrib timbre5-med    -9.117548590025358E-4
+    Attrib timbre6-var    0.23633282418957172
+    Attrib timbre6-skw    0.03480432178210217
+    Attrib timbre7-var    -0.20816560752253288
+    Attrib timbre8-var    0.05401241376901609
+    Attrib timbre9-var    -0.24136046887537901
+    Attrib timbre10-mean    0.4103256697334417
+    Attrib timbre10-var    0.21604594465870133
+    Attrib timbre11-var    0.552661369312804
+    Attrib loudmax-med    -0.349620545625533
+    Attrib seglen-mean    -0.0894222374094938
+    Attrib seglen-med    -0.0947192458070686
+    Attrib seglen-var    -0.08763748962284085
+    Attrib chordsize-mean    0.09809657745318329
+    Attrib chordfreq-mean    0.3829694904348813
+    Attrib chordfreq-var    -0.033933417282646185
+    Attrib rep0-max    0.0655510495242906
+    Attrib rep0-krt    -2.411489461273755E-4
+    Attrib intra0-posmax    0.03553220439032784
+    Attrib intra0-negmax    0.06415006855420022
+    Attrib inter1-posmean    0.16742624861938143
+    Attrib inter1-negmean    -0.15871220082386236
+    Attrib inter2-negmean    -0.24406481761951765
+    Attrib inter3-negmean    -0.04492298234006327
+    Attrib rep4-krt    0.1314173368762278
+    Attrib intra5-posmean    0.5683323388424885
+    Attrib intra5-negmax    0.42523347134814016
+    Attrib inter6-negmean    -0.13411805996444562
+    Attrib rep7-max    0.4013679655070711
+    Attrib intra11-negmean    -0.02341888389472049
+    Attrib inter11-negmean    -0.12054071270226893
+Sigmoid Node 22
+    Inputs    Weights
+    Threshold    -0.0556191874342567
+    Attrib pitches0-var    -0.048128317518454936
+    Attrib timbre0-med    0.5402962777708957
+    Attrib timbre1-mean    0.3108380640207074
+    Attrib timbre1-med    0.37842713873406253
+    Attrib timbre3-var    -0.08533183756326641
+    Attrib timbre3-krt    0.3504750185100663
+    Attrib timbre4-skw    0.36027211707301793
+    Attrib timbre5-mean    -0.6430040507154856
+    Attrib timbre5-med    -0.742130381719421
+    Attrib timbre6-var    -0.3258034099020569
+    Attrib timbre6-skw    -0.23360554669096678
+    Attrib timbre7-var    0.6024736346064727
+    Attrib timbre8-var    -0.24836863093133602
+    Attrib timbre9-var    0.5435748254262694
+    Attrib timbre10-mean    0.209034876196904
+    Attrib timbre10-var    -0.16580396695974595
+    Attrib timbre11-var    -0.8838622188765755
+    Attrib loudmax-med    0.6131684311097982
+    Attrib seglen-mean    0.1431791301999139
+    Attrib seglen-med    0.09689304940290194
+    Attrib seglen-var    0.12130090466641211
+    Attrib chordsize-mean    0.33970967820118386
+    Attrib chordfreq-mean    0.6527487884631911
+    Attrib chordfreq-var    0.20783724549818844
+    Attrib rep0-max    -0.18188281681448606
+    Attrib rep0-krt    -0.6064315296944348
+    Attrib intra0-posmax    -0.09542114041148013
+    Attrib intra0-negmax    -0.2021028923833535
+    Attrib inter1-posmean    0.009795073732872465
+    Attrib inter1-negmean    -0.009749204017299265
+    Attrib inter2-negmean    0.017946322833204326
+    Attrib inter3-negmean    0.22156866169966521
+    Attrib rep4-krt    -0.7834348045863416
+    Attrib intra5-posmean    0.8577485016784093
+    Attrib intra5-negmax    0.5718649983364057
+    Attrib inter6-negmean    0.14505162338139588
+    Attrib rep7-max    0.8729754504018368
+    Attrib intra11-negmean    0.5700588389790955
+    Attrib inter11-negmean    0.36549518230188127
+Sigmoid Node 23
+    Inputs    Weights
+    Threshold    -0.40135339655395447
+    Attrib pitches0-var    -0.24883721786591673
+    Attrib timbre0-med    1.1406708192546382
+    Attrib timbre1-mean    0.48332485502126493
+    Attrib timbre1-med    0.6280318456425841
+    Attrib timbre3-var    -0.10497718270607871
+    Attrib timbre3-krt    0.7800434818398677
+    Attrib timbre4-skw    0.35542993642438436
+    Attrib timbre5-mean    -0.5466837102898796
+    Attrib timbre5-med    -0.7234163846771082
+    Attrib timbre6-var    -0.5490750022170195
+    Attrib timbre6-skw    0.2697907214798935
+    Attrib timbre7-var    0.7004725332890578
+    Attrib timbre8-var    -0.5352230898118854
+    Attrib timbre9-var    0.5369373956749189
+    Attrib timbre10-mean    -0.43772085773420794
+    Attrib timbre10-var    -0.6344982398477507
+    Attrib timbre11-var    -1.5033422533495864
+    Attrib loudmax-med    0.925082777989155
+    Attrib seglen-mean    0.40377121442136427
+    Attrib seglen-med    0.4884921833339452
+    Attrib seglen-var    0.34827461021981143
+    Attrib chordsize-mean    0.16407561065522427
+    Attrib chordfreq-mean    0.002132010556442726
+    Attrib chordfreq-var    0.39142710683195486
+    Attrib rep0-max    -0.3914550194277144
+    Attrib rep0-krt    -0.06649504575268389
+    Attrib intra0-posmax    -0.2405472433418996
+    Attrib intra0-negmax    -0.356148154682566
+    Attrib inter1-posmean    -0.016800126909682425
+    Attrib inter1-negmean    -0.23537672273161073
+    Attrib inter2-negmean    0.11902192449409786
+    Attrib inter3-negmean    -0.14574402065907588
+    Attrib rep4-krt    -0.8641781132016588
+    Attrib intra5-posmean    0.8644397185690447
+    Attrib intra5-negmax    0.3710841218587458
+    Attrib inter6-negmean    0.05714141638160697
+    Attrib rep7-max    0.9881924867910764
+    Attrib intra11-negmean    0.5661610134533867
+    Attrib inter11-negmean    0.24191708666692663
+Sigmoid Node 24
+    Inputs    Weights
+    Threshold    -0.214638443373866
+    Attrib pitches0-var    -0.15899581911796576
+    Attrib timbre0-med    0.2912158533371313
+    Attrib timbre1-mean    -0.03430282184823733
+    Attrib timbre1-med    0.015036853678187547
+    Attrib timbre3-var    -0.0013711914527319055
+    Attrib timbre3-krt    0.5167851654049633
+    Attrib timbre4-skw    0.13393964997058488
+    Attrib timbre5-mean    -0.3440967189800137
+    Attrib timbre5-med    -0.3985981355154906
+    Attrib timbre6-var    -0.330977703638134
+    Attrib timbre6-skw    0.10988967779812436
+    Attrib timbre7-var    0.15165049043868775
+    Attrib timbre8-var    -0.35467054692265093
+    Attrib timbre9-var    0.146688466360703
+    Attrib timbre10-mean    0.15089756259018508
+    Attrib timbre10-var    -0.3062037562897271
+    Attrib timbre11-var    -0.5397132270154957
+    Attrib loudmax-med    0.212443150799734
+    Attrib seglen-mean    0.22201753244619535
+    Attrib seglen-med    0.18423715441505065
+    Attrib seglen-var    0.13136589662059558
+    Attrib chordsize-mean    -0.7171358453282753
+    Attrib chordfreq-mean    -0.21641230622880095
+    Attrib chordfreq-var    0.0940684198632409
+    Attrib rep0-max    -0.3315069005863275
+    Attrib rep0-krt    0.011488284392908074
+    Attrib intra0-posmax    -0.22315140198299205
+    Attrib intra0-negmax    -0.3362046608464503
+    Attrib inter1-posmean    0.2647169013904416
+    Attrib inter1-negmean    -0.36153315053111246
+    Attrib inter2-negmean    -0.35018069799448964
+    Attrib inter3-negmean    -0.262899425230521
+    Attrib rep4-krt    -0.2259516716817894
+    Attrib intra5-posmean    0.6241753833645939
+    Attrib intra5-negmax    0.3463614351906198
+    Attrib inter6-negmean    -0.17845303851121921
+    Attrib rep7-max    0.19467578065085867
+    Attrib intra11-negmean    0.29281187449659773
+    Attrib inter11-negmean    -0.13527741491477605
+Sigmoid Node 25
+    Inputs    Weights
+    Threshold    0.2009949365520719
+    Attrib pitches0-var    0.006062494454616612
+    Attrib timbre0-med    -0.35380624576808933
+    Attrib timbre1-mean    0.06400534312348376
+    Attrib timbre1-med    0.023212239503467503
+    Attrib timbre3-var    0.09421929161123374
+    Attrib timbre3-krt    -0.29282161615955554
+    Attrib timbre4-skw    0.03412668419193374
+    Attrib timbre5-mean    0.07458901093185526
+    Attrib timbre5-med    0.2100132515846809
+    Attrib timbre6-var    0.35761024418639326
+    Attrib timbre6-skw    -0.043910481964743536
+    Attrib timbre7-var    -0.09911107312744094
+    Attrib timbre8-var    0.18176077236810223
+    Attrib timbre9-var    -0.1047512004025196
+    Attrib timbre10-mean    0.22157811874631914
+    Attrib timbre10-var    0.5132038864340239
+    Attrib timbre11-var    0.6167611229354498
+    Attrib loudmax-med    -0.150047167106241
+    Attrib seglen-mean    -0.2114675257299709
+    Attrib seglen-med    -0.21609844162818198
+    Attrib seglen-var    -0.15032172139374264
+    Attrib chordsize-mean    0.7495382373233516
+    Attrib chordfreq-mean    0.5548557221769717
+    Attrib chordfreq-var    -0.03677738887157935
+    Attrib rep0-max    0.2099850528061369
+    Attrib rep0-krt    0.026927510214562956
+    Attrib intra0-posmax    0.13078267081273812
+    Attrib intra0-negmax    0.22315577417329696
+    Attrib inter1-posmean    -0.015072102161873855
+    Attrib inter1-negmean    0.1265652605012244
+    Attrib inter2-negmean    0.026548807814491485
+    Attrib inter3-negmean    0.21371499709739927
+    Attrib rep4-krt    0.19780999868412635
+    Attrib intra5-posmean    0.31380095763496557
+    Attrib intra5-negmax    0.16232430355967362
+    Attrib inter6-negmean    0.116841473187103
+    Attrib rep7-max    0.29797909567685277
+    Attrib intra11-negmean    -0.06438869045336892
+    Attrib inter11-negmean    0.02071497425031425
+Sigmoid Node 26
+    Inputs    Weights
+    Threshold    0.05420102156137673
+    Attrib pitches0-var    0.08099982188889113
+    Attrib timbre0-med    -0.015789836563037413
+    Attrib timbre1-mean    0.12839160279536552
+    Attrib timbre1-med    0.14230946180532003
+    Attrib timbre3-var    0.06473444841821502
+    Attrib timbre3-krt    0.10611221076494787
+    Attrib timbre4-skw    0.17034708436288976
+    Attrib timbre5-mean    -0.2536809174029103
+    Attrib timbre5-med    -0.31869254785334317
+    Attrib timbre6-var    -0.1645145237488523
+    Attrib timbre6-skw    -0.12813900684253982
+    Attrib timbre7-var    0.25447320893415837
+    Attrib timbre8-var    -0.12936548967405
+    Attrib timbre9-var    0.2761899075127772
+    Attrib timbre10-mean    0.2636215194296047
+    Attrib timbre10-var    0.07071772651239426
+    Attrib timbre11-var    -0.2826915103258183
+    Attrib loudmax-med    0.1103116831374358
+    Attrib seglen-mean    0.0048326088376277115
+    Attrib seglen-med    -0.03132621511797114
+    Attrib seglen-var    -0.029918161425463167
+    Attrib chordsize-mean    -0.11333768239689716
+    Attrib chordfreq-mean    0.28151246808619074
+    Attrib chordfreq-var    0.02148821186159215
+    Attrib rep0-max    -0.15296768563077193
+    Attrib rep0-krt    -0.2633723023438444
+    Attrib intra0-posmax    -0.027890312406093017
+    Attrib intra0-negmax    -0.09067110896691767
+    Attrib inter1-posmean    0.09469564600064984
+    Attrib inter1-negmean    -0.09561391565384128
+    Attrib inter2-negmean    -0.13177993340944677
+    Attrib inter3-negmean    0.08473220455143442
+    Attrib rep4-krt    -0.3040722555207732
+    Attrib intra5-posmean    0.4860495955736391
+    Attrib intra5-negmax    0.2842793908779632
+    Attrib inter6-negmean    0.029299496782865912
+    Attrib rep7-max    0.36596481896151317
+    Attrib intra11-negmean    0.27059878286081174
+    Attrib inter11-negmean    0.14275469373773964
+Sigmoid Node 27
+    Inputs    Weights
+    Threshold    -0.0782760260830994
+    Attrib pitches0-var    -0.0969234234035173
+    Attrib timbre0-med    0.11098455562183845
+    Attrib timbre1-mean    -0.10941825968329325
+    Attrib timbre1-med    -0.03399763410300403
+    Attrib timbre3-var    0.026734097739879958
+    Attrib timbre3-krt    0.410336002231387
+    Attrib timbre4-skw    0.09024096943680984
+    Attrib timbre5-mean    -0.1915582612374523
+    Attrib timbre5-med    -0.27376257655903474
+    Attrib timbre6-var    -0.30913870280652134
+    Attrib timbre6-skw    0.08624927812335216
+    Attrib timbre7-var    0.09159295274430912
+    Attrib timbre8-var    -0.18940818251471436
+    Attrib timbre9-var    0.15607263691583964
+    Attrib timbre10-mean    0.09697056402758908
+    Attrib timbre10-var    -0.3518696754997662
+    Attrib timbre11-var    -0.413391845707032
+    Attrib loudmax-med    -0.016803449396580596
+    Attrib seglen-mean    0.19631935731716185
+    Attrib seglen-med    0.17237810789179334
+    Attrib seglen-var    0.08257081778575262
+    Attrib chordsize-mean    -0.8506127295037332
+    Attrib chordfreq-mean    -0.37637179944885574
+    Attrib chordfreq-var    0.07228137753055511
+    Attrib rep0-max    -0.32658996735892637
+    Attrib rep0-krt    -0.109884294015566
+    Attrib intra0-posmax    -0.19954195286803092
+    Attrib intra0-negmax    -0.33153575753533476
+    Attrib inter1-posmean    0.1486999009151522
+    Attrib inter1-negmean    -0.3337162158561926
+    Attrib inter2-negmean    -0.27755456243902793
+    Attrib inter3-negmean    -0.24956117103283712
+    Attrib rep4-krt    -0.15465949296647893
+    Attrib intra5-posmean    0.45655760153374925
+    Attrib intra5-negmax    0.21084242917996826
+    Attrib inter6-negmean    -0.10650483376058663
+    Attrib rep7-max    0.1648660506810299
+    Attrib intra11-negmean    0.2559112601640238
+    Attrib inter11-negmean    -0.06005749459719844
+Sigmoid Node 28
+    Inputs    Weights
+    Threshold    0.17424511396896356
+    Attrib pitches0-var    -0.14206188642436976
+    Attrib timbre0-med    -0.6843787468969038
+    Attrib timbre1-mean    -0.3078311550527161
+    Attrib timbre1-med    -0.4025431259778476
+    Attrib timbre3-var    0.056723522421713406
+    Attrib timbre3-krt    0.03927597399459776
+    Attrib timbre4-skw    -0.23456947194740127
+    Attrib timbre5-mean    0.40339415453798433
+    Attrib timbre5-med    0.39431106191428567
+    Attrib timbre6-var    0.23612685813180967
+    Attrib timbre6-skw    0.3828905757503748
+    Attrib timbre7-var    -1.1636458885521648
+    Attrib timbre8-var    -0.21744028348905256
+    Attrib timbre9-var    -0.8765294901477972
+    Attrib timbre10-mean    1.0090017382832328
+    Attrib timbre10-var    0.20881959050818952
+    Attrib timbre11-var    1.0912992064721274
+    Attrib loudmax-med    -0.5283687467302777
+    Attrib seglen-mean    -0.13395264972681048
+    Attrib seglen-med    -0.20998110618882257
+    Attrib seglen-var    -0.11547805063267061
+    Attrib chordsize-mean    -0.7805239939152508
+    Attrib chordfreq-mean    0.05284328536049472
+    Attrib chordfreq-var    -0.061863151050531674
+    Attrib rep0-max    0.20118944708570088
+    Attrib rep0-krt    0.5243893510135035
+    Attrib intra0-posmax    0.08304420950392859
+    Attrib intra0-negmax    0.15889924243545134
+    Attrib inter1-posmean    0.2303842244232606
+    Attrib inter1-negmean    -0.2179729463742318
+    Attrib inter2-negmean    -0.26937415045118196
+    Attrib inter3-negmean    -0.20360956033268868
+    Attrib rep4-krt    0.6884502100656916
+    Attrib intra5-posmean    0.22598777362315975
+    Attrib intra5-negmax    -0.2715817313825274
+    Attrib inter6-negmean    -0.1855821014431723
+    Attrib rep7-max    0.5322209292453525
+    Attrib intra11-negmean    -0.04082055370638691
+    Attrib inter11-negmean    -0.43358396810844674
+Sigmoid Node 29
+    Inputs    Weights
+    Threshold    -0.3205555212368068
+    Attrib pitches0-var    -0.1744100337369751
+    Attrib timbre0-med    0.5861721683574023
+    Attrib timbre1-mean    0.16913331687234015
+    Attrib timbre1-med    0.2550778946772089
+    Attrib timbre3-var    0.011066961506852616
+    Attrib timbre3-krt    0.6472721098095231
+    Attrib timbre4-skw    0.1802074633796252
+    Attrib timbre5-mean    -0.2890980753777116
+    Attrib timbre5-med    -0.43378332835066213
+    Attrib timbre6-var    -0.39288590367484016
+    Attrib timbre6-skw    0.13027284051986385
+    Attrib timbre7-var    0.412875750182313
+    Attrib timbre8-var    -0.39789685129336183
+    Attrib timbre9-var    0.4101188285236071
+    Attrib timbre10-mean    -0.2441551990945735
+    Attrib timbre10-var    -0.4206314564263947
+    Attrib timbre11-var    -0.953237478169463
+    Attrib loudmax-med    0.5016878280030856
+    Attrib seglen-mean    0.3407505332274636
+    Attrib seglen-med    0.3793194347944834
+    Attrib seglen-var    0.2071844234291271
+    Attrib chordsize-mean    -0.4908329662796874
+    Attrib chordfreq-mean    -0.1614284397023886
+    Attrib chordfreq-var    0.19190897921788314
+    Attrib rep0-max    -0.3237209455920378
+    Attrib rep0-krt    0.08300530269485645
+    Attrib intra0-posmax    -0.2414739133044717
+    Attrib intra0-negmax    -0.3230184665834541
+    Attrib inter1-posmean    0.0041130494336723555
+    Attrib inter1-negmean    -0.2246040260443218
+    Attrib inter2-negmean    -0.15060846629102198
+    Attrib inter3-negmean    -0.22103335826805615
+    Attrib rep4-krt    -0.4506196138864346
+    Attrib intra5-posmean    0.4980447615601648
+    Attrib intra5-negmax    0.18735449489902498
+    Attrib inter6-negmean    -0.026629600959523752
+    Attrib rep7-max    0.4083301510974606
+    Attrib intra11-negmean    0.4399979682242358
+    Attrib inter11-negmean    0.045574757392044966
+Sigmoid Node 30
+    Inputs    Weights
+    Threshold    -0.06431149037879653
+    Attrib pitches0-var    0.06108795453705444
+    Attrib timbre0-med    0.3428341587698237
+    Attrib timbre1-mean    0.31460659397666635
+    Attrib timbre1-med    0.20844427413019315
+    Attrib timbre3-var    0.03361789057973348
+    Attrib timbre3-krt    0.11876502778530884
+    Attrib timbre4-skw    -0.1345966117917585
+    Attrib timbre5-mean    0.16914452252998635
+    Attrib timbre5-med    0.2688809733176105
+    Attrib timbre6-var    0.06979575222201813
+    Attrib timbre6-skw    -0.08510597801552212
+    Attrib timbre7-var    0.10593526868220003
+    Attrib timbre8-var    0.08193745206338182
+    Attrib timbre9-var    0.03201162750331445
+    Attrib timbre10-mean    -0.4837984893947168
+    Attrib timbre10-var    0.02646759984031408
+    Attrib timbre11-var    -0.16152122367357621
+    Attrib loudmax-med    0.24568182889364215
+    Attrib seglen-mean    0.14002015716754523
+    Attrib seglen-med    0.12915618594294045
+    Attrib seglen-var    0.00879285585694511
+    Attrib chordsize-mean    0.15654341515054135
+    Attrib chordfreq-mean    -0.545924148408373
+    Attrib chordfreq-var    -0.023820604383229114
+    Attrib rep0-max    0.02909980817485298
+    Attrib rep0-krt    0.23586230144865303
+    Attrib intra0-posmax    -0.012080444795981691
+    Attrib intra0-negmax    0.02113429608913621
+    Attrib inter1-posmean    -0.005469560850564668
+    Attrib inter1-negmean    0.11518760215084689
+    Attrib inter2-negmean    -0.015455478329777875
+    Attrib inter3-negmean    -0.1778219092528603
+    Attrib rep4-krt    0.11224046888391316
+    Attrib intra5-posmean    -0.17667416268405642
+    Attrib intra5-negmax    -0.2727914798592203
+    Attrib inter6-negmean    0.10259099641892855
+    Attrib rep7-max    -0.6762434540582444
+    Attrib intra11-negmean    -0.058480743851273005
+    Attrib inter11-negmean    -0.03723114765865514
+Sigmoid Node 31
+    Inputs    Weights
+    Threshold    0.04743889085457961
+    Attrib pitches0-var    0.07526609360414492
+    Attrib timbre0-med    -0.15627779581347942
+    Attrib timbre1-mean    -0.10640389893022498
+    Attrib timbre1-med    -0.002774798936780798
+    Attrib timbre3-var    -0.06647264971401552
+    Attrib timbre3-krt    0.2848095637504847
+    Attrib timbre4-skw    0.22105796549817283
+    Attrib timbre5-mean    -0.49091214118724524
+    Attrib timbre5-med    -0.6066103402154954
+    Attrib timbre6-var    -0.41777420046644176
+    Attrib timbre6-skw    0.013417101274190482
+    Attrib timbre7-var    0.07183737887331851
+    Attrib timbre8-var    -0.393697553953257
+    Attrib timbre9-var    0.1657440873605267
+    Attrib timbre10-mean    0.7263055870228615
+    Attrib timbre10-var    -0.22111609517079428
+    Attrib timbre11-var    -0.43791756220532335
+    Attrib loudmax-med    -0.06869939046814096
+    Attrib seglen-mean    -0.05013725918827161
+    Attrib seglen-med    0.010403694983949286
+    Attrib seglen-var    -0.013350537000065294
+    Attrib chordsize-mean    -0.6880847391588044
+    Attrib chordfreq-mean    0.256812845590454
+    Attrib chordfreq-var    0.15221101168488943
+    Attrib rep0-max    -0.19718988363460618
+    Attrib rep0-krt    -0.506741525324946
+    Attrib intra0-posmax    -0.02312248731510799
+    Attrib intra0-negmax    -0.2072047157379868
+    Attrib inter1-posmean    0.11660106857184815
+    Attrib inter1-negmean    -0.24609636249331363
+    Attrib inter2-negmean    -0.287425881781751
+    Attrib inter3-negmean    0.10577277315505297
+    Attrib rep4-krt    -0.32249039632029747
+    Attrib intra5-posmean    0.6903468544532888
+    Attrib intra5-negmax    0.4010164331116207
+    Attrib inter6-negmean    -0.043024863096709394
+    Attrib rep7-max    0.7244693484898252
+    Attrib intra11-negmean    0.37690871604502896
+    Attrib inter11-negmean    0.1021586493775246
+Sigmoid Node 32
+    Inputs    Weights
+    Threshold    0.10227292530219786
+    Attrib pitches0-var    -0.04534033185145419
+    Attrib timbre0-med    -0.46642276640113045
+    Attrib timbre1-mean    -0.13689161758433632
+    Attrib timbre1-med    -0.20044057399975332
+    Attrib timbre3-var    0.04466085110748655
+    Attrib timbre3-krt    0.031086576281380503
+    Attrib timbre4-skw    0.0835031419855766
+    Attrib timbre5-mean    -0.27979790311002484
+    Attrib timbre5-med    -0.2291488649005784
+    Attrib timbre6-var    0.17629088730859416
+    Attrib timbre6-skw    1.2284201308590949E-4
+    Attrib timbre7-var    -0.40614816680937416
+    Attrib timbre8-var    -0.19105616830701877
+    Attrib timbre9-var    -0.3237800364987825
+    Attrib timbre10-mean    0.7911646716388991
+    Attrib timbre10-var    0.1946668179453001
+    Attrib timbre11-var    0.4983009206169431
+    Attrib loudmax-med    -0.3504310672125636
+    Attrib seglen-mean    -0.15182155809274495
+    Attrib seglen-med    -0.13348646583251325
+    Attrib seglen-var    -0.12174749239796388
+    Attrib chordsize-mean    -0.18582914409568363
+    Attrib chordfreq-mean    0.5875533072129306
+    Attrib chordfreq-var    0.020874612340163145
+    Attrib rep0-max    0.04273795169864144
+    Attrib rep0-krt    -0.11900410371213857
+    Attrib intra0-posmax    -0.020102985666262056
+    Attrib intra0-negmax    -0.04996442897646632
+    Attrib inter1-posmean    0.20274320034553156
+    Attrib inter1-negmean    -0.2531223477394085
+    Attrib inter2-negmean    -0.28260964895853685
+    Attrib inter3-negmean    -0.016047932023533558
+    Attrib rep4-krt    0.15210612466473403
+    Attrib intra5-posmean    0.7106083268916094
+    Attrib intra5-negmax    0.5444527535521675
+    Attrib inter6-negmean    -0.13374927402866288
+    Attrib rep7-max    0.8181361047675241
+    Attrib intra11-negmean    0.2192633923439576
+    Attrib inter11-negmean    -0.11841205895352674
+Sigmoid Node 33
+    Inputs    Weights
+    Threshold    -0.3027923911774058
+    Attrib pitches0-var    -0.05288464529102338
+    Attrib timbre0-med    0.6675890966505807
+    Attrib timbre1-mean    0.21589739781679507
+    Attrib timbre1-med    0.210739265468332
+    Attrib timbre3-var    -0.02007907016031661
+    Attrib timbre3-krt    0.6649680795557402
+    Attrib timbre4-skw    0.12178241915350425
+    Attrib timbre5-mean    -0.09064986214950975
+    Attrib timbre5-med    -0.23936373406192585
+    Attrib timbre6-var    -0.562868295181204
+    Attrib timbre6-skw    0.13791727025739653
+    Attrib timbre7-var    0.7532970414218269
+    Attrib timbre8-var    -0.2650386876066224
+    Attrib timbre9-var    0.7059507393423857
+    Attrib timbre10-mean    -0.8065133827846024
+    Attrib timbre10-var    -0.5427557909656825
+    Attrib timbre11-var    -1.2832976552667323
+    Attrib loudmax-med    0.45475042822501094
+    Attrib seglen-mean    0.41731230228969024
+    Attrib seglen-med    0.37908253154863103
+    Attrib seglen-var    0.28729703668137285
+    Attrib chordsize-mean    -0.6736938605272267
+    Attrib chordfreq-mean    -0.9431779704899961
+    Attrib chordfreq-var    0.08476923721482475
+    Attrib rep0-max    -0.4521661149338928
+    Attrib rep0-krt    -0.1385453336651644
+    Attrib intra0-posmax    -0.23900636676525094
+    Attrib intra0-negmax    -0.4495444127948527
+    Attrib inter1-posmean    0.012661386248556096
+    Attrib inter1-negmean    -0.21927111377957448
+    Attrib inter2-negmean    -0.11176957193480852
+    Attrib inter3-negmean    -0.326564258192934
+    Attrib rep4-krt    -0.7020503875973716
+    Attrib intra5-posmean    0.2341236860910684
+    Attrib intra5-negmax    -0.07494675525534007
+    Attrib inter6-negmean    -0.018629817205723296
+    Attrib rep7-max    -0.2159880938840745
+    Attrib intra11-negmean    0.24977437797360988
+    Attrib inter11-negmean    0.06840672583622491
+Sigmoid Node 34
+    Inputs    Weights
+    Threshold    -0.08675611912388244
+    Attrib pitches0-var    -0.03644922711825429
+    Attrib timbre0-med    0.3347646311659936
+    Attrib timbre1-mean    0.15751300772612226
+    Attrib timbre1-med    0.1176810456302921
+    Attrib timbre3-var    0.008406411144087536
+    Attrib timbre3-krt    0.3680586907563804
+    Attrib timbre4-skw    -0.03583757489516849
+    Attrib timbre5-mean    0.17412083598215594
+    Attrib timbre5-med    -0.03363802757613596
+    Attrib timbre6-var    -0.3918815013822024
+    Attrib timbre6-skw    0.05236518330900159
+    Attrib timbre7-var    0.23320285097321475
+    Attrib timbre8-var    -0.13057209082571808
+    Attrib timbre9-var    0.25264327274893805
+    Attrib timbre10-mean    -0.4341496942976947
+    Attrib timbre10-var    -0.31551382270469264
+    Attrib timbre11-var    -0.5294915246469261
+    Attrib loudmax-med    0.1622684550835843
+    Attrib seglen-mean    0.18332897594751654
+    Attrib seglen-med    0.21425726442980297
+    Attrib seglen-var    0.10818465300306639
+    Attrib chordsize-mean    -0.7652115520378542
+    Attrib chordfreq-mean    -0.8928489472879538
+    Attrib chordfreq-var    0.009536802288378644
+    Attrib rep0-max    -0.2532005742256665
+    Attrib rep0-krt    0.1343891612891484
+    Attrib intra0-posmax    -0.17708779037766179
+    Attrib intra0-negmax    -0.28515611807324837
+    Attrib inter1-posmean    0.11462962920042807
+    Attrib inter1-negmean    -0.1593709407440382
+    Attrib inter2-negmean    -0.14245876950015515
+    Attrib inter3-negmean    -0.30834912050879276
+    Attrib rep4-krt    -0.10884563957016934
+    Attrib intra5-posmean    -0.005671783908825395
+    Attrib intra5-negmax    -0.1954473601867399
+    Attrib inter6-negmean    -0.0871018555479395
+    Attrib rep7-max    -0.4259454863750151
+    Attrib intra11-negmean    0.04558082353240143
+    Attrib inter11-negmean    -0.05932998192299878
+Sigmoid Node 35
+    Inputs    Weights
+    Threshold    -0.0506804206343725
+    Attrib pitches0-var    -0.05255152948134459
+    Attrib timbre0-med    -0.08871836625988067
+    Attrib timbre1-mean    0.03673643994115379
+    Attrib timbre1-med    0.03459954190145741
+    Attrib timbre3-var    0.04739794346605782
+    Attrib timbre3-krt    0.1386247331922567
+    Attrib timbre4-skw    -0.06124159618808891
+    Attrib timbre5-mean    0.07966756909511365
+    Attrib timbre5-med    0.1493690457042571
+    Attrib timbre6-var    0.058031787693363875
+    Attrib timbre6-skw    -0.007894276369949021
+    Attrib timbre7-var    -0.05559207707253705
+    Attrib timbre8-var    -0.05198521006376391
+    Attrib timbre9-var    -0.017383838388409487
+    Attrib timbre10-mean    0.09303284341697522
+    Attrib timbre10-var    0.1007788560745619
+    Attrib timbre11-var    0.14591330015364812
+    Attrib loudmax-med    -0.07391028375715508
+    Attrib seglen-mean    0.07943088771388405
+    Attrib seglen-med    0.02677771276607588
+    Attrib seglen-var    0.011459472519320413
+    Attrib chordsize-mean    -0.1074375179964498
+    Attrib chordfreq-mean    -0.10104233505732665
+    Attrib chordfreq-var    0.06212373317288685
+    Attrib rep0-max    -0.06316443649874674
+    Attrib rep0-krt    0.12469461791969313
+    Attrib intra0-posmax    -0.05171583670918337
+    Attrib intra0-negmax    -0.07438041368493725
+    Attrib inter1-posmean    0.07293822343423871
+    Attrib inter1-negmean    -0.05658895463040876
+    Attrib inter2-negmean    -0.08622116772473992
+    Attrib inter3-negmean    -0.13007359048842018
+    Attrib rep4-krt    0.12112326271709985
+    Attrib intra5-posmean    0.1384589177826558
+    Attrib intra5-negmax    -0.09655158927515708
+    Attrib inter6-negmean    -0.056255695402601294
+    Attrib rep7-max    -0.07563598372505569
+    Attrib intra11-negmean    0.09249753874353432
+    Attrib inter11-negmean    -0.09389649426053094
+Sigmoid Node 36
+    Inputs    Weights
+    Threshold    -0.07693716886268812
+    Attrib pitches0-var    0.08061657204277178
+    Attrib timbre0-med    0.7581275204603857
+    Attrib timbre1-mean    0.5818857303358372
+    Attrib timbre1-med    0.47254239150974603
+    Attrib timbre3-var    0.20794798755152477
+    Attrib timbre3-krt    -0.16621312753790485
+    Attrib timbre4-skw    -0.05942788631542305
+    Attrib timbre5-mean    0.042332527450867706
+    Attrib timbre5-med    0.3549935688390489
+    Attrib timbre6-var    0.6525486692095185
+    Attrib timbre6-skw    -0.2880202168755707
+    Attrib timbre7-var    0.7991748495705948
+    Attrib timbre8-var    0.7193298927676602
+    Attrib timbre9-var    0.28567141583799355
+    Attrib timbre10-mean    -1.5254347853272674
+    Attrib timbre10-var    0.644313810647204
+    Attrib timbre11-var    0.11177448960646728
+    Attrib loudmax-med    0.6375650423554075
+    Attrib seglen-mean    0.1014511064884231
+    Attrib seglen-med    0.09702608719283422
+    Attrib seglen-var    0.12769974016126046
+    Attrib chordsize-mean    1.9600267870671217
+    Attrib chordfreq-mean    0.2648724419196615
+    Attrib chordfreq-var    0.0433267639386072
+    Attrib rep0-max    0.2805596414483762
+    Attrib rep0-krt    0.3001517308370969
+    Attrib intra0-posmax    -0.015731699240646626
+    Attrib intra0-negmax    0.2400696562600011
+    Attrib inter1-posmean    -0.6332837320416692
+    Attrib inter1-negmean    0.7312378386763067
+    Attrib inter2-negmean    0.7580931555638144
+    Attrib inter3-negmean    0.09924236223013323
+    Attrib rep4-krt    -0.09164135458099772
+    Attrib intra5-posmean    -0.4518641320175469
+    Attrib intra5-negmax    -0.002069411800078974
+    Attrib inter6-negmean    0.4593746142551335
+    Attrib rep7-max    -0.9745485011261504
+    Attrib intra11-negmean    -0.19706575600752435
+    Attrib inter11-negmean    0.2854239226477617
+Sigmoid Node 37
+    Inputs    Weights
+    Threshold    -0.18231678302665869
+    Attrib pitches0-var    0.09534457850069725
+    Attrib timbre0-med    0.563661959803395
+    Attrib timbre1-mean    0.23921054214409945
+    Attrib timbre1-med    0.14310696714350746
+    Attrib timbre3-var    0.05111856567501263
+    Attrib timbre3-krt    0.37572033439332836
+    Attrib timbre4-skw    -0.2017654841789492
+    Attrib timbre5-mean    0.3834832321697481
+    Attrib timbre5-med    0.34241466033072054
+    Attrib timbre6-var    -0.2994578573579581
+    Attrib timbre6-skw    0.0796708019511543
+    Attrib timbre7-var    0.22795817558298714
+    Attrib timbre8-var    0.0833657524464232
+    Attrib timbre9-var    0.209429909522017
+    Attrib timbre10-mean    -0.9194672699997014
+    Attrib timbre10-var    -0.32734720000152906
+    Attrib timbre11-var    -0.5115086182121688
+    Attrib loudmax-med    0.219047430480914
+    Attrib seglen-mean    0.2997388303311969
+    Attrib seglen-med    0.24249268034510887
+    Attrib seglen-var    0.1861928015692279
+    Attrib chordsize-mean    -0.6717141796106552
+    Attrib chordfreq-mean    -1.4999382966155257
+    Attrib chordfreq-var    -0.22448149476869236
+    Attrib rep0-max    -0.16470424112863627
+    Attrib rep0-krt    0.294292780355643
+    Attrib intra0-posmax    -0.1803401757050791
+    Attrib intra0-negmax    -0.2047563773149772
+    Attrib inter1-posmean    0.11445301169219439
+    Attrib inter1-negmean    -0.08908704977982357
+    Attrib inter2-negmean    -0.08986812634026373
+    Attrib inter3-negmean    -0.3939652766889705
+    Attrib rep4-krt    0.03501180613789564
+    Attrib intra5-posmean    -0.4627829038263493
+    Attrib intra5-negmax    -0.40266492293385997
+    Attrib inter6-negmean    -0.11349214535311801
+    Attrib rep7-max    -1.0959292784410424
+    Attrib intra11-negmean    -0.06219461463487563
+    Attrib inter11-negmean    -0.1870534764471355
+Sigmoid Node 38
+    Inputs    Weights
+    Threshold    0.18929389525381313
+    Attrib pitches0-var    -0.006031277870690277
+    Attrib timbre0-med    -0.28576545006044635
+    Attrib timbre1-mean    0.018498994839837843
+    Attrib timbre1-med    0.019601322697981875
+    Attrib timbre3-var    0.10368969201164661
+    Attrib timbre3-krt    -0.21128322055363633
+    Attrib timbre4-skw    0.09385796105308597
+    Attrib timbre5-mean    -0.12288626236139866
+    Attrib timbre5-med    0.056026709431774346
+    Attrib timbre6-var    0.31351697141268864
+    Attrib timbre6-skw    -0.12948224305501582
+    Attrib timbre7-var    -0.17634751708060875
+    Attrib timbre8-var    -0.024359945586636695
+    Attrib timbre9-var    -0.10041741017259727
+    Attrib timbre10-mean    0.44613724718726216
+    Attrib timbre10-var    0.4990126452342997
+    Attrib timbre11-var    0.4447045860796358
+    Attrib loudmax-med    -0.08208757769531934
+    Attrib seglen-mean    -0.16501341897376817
+    Attrib seglen-med    -0.20257816521588745
+    Attrib seglen-var    -0.12091393568447947
+    Attrib chordsize-mean    0.5574131957784938
+    Attrib chordfreq-mean    0.7737078304502448
+    Attrib chordfreq-var    0.05486209782289256
+    Attrib rep0-max    0.1239652342273964
+    Attrib rep0-krt    -0.015497569079258217
+    Attrib intra0-posmax    0.13712437100027225
+    Attrib intra0-negmax    0.11662836061975221
+    Attrib inter1-posmean    0.007910954188693475
+    Attrib inter1-negmean    0.11587494987095816
+    Attrib inter2-negmean    0.0017080721374211317
+    Attrib inter3-negmean    0.21488803309833188
+    Attrib rep4-krt    0.1294903632732369
+    Attrib intra5-posmean    0.5096498031789083
+    Attrib intra5-negmax    0.2558421667200111
+    Attrib inter6-negmean    0.07223222523243007
+    Attrib rep7-max    0.45951170505877853
+    Attrib intra11-negmean    0.01125325372679361
+    Attrib inter11-negmean    0.037744830652544
+Sigmoid Node 39
+    Inputs    Weights
+    Threshold    0.11788930273020175
+    Attrib pitches0-var    -0.013861135646765685
+    Attrib timbre0-med    -0.29366136355582967
+    Attrib timbre1-mean    0.10791525703748578
+    Attrib timbre1-med    0.01015582205812022
+    Attrib timbre3-var    0.11468207187090794
+    Attrib timbre3-krt    -0.13269372690289313
+    Attrib timbre4-skw    -0.0672997514019253
+    Attrib timbre5-mean    0.13780887942169626
+    Attrib timbre5-med    0.233575269681206
+    Attrib timbre6-var    0.24285117222314617
+    Attrib timbre6-skw    0.0898975952718199
+    Attrib timbre7-var    -0.23879403715066164
+    Attrib timbre8-var    -0.04286796162240772
+    Attrib timbre9-var    -0.1646585813718376
+    Attrib timbre10-mean    0.22895230190890375
+    Attrib timbre10-var    0.3870808721920972
+    Attrib timbre11-var    0.6304681539420935
+    Attrib loudmax-med    -0.1732941766425761
+    Attrib seglen-mean    -0.1500828777933407
+    Attrib seglen-med    -0.08060214598577771
+    Attrib seglen-var    -0.0964312363406026
+    Attrib chordsize-mean    0.18055829970354664
+    Attrib chordfreq-mean    0.2294248214387782
+    Attrib chordfreq-var    -0.03932219350771958
+    Attrib rep0-max    0.17140196295993004
+    Attrib rep0-krt    0.20748712870866956
+    Attrib intra0-posmax    0.049108844272557316
+    Attrib intra0-negmax    0.133171210976565
+    Attrib inter1-posmean    0.01980242319167695
+    Attrib inter1-negmean    -0.006094507741247292
+    Attrib inter2-negmean    0.029719079479543067
+    Attrib inter3-negmean    0.012721895982877056
+    Attrib rep4-krt    0.30698723286519464
+    Attrib intra5-posmean    0.16749422583890794
+    Attrib intra5-negmax    -0.05659152884270517
+    Attrib inter6-negmean    0.006676099050175206
+    Attrib rep7-max    0.07681450587341264
+    Attrib intra11-negmean    -0.05369694967743371
+    Attrib inter11-negmean    -0.03854823904154717
+Sigmoid Node 40
+    Inputs    Weights
+    Threshold    -0.11375262058106908
+    Attrib pitches0-var    0.02489040925678967
+    Attrib timbre0-med    0.2482280507172609
+    Attrib timbre1-mean    0.07809545196444871
+    Attrib timbre1-med    0.054376866502735065
+    Attrib timbre3-var    -0.03439529872582538
+    Attrib timbre3-krt    0.320638581790364
+    Attrib timbre4-skw    -0.017048925013246004
+    Attrib timbre5-mean    0.14414314461703343
+    Attrib timbre5-med    0.06573037254606644
+    Attrib timbre6-var    -0.30410356503475444
+    Attrib timbre6-skw    0.056731355575700616
+    Attrib timbre7-var    0.15475064201414612
+    Attrib timbre8-var    -0.09513830987115991
+    Attrib timbre9-var    0.19015479582505534
+    Attrib timbre10-mean    -0.15844304833572595
+    Attrib timbre10-var    -0.1712777605980703
+    Attrib timbre11-var    -0.4854638936867657
+    Attrib loudmax-med    0.16902981439681533
+    Attrib seglen-mean    0.10518430548938032
+    Attrib seglen-med    0.12897123010090156
+    Attrib seglen-var    0.06883970351829408
+    Attrib chordsize-mean    -0.5879379235619866
+    Attrib chordfreq-mean    -0.5481841852257183
+    Attrib chordfreq-var    -0.01592670517249431
+    Attrib rep0-max    -0.20463159323190708
+    Attrib rep0-krt    0.10362821372581024
+    Attrib intra0-posmax    -0.16386234447182663
+    Attrib intra0-negmax    -0.20432642411752985
+    Attrib inter1-posmean    0.05681280030991056
+    Attrib inter1-negmean    -0.1241721225946281
+    Attrib inter2-negmean    -0.14383210165046073
+    Attrib inter3-negmean    -0.18260608599070538
+    Attrib rep4-krt    -0.12375203838396326
+    Attrib intra5-posmean    -0.04183186497197991
+    Attrib intra5-negmax    -0.2747576841653308
+    Attrib inter6-negmean    -0.009475884307806244
+    Attrib rep7-max    -0.2309648675268137
+    Attrib intra11-negmean    0.09218643403429905
+    Attrib inter11-negmean    -0.007044105026586593
+Sigmoid Node 41
+    Inputs    Weights
+    Threshold    -0.009112948394493614
+    Attrib pitches0-var    0.13615256459166342
+    Attrib timbre0-med    0.5093704001049632
+    Attrib timbre1-mean    0.5079358831675199
+    Attrib timbre1-med    0.44426208678849105
+    Attrib timbre3-var    0.14706965993192042
+    Attrib timbre3-krt    -0.2378582016196805
+    Attrib timbre4-skw    -0.03940338156591121
+    Attrib timbre5-mean    0.24470248701288802
+    Attrib timbre5-med    0.45341175642714404
+    Attrib timbre6-var    0.5759057814360802
+    Attrib timbre6-skw    -0.21685665961522327
+    Attrib timbre7-var    0.4041013202455549
+    Attrib timbre8-var    0.4771613839162837
+    Attrib timbre9-var    0.0719509142034466
+    Attrib timbre10-mean    -1.0600905778527818
+    Attrib timbre10-var    0.5775335042985806
+    Attrib timbre11-var    0.2625856301666755
+    Attrib loudmax-med    0.47089890724774275
+    Attrib seglen-mean    0.044105798736852164
+    Attrib seglen-med    0.06478986114666785
+    Attrib seglen-var    0.11728638209992062
+    Attrib chordsize-mean    1.507497334555731
+    Attrib chordfreq-mean    0.24744044051637526
+    Attrib chordfreq-var    0.041436178101274576
+    Attrib rep0-max    0.2441432657622548
+    Attrib rep0-krt    0.3642524766046047
+    Attrib intra0-posmax    0.04362694288981346
+    Attrib intra0-negmax    0.2625350310957245
+    Attrib inter1-posmean    -0.39448645538568183
+    Attrib inter1-negmean    0.5302548227033488
+    Attrib inter2-negmean    0.5505494819657956
+    Attrib inter3-negmean    0.054788992723829394
+    Attrib rep4-krt    0.026854775255150492
+    Attrib intra5-posmean    -0.35300351835071964
+    Attrib intra5-negmax    -0.18996424832842126
+    Attrib inter6-negmean    0.31698759074018906
+    Attrib rep7-max    -0.7540458892502554
+    Attrib intra11-negmean    -0.06921982829204826
+    Attrib inter11-negmean    0.13532417039967018
+Sigmoid Node 42
+    Inputs    Weights
+    Threshold    -0.04483881350244643
+    Attrib pitches0-var    -0.11794522625729449
+    Attrib timbre0-med    -0.08284195437255948
+    Attrib timbre1-mean    -0.1649693023366534
+    Attrib timbre1-med    -0.11268166994670635
+    Attrib timbre3-var    0.04094028772160969
+    Attrib timbre3-krt    0.34882973190209815
+    Attrib timbre4-skw    0.025783887356694454
+    Attrib timbre5-mean    -0.08889648679988267
+    Attrib timbre5-med    -0.12185003413720925
+    Attrib timbre6-var    -0.12781195456388522
+    Attrib timbre6-skw    0.12448817308965825
+    Attrib timbre7-var    -0.09345894378432072
+    Attrib timbre8-var    -0.18104022971005804
+    Attrib timbre9-var    0.012738533865305414
+    Attrib timbre10-mean    0.31057331426925466
+    Attrib timbre10-var    -0.154111771869762
+    Attrib timbre11-var    -0.20411485588168746
+    Attrib loudmax-med    -0.11581716088855322
+    Attrib seglen-mean    0.05054363489674455
+    Attrib seglen-med    0.0880556806128692
+    Attrib seglen-var    0.02286898173436491
+    Attrib chordsize-mean    -0.6732545287729976
+    Attrib chordfreq-mean    -0.22937818210571834
+    Attrib chordfreq-var    0.04895785242433721
+    Attrib rep0-max    -0.19682142706134295
+    Attrib rep0-krt    0.06827527629016616
+    Attrib intra0-posmax    -0.1566758241795007
+    Attrib intra0-negmax    -0.18435553287976775
+    Attrib inter1-posmean    0.20100410488323595
+    Attrib inter1-negmean    -0.1981371297866229
+    Attrib inter2-negmean    -0.2842255811641589
+    Attrib inter3-negmean    -0.17599518424077013
+    Attrib rep4-krt    0.016631579407065212
+    Attrib intra5-posmean    0.43621718802902787
+    Attrib intra5-negmax    0.12981207098885036
+    Attrib inter6-negmean    -0.1336347113736531
+    Attrib rep7-max    0.20264090253027756
+    Attrib intra11-negmean    0.20762741929677636
+    Attrib inter11-negmean    -0.16076302687373212
+Sigmoid Node 43
+    Inputs    Weights
+    Threshold    0.17212365232824334
+    Attrib pitches0-var    -0.0662912110569329
+    Attrib timbre0-med    -0.49363528401168205
+    Attrib timbre1-mean    -0.05485919770799364
+    Attrib timbre1-med    -0.11947509635688346
+    Attrib timbre3-var    0.12992832237921928
+    Attrib timbre3-krt    -0.11763298952014394
+    Attrib timbre4-skw    -0.12289416937060439
+    Attrib timbre5-mean    0.37517752272910204
+    Attrib timbre5-med    0.3133755143137987
+    Attrib timbre6-var    0.25595786544308824
+    Attrib timbre6-skw    0.28220044877805284
+    Attrib timbre7-var    -0.5847760801926707
+    Attrib timbre8-var    -0.13797125631405144
+    Attrib timbre9-var    -0.3518760112973569
+    Attrib timbre10-mean    0.537793293036432
+    Attrib timbre10-var    0.2779362436721908
+    Attrib timbre11-var    0.713566690854685
+    Attrib loudmax-med    -0.3702736809517731
+    Attrib seglen-mean    -0.17595921690393618
+    Attrib seglen-med    -0.1451488089809633
+    Attrib seglen-var    -0.08950356711636437
+    Attrib chordsize-mean    -0.14793909338302738
+    Attrib chordfreq-mean    0.11409222001574548
+    Attrib chordfreq-var    -0.10155211232715994
+    Attrib rep0-max    0.1128042710456329
+    Attrib rep0-krt    0.3737167116468277
+    Attrib intra0-posmax    0.06969750882770218
+    Attrib intra0-negmax    0.07151955255155051
+    Attrib inter1-posmean    0.04879448705258528
+    Attrib inter1-negmean    -0.021383101592355642
+    Attrib inter2-negmean    -0.005453040643506547
+    Attrib inter3-negmean    -0.028306542277476813
+    Attrib rep4-krt    0.332734934551666
+    Attrib intra5-posmean    -2.918823841651029E-4
+    Attrib intra5-negmax    -0.24697701578507872
+    Attrib inter6-negmean    0.009343308508981305
+    Attrib rep7-max    0.15205878981501347
+    Attrib intra11-negmean    -0.05915733309084668
+    Attrib inter11-negmean    -0.23904141315027083
+Sigmoid Node 44
+    Inputs    Weights
+    Threshold    0.028449579167712336
+    Attrib pitches0-var    -0.0904919034057305
+    Attrib timbre0-med    -0.22511721224481596
+    Attrib timbre1-mean    -0.05293935696322173
+    Attrib timbre1-med    -0.025042608701369016
+    Attrib timbre3-var    0.06243591958168775
+    Attrib timbre3-krt    -0.03851250346045395
+    Attrib timbre4-skw    -0.0648841280074277
+    Attrib timbre5-mean    0.3963621791508399
+    Attrib timbre5-med    0.3657209762639299
+    Attrib timbre6-var    0.1452244433226657
+    Attrib timbre6-skw    0.10854532152912491
+    Attrib timbre7-var    -0.4753981015528764
+    Attrib timbre8-var    -0.10869354994339085
+    Attrib timbre9-var    -0.2480007788094102
+    Attrib timbre10-mean    0.30403129942180185
+    Attrib timbre10-var    0.17516738237484827
+    Attrib timbre11-var    0.4308472168221864
+    Attrib loudmax-med    -0.07434645937599822
+    Attrib seglen-mean    -0.03544425838896066
+    Attrib seglen-med    -0.03636472437689615
+    Attrib seglen-var    -0.09664821506878503
+    Attrib chordsize-mean    -0.21330123755308145
+    Attrib chordfreq-mean    0.040153894701154505
+    Attrib chordfreq-var    0.021182840711309363
+    Attrib rep0-max    0.10918179788637818
+    Attrib rep0-krt    0.35713875334331313
+    Attrib intra0-posmax    -0.00596177930877674
+    Attrib intra0-negmax    0.09045761508801385
+    Attrib inter1-posmean    0.03500100459856409
+    Attrib inter1-negmean    -0.06708662542728237
+    Attrib inter2-negmean    -0.03700327942508724
+    Attrib inter3-negmean    -0.0866117147360691
+    Attrib rep4-krt    0.355113402016366
+    Attrib intra5-posmean    -0.010052062607513247
+    Attrib intra5-negmax    -0.39508219909736736
+    Attrib inter6-negmean    -0.04656085572643515
+    Attrib rep7-max    0.040724849131298244
+    Attrib intra11-negmean    -0.09963741083093239
+    Attrib inter11-negmean    -0.13288753497602823
+Sigmoid Node 45
+    Inputs    Weights
+    Threshold    0.10678481857766281
+    Attrib pitches0-var    0.15420862767207816
+    Attrib timbre0-med    0.09086451383867913
+    Attrib timbre1-mean    0.3252949410792992
+    Attrib timbre1-med    0.3295280471895537
+    Attrib timbre3-var    0.11824331292966206
+    Attrib timbre3-krt    -0.24252389080181858
+    Attrib timbre4-skw    0.03184499328394387
+    Attrib timbre5-mean    -0.010256952628926785
+    Attrib timbre5-med    0.21190567839504976
+    Attrib timbre6-var    0.41689221344788957
+    Attrib timbre6-skw    -0.2580744595201299
+    Attrib timbre7-var    0.16304396829699142
+    Attrib timbre8-var    0.2615157535836699
+    Attrib timbre9-var    0.05405457877946525
+    Attrib timbre10-mean    -0.23898681853460557
+    Attrib timbre10-var    0.596671608371923
+    Attrib timbre11-var    0.28368209679487555
+    Attrib loudmax-med    0.20082309058225759
+    Attrib seglen-mean    -0.11450200506887505
+    Attrib seglen-med    -0.09948861730630433
+    Attrib seglen-var    -0.0701577685129689
+    Attrib chordsize-mean    1.2027142930030683
+    Attrib chordfreq-mean    0.5442227806455858
+    Attrib chordfreq-var    -0.0011879322032134854
+    Attrib rep0-max    0.23166913013118895
+    Attrib rep0-krt    -0.04100456127145256
+    Attrib intra0-posmax    0.10581025064264474
+    Attrib intra0-negmax    0.27461570572004046
+    Attrib inter1-posmean    -0.19938009051722994
+    Attrib inter1-negmean    0.3056522687567795
+    Attrib inter2-negmean    0.30375858719325627
+    Attrib inter3-negmean    0.1737712739995629
+    Attrib rep4-krt    0.007574448045677536
+    Attrib intra5-posmean    0.064703224014683
+    Attrib intra5-negmax    0.05057175811186007
+    Attrib inter6-negmean    0.19646425358649192
+    Attrib rep7-max    -0.11428516441590231
+    Attrib intra11-negmean    0.07752789476659103
+    Attrib inter11-negmean    0.18542717105635415
+Sigmoid Node 46
+    Inputs    Weights
+    Threshold    -0.011586512963234768
+    Attrib pitches0-var    -0.19177334747303493
+    Attrib timbre0-med    -0.2452527775002269
+    Attrib timbre1-mean    -0.264004745735299
+    Attrib timbre1-med    -0.2937545684370073
+    Attrib timbre3-var    -0.06581977216969315
+    Attrib timbre3-krt    0.4400747872913018
+    Attrib timbre4-skw    -0.050936922695152674
+    Attrib timbre5-mean    0.3716764306326216
+    Attrib timbre5-med    0.00830061966656488
+    Attrib timbre6-var    -0.5074257949042639
+    Attrib timbre6-skw    0.45049556448652905
+    Attrib timbre7-var    -0.6500782894889068
+    Attrib timbre8-var    -0.56107446879675
+    Attrib timbre9-var    -0.22203604412796493
+    Attrib timbre10-mean    0.5799448338216372
+    Attrib timbre10-var    -0.5944712621377007
+    Attrib timbre11-var    -0.26751036303069403
+    Attrib loudmax-med    -0.2673979729422723
+    Attrib seglen-mean    0.14420970645243017
+    Attrib seglen-med    0.1399790707844457
+    Attrib seglen-var    0.020735283803559396
+    Attrib chordsize-mean    -1.9243204021607085
+    Attrib chordfreq-mean    -0.9174411585058497
+    Attrib chordfreq-var    -0.047267704182945985
+    Attrib rep0-max    -0.27611833040605255
+    Attrib rep0-krt    0.36392969546945875
+    Attrib intra0-posmax    -0.15791952385408745
+    Attrib intra0-negmax    -0.34430155911780796
+    Attrib inter1-posmean    0.34405891651779164
+    Attrib inter1-negmean    -0.48331314590548496
+    Attrib inter2-negmean    -0.4297670380392007
+    Attrib inter3-negmean    -0.3217246893907518
+    Attrib rep4-krt    0.2271215993023931
+    Attrib intra5-posmean    0.17091585143771346
+    Attrib intra5-negmax    -0.39494603072887274
+    Attrib inter6-negmean    -0.27249796278331
+    Attrib rep7-max    0.11755971966633844
+    Attrib intra11-negmean    0.09662806517658042
+    Attrib inter11-negmean    -0.3097829885908913
+Sigmoid Node 47
+    Inputs    Weights
+    Threshold    0.011374817480021818
+    Attrib pitches0-var    -0.10548952492533947
+    Attrib timbre0-med    -0.25141609622348476
+    Attrib timbre1-mean    -0.28921870540582656
+    Attrib timbre1-med    -0.36870345897371126
+    Attrib timbre3-var    0.01373760409931875
+    Attrib timbre3-krt    0.2796734332414193
+    Attrib timbre4-skw    -0.15938321373307257
+    Attrib timbre5-mean    0.3413586322322464
+    Attrib timbre5-med    0.14045258168877392
+    Attrib timbre6-var    -0.2979973305572837
+    Attrib timbre6-skw    0.40537743943854165
+    Attrib timbre7-var    -0.4552821333791931
+    Attrib timbre8-var    -0.34060773966613067
+    Attrib timbre9-var    -0.15845184935723974
+    Attrib timbre10-mean    0.5060036230334296
+    Attrib timbre10-var    -0.369141633344061
+    Attrib timbre11-var    -0.027767689050337326
+    Attrib loudmax-med    -0.3798295336758281
+    Attrib seglen-mean    0.09056724752096429
+    Attrib seglen-med    0.08285579403774575
+    Attrib seglen-var    -5.775318118345634E-4
+    Attrib chordsize-mean    -1.455732829877307
+    Attrib chordfreq-mean    -0.7752682835262927
+    Attrib chordfreq-var    -0.10566019680748735
+    Attrib rep0-max    -0.2315862566549736
+    Attrib rep0-krt    0.2980823803271871
+    Attrib intra0-posmax    -0.10168083537871488
+    Attrib intra0-negmax    -0.23556015987118573
+    Attrib inter1-posmean    0.22607392786166838
+    Attrib inter1-negmean    -0.32327237084052257
+    Attrib inter2-negmean    -0.3179155477601544
+    Attrib inter3-negmean    -0.32385004663274713
+    Attrib rep4-krt    0.13880339488577614
+    Attrib intra5-posmean    0.20362827114404108
+    Attrib intra5-negmax    -0.21017973639158236
+    Attrib inter6-negmean    -0.14120807715174927
+    Attrib rep7-max    0.11669965111463598
+    Attrib intra11-negmean    0.1126707997439634
+    Attrib inter11-negmean    -0.3450010916403252
+Sigmoid Node 48
+    Inputs    Weights
+    Threshold    -0.2787202479505575
+    Attrib pitches0-var    -0.10921748720850707
+    Attrib timbre0-med    0.590239386258901
+    Attrib timbre1-mean    0.2809817775673267
+    Attrib timbre1-med    0.3547206448977758
+    Attrib timbre3-var    3.941722763317606E-4
+    Attrib timbre3-krt    0.5576177057367638
+    Attrib timbre4-skw    0.1747930301402802
+    Attrib timbre5-mean    -0.23088526670088638
+    Attrib timbre5-med    -0.3747152159666236
+    Attrib timbre6-var    -0.49020937065261294
+    Attrib timbre6-skw    0.04083290339800055
+    Attrib timbre7-var    0.6460487013271575
+    Attrib timbre8-var    -0.28353664493349506
+    Attrib timbre9-var    0.46647462942688456
+    Attrib timbre10-mean    -0.4696383200357179
+    Attrib timbre10-var    -0.329408521944049
+    Attrib timbre11-var    -1.0098345399595148
+    Attrib loudmax-med    0.4178916824546115
+    Attrib seglen-mean    0.2468374033712863
+    Attrib seglen-med    0.30970810127492704
+    Attrib seglen-var    0.24034353568871106
+    Attrib chordsize-mean    -0.3004408487027645
+    Attrib chordfreq-mean    -0.4079379592214308
+    Attrib chordfreq-var    0.1356659347772278
+    Attrib rep0-max    -0.3206929397432462
+    Attrib rep0-krt    -0.1176606428711016
+    Attrib intra0-posmax    -0.1970804604058828
+    Attrib intra0-negmax    -0.3539827340888372
+    Attrib inter1-posmean    0.04690603745353308
+    Attrib inter1-negmean    -0.11779980630886511
+    Attrib inter2-negmean    -0.05518709751454506
+    Attrib inter3-negmean    -0.09984050507999527
+    Attrib rep4-krt    -0.5896034411997372
+    Attrib intra5-posmean    0.30594690778744754
+    Attrib intra5-negmax    0.12986714551874684
+    Attrib inter6-negmean    0.10630097495508496
+    Attrib rep7-max    0.01198459635148796
+    Attrib intra11-negmean    0.32819094592009496
+    Attrib inter11-negmean    0.1733841720871121
+Sigmoid Node 49
+    Inputs    Weights
+    Threshold    0.012283113560745122
+    Attrib pitches0-var    -0.039090982919361784
+    Attrib timbre0-med    -0.10542416025774404
+    Attrib timbre1-mean    0.005175846140545698
+    Attrib timbre1-med    0.006964520250628944
+    Attrib timbre3-var    0.06740295480877334
+    Attrib timbre3-krt    0.06623934957859436
+    Attrib timbre4-skw    0.053360244814779786
+    Attrib timbre5-mean    0.06861021733429375
+    Attrib timbre5-med    0.07210320034115215
+    Attrib timbre6-var    0.10043345015715212
+    Attrib timbre6-skw    -0.004040546267284278
+    Attrib timbre7-var    0.05532066490864467
+    Attrib timbre8-var    0.037368090019897604
+    Attrib timbre9-var    0.010949064008121592
+    Attrib timbre10-mean    0.14660639262869576
+    Attrib timbre10-var    0.1625332695702281
+    Attrib timbre11-var    0.1968073415032641
+    Attrib loudmax-med    -0.03923477838533368
+    Attrib seglen-mean    0.0051534152232919775
+    Attrib seglen-med    0.022541375549545262
+    Attrib seglen-var    0.03805628844013657
+    Attrib chordsize-mean    0.08600692376600971
+    Attrib chordfreq-mean    0.1364169940679559
+    Attrib chordfreq-var    0.0736646746129757
+    Attrib rep0-max    -0.023884223433541896
+    Attrib rep0-krt    0.041994016461672605
+    Attrib intra0-posmax    -0.07065716119188671
+    Attrib intra0-negmax    -0.04322658553327031
+    Attrib inter1-posmean    0.006307060551583774
+    Attrib inter1-negmean    -0.03431723861623086
+    Attrib inter2-negmean    -0.054542938699596324
+    Attrib inter3-negmean    -0.014045728877202901
+    Attrib rep4-krt    0.10619527598276417
+    Attrib intra5-posmean    0.18850283142260663
+    Attrib intra5-negmax    0.0812534153318255
+    Attrib inter6-negmean    0.03562984209999356
+    Attrib rep7-max    0.020172728715714607
+    Attrib intra11-negmean    0.0821873795258132
+    Attrib inter11-negmean    0.01138249652619127
+Sigmoid Node 50
+    Inputs    Weights
+    Threshold    0.1558589032349253
+    Attrib pitches0-var    0.12959827886338574
+    Attrib timbre0-med    -0.21390028884603457
+    Attrib timbre1-mean    0.26381008026598735
+    Attrib timbre1-med    0.19346121086265392
+    Attrib timbre3-var    0.16348878330439104
+    Attrib timbre3-krt    -0.38777815742395527
+    Attrib timbre4-skw    0.0028458577635465214
+    Attrib timbre5-mean    0.1161173868584751
+    Attrib timbre5-med    0.30760289934856877
+    Attrib timbre6-var    0.5821052555831485
+    Attrib timbre6-skw    -0.1695695498223755
+    Attrib timbre7-var    -0.2738400556157353
+    Attrib timbre8-var    0.11994829085200495
+    Attrib timbre9-var    -0.29126240810227255
+    Attrib timbre10-mean    0.2231819451882426
+    Attrib timbre10-var    0.6398567882635033
+    Attrib timbre11-var    0.7670717492414106
+    Attrib loudmax-med    0.04575383863271389
+    Attrib seglen-mean    -0.23183610695021983
+    Attrib seglen-med    -0.26696154515233805
+    Attrib seglen-var    -0.1426996104655767
+    Attrib chordsize-mean    1.110086392794493
+    Attrib chordfreq-mean    0.8184251082573677
+    Attrib chordfreq-var    -0.037696305009678625
+    Attrib rep0-max    0.3255070466767867
+    Attrib rep0-krt    0.2231593197322582
+    Attrib intra0-posmax    0.18348445957904866
+    Attrib intra0-negmax    0.2651557704999408
+    Attrib inter1-posmean    -0.17313687571341707
+    Attrib inter1-negmean    0.28819401294949465
+    Attrib inter2-negmean    0.2749107970590135
+    Attrib inter3-negmean    0.30866824677016114
+    Attrib rep4-krt    0.21577237482493555
+    Attrib intra5-posmean    0.0588741867667275
+    Attrib intra5-negmax    -0.01535510520486531
+    Attrib inter6-negmean    0.21847593449818375
+    Attrib rep7-max    0.2964843440036844
+    Attrib intra11-negmean    0.05047611046942997
+    Attrib inter11-negmean    0.11408465609840564
+Class Pop_Rock
+    Input
+    Node 0
+Class Electronic
+    Input
+    Node 1
+Class Rap
+    Input
+    Node 2
+Class Jazz
+    Input
+    Node 3
+Class Latin
+    Input
+    Node 4
+Class RnB
+    Input
+    Node 5
+Class International
+    Input
+    Node 6
+Class Country
+    Input
+    Node 7
+Class Religious
+    Input
+    Node 8
+Class Reggae
+    Input
+    Node 9
+Class Blues
+    Input
+    Node 10
+Class Vocal
+    Input
+    Node 11
+Class Folk
+    Input
+    Node 12
+Class New
+    Input
+    Node 13
+Class Comedy_Spoken
+    Input
+    Node 14
+Class Stage
+    Input
+    Node 15
+Class Easy_Listening
+    Input
+    Node 16
+Class Avant_Garde
+    Input
+    Node 17
+Class Classical
+    Input
+    Node 18
+Class Children
+    Input
+    Node 19
+Class Holiday
+    Input
+    Node 20
+
+
+Time taken to build model: 117.13 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        2097               52.4643 %
+Incorrectly Classified Instances      1900               47.5357 %
+Kappa statistic                          0.2093
+Mean absolute error                      0.0628
+Root mean squared error                  0.173 
+Relative absolute error                 88.1103 %
+Root relative squared error             91.7015 %
+Total Number of Instances             3997     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.934     0.697      0.553     0.934     0.695      0.818    Pop_Rock
+                 0.377     0.023      0.503     0.377     0.431      0.859    Electronic
+                 0.638     0.053      0.428     0.638     0.512      0.923    Rap
+                 0.11      0.012      0.297     0.11      0.16       0.827    Jazz
+                 0.004     0.001      0.2       0.004     0.008      0.691    Latin
+                 0         0          0         0         0          0.741    RnB
+                 0         0          0         0         0          0.675    International
+                 0.04      0.009      0.171     0.04      0.065      0.78     Country
+                 0         0          0         0         0          0.63     Religious
+                 0.042     0.005      0.2       0.042     0.069      0.904    Reggae
+                 0         0          0         0         0          0.804    Blues
+                 0         0          0         0         0          0.647    Vocal
+                 0         0          0         0         0          0.632    Folk
+                 0.415     0.017      0.375     0.415     0.394      0.896    New
+                 0         0          0         0         0          0.823    Comedy_Spoken
+                 0         0          0         0         0          0.362    Stage
+                 0         0          0         0         0          0.577    Easy_Listening
+                 0         0          0         0         0          0.387    Avant_Garde
+                 0         0          0         0         0          0.54     Classical
+                 0         0          0         0         0          0.753    Children
+                 0         0          0         0         0          0.44     Holiday
+Weighted Avg.    0.525     0.341      0.367     0.525     0.409      0.794
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e    f    g    h    i    j    k    l    m    n    o    p    q    r    s    t    u   <-- classified as
+ 1792   47   38   11    0    0    0    7    0    3    0    0    0   21    0    0    0    0    0    0    0 |    a = Pop_Rock
+  126   86   10    0    0    0    0    0    0    0    0    0    0    6    0    0    0    0    0    0    0 |    b = Electronic
+   68   11  148    1    0    0    0    1    0    3    0    0    0    0    0    0    0    0    0    0    0 |    c = Rap
+  129    6    6   19    0    0    0    1    0    1    0    0    0   11    0    0    0    0    0    0    0 |    d = Jazz
+  221    5   18    4    1    0    0    2    0    3    0    0    0    2    0    0    0    0    0    0    0 |    e = Latin
+  106    5   17    0    1    0    0    2    0    1    0    0    0    0    0    0    0    0    0    0    0 |    f = RnB
+  112    4   13    6    1    0    0    5    0    1    0    0    0    4    0    0    0    0    0    0    0 |    g = International
+  161    0    3    3    0    0    0    7    0    1    0    0    0    0    0    0    0    0    0    0    0 |    h = Country
+  179    1   11    0    0    0    0    5    0    2    0    0    0    0    0    0    0    0    0    0    0 |    i = Religious
+   47    2   65    0    1    0    0    0    0    5    0    0    0    0    0    0    0    0    0    0    0 |    j = Reggae
+  107    0    1   10    0    0    0    7    0    0    0    0    0    1    0    0    0    0    0    0    0 |    k = Blues
+   31    0    0    0    0    0    0    2    0    0    0    0    0    3    0    0    0    0    0    0    0 |    l = Vocal
+   39    0    4    2    0    0    0    1    0    0    0    0    0    2    0    0    0    0    0    0    0 |    m = Folk
+   43    4    1    6    0    0    0    1    0    0    0    0    0   39    0    0    0    0    0    0    0 |    n = New
+   24    0   10    0    1    0    0    0    0    4    0    0    0    0    0    0    0    0    0    0    0 |    o = Comedy_Spoken
+   23    0    0    0    0    0    0    0    0    0    0    0    0    7    0    0    0    0    0    0    0 |    p = Stage
+   17    0    0    0    0    0    0    0    0    0    0    0    0    3    0    0    0    0    0    0    0 |    q = Easy_Listening
+    8    0    0    1    0    0    0    0    0    0    0    0    0    1    0    0    0    0    0    0    0 |    r = Avant_Garde
+    2    0    0    0    0    0    0    0    0    0    0    0    0    4    0    0    0    0    0    0    0 |    s = Classical
+    4    0    1    1    0    0    0    0    0    1    0    0    0    0    0    0    0    0    0    0    0 |    t = Children
+    2    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 |    u = Holiday
+

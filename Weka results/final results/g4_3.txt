@@ -1,0 +1,191 @@
+=== Run information ===
+
+Scheme:weka.classifiers.meta.AttributeSelectedClassifier -E "weka.attributeSelection.CfsSubsetEval " -S "weka.attributeSelection.LinearForwardSelection -D 0 -N 5 -I -K 50 -T 0" -W weka.classifiers.trees.RandomForest -- -I 1000 -K 10 -S 1
+Relation:     song-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    3997
+Attributes:   604
+[list of attributes omitted]
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+AttributeSelectedClassifier:
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Linear Forward Selection.
+	Start set: no attributes
+	Forward selection method: forward selection
+	Stale search after 5 node expansions
+	Linear Forward Selection Type: fixed-set
+	Number of top-ranked attributes that are used: 50
+	Total number of subsets evaluated: 1762
+	Merit of best subset found:    0.222
+
+Attribute Subset Evaluator (supervised, Class (nominal): 178 genre):
+	CFS Subset Evaluator
+	Including locally predictive attributes
+
+Selected attributes: 3,86,92,93,108,112,118,120,121,129,132,136,143,150,155,157,164,170,179,180,181,193,200,202,210,217,219,225,265,271,304,337,349,385,390,436,441,589,601 : 39
+                     pitches0-var
+                     timbre0-med
+                     timbre1-mean
+                     timbre1-med
+                     timbre3-var
+                     timbre3-krt
+                     timbre4-skw
+                     timbre5-mean
+                     timbre5-med
+                     timbre6-var
+                     timbre6-skw
+                     timbre7-var
+                     timbre8-var
+                     timbre9-var
+                     timbre10-mean
+                     timbre10-var
+                     timbre11-var
+                     loudmax-med
+                     seglen-mean
+                     seglen-med
+                     seglen-var
+                     chordsize-mean
+                     chordfreq-mean
+                     chordfreq-var
+                     rep0-max
+                     rep0-krt
+                     intra0-posmax
+                     intra0-negmax
+                     inter1-posmean
+                     inter1-negmean
+                     inter2-negmean
+                     inter3-negmean
+                     rep4-krt
+                     intra5-posmean
+                     intra5-negmax
+                     inter6-negmean
+                     rep7-max
+                     intra11-negmean
+                     inter11-negmean
+
+
+Header of reduced data:
+@relation 'song-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Remove-V-R3,86,92-93,108,112,118,120-121,129,132,136,143,150,155,157,164,170,179-181,193,200,202,210,217,219,225,265,271,304,337,349,385,390,436,441,589,601,178'
+
+@attribute pitches0-var numeric
+@attribute timbre0-med numeric
+@attribute timbre1-mean numeric
+@attribute timbre1-med numeric
+@attribute timbre3-var numeric
+@attribute timbre3-krt numeric
+@attribute timbre4-skw numeric
+@attribute timbre5-mean numeric
+@attribute timbre5-med numeric
+@attribute timbre6-var numeric
+@attribute timbre6-skw numeric
+@attribute timbre7-var numeric
+@attribute timbre8-var numeric
+@attribute timbre9-var numeric
+@attribute timbre10-mean numeric
+@attribute timbre10-var numeric
+@attribute timbre11-var numeric
+@attribute loudmax-med numeric
+@attribute seglen-mean numeric
+@attribute seglen-med numeric
+@attribute seglen-var numeric
+@attribute chordsize-mean numeric
+@attribute chordfreq-mean numeric
+@attribute chordfreq-var numeric
+@attribute rep0-max numeric
+@attribute rep0-krt numeric
+@attribute intra0-posmax numeric
+@attribute intra0-negmax numeric
+@attribute inter1-posmean numeric
+@attribute inter1-negmean numeric
+@attribute inter2-negmean numeric
+@attribute inter3-negmean numeric
+@attribute rep4-krt numeric
+@attribute intra5-posmean numeric
+@attribute intra5-negmax numeric
+@attribute inter6-negmean numeric
+@attribute rep7-max numeric
+@attribute intra11-negmean numeric
+@attribute inter11-negmean numeric
+@attribute genre {Pop_Rock,Electronic,Rap,Jazz,Latin,RnB,International,Country,Religious,Reggae,Blues,Vocal,Folk,New,Comedy_Spoken,Stage,Easy_Listening,Avant_Garde,Classical,Children,Holiday}
+
+@data
+
+
+Classifier Model
+Random forest of 1000 trees, each constructed while considering 10 random features.
+Out of bag error: 0.4368
+
+
+
+Time taken to build model: 279.82 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        2235               55.9169 %
+Incorrectly Classified Instances      1762               44.0831 %
+Kappa statistic                          0.2688
+Mean absolute error                      0.0586
+Root mean squared error                  0.1674
+Relative absolute error                 82.2226 %
+Root relative squared error             88.7488 %
+Total Number of Instances             3997     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.943     0.684      0.56      0.943     0.703      0.828    Pop_Rock
+                 0.342     0.016      0.557     0.342     0.424      0.872    Electronic
+                 0.642     0.028      0.587     0.642     0.613      0.943    Rap
+                 0.145     0.008      0.446     0.145     0.218      0.87     Jazz
+                 0.102     0.007      0.51      0.102     0.169      0.786    Latin
+                 0         0          0         0         0          0.833    RnB
+                 0.089     0.003      0.542     0.089     0.153      0.75     International
+                 0.154     0.007      0.5       0.154     0.236      0.872    Country
+                 0.005     0.001      0.167     0.005     0.01       0.772    Religious
+                 0.25      0.004      0.682     0.25      0.366      0.942    Reggae
+                 0.127     0.002      0.64      0.127     0.212      0.851    Blues
+                 0         0          0         0         0          0.877    Vocal
+                 0         0          0         0         0          0.792    Folk
+                 0.362     0.008      0.531     0.362     0.43       0.914    New
+                 0.436     0.004      0.531     0.436     0.479      0.916    Comedy_Spoken
+                 0.267     0.002      0.571     0.267     0.364      0.959    Stage
+                 0         0          0         0         0          0.805    Easy_Listening
+                 0.1       0          1         0.1       0.182      0.779    Avant_Garde
+                 0         0          0         0         0          0.863    Classical
+                 0         0          0         0         0          0.884    Children
+                 0         0          0         0         0          0.656    Holiday
+Weighted Avg.    0.559     0.333      0.502     0.559     0.47       0.841
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e    f    g    h    i    j    k    l    m    n    o    p    q    r    s    t    u   <-- classified as
+ 1810   37   26    9    4    0    2   10    2    2    2    0    0   10    2    3    0    0    0    0    0 |    a = Pop_Rock
+  137   78    4    1    0    0    1    0    0    0    0    0    0    6    0    1    0    0    0    0    0 |    b = Electronic
+   61    9  149    1    1    0    0    1    1    5    1    0    0    0    3    0    0    0    0    0    0 |    c = Rap
+  129    3    3   25    1    0    1    2    1    1    1    0    0    5    1    0    0    0    0    0    0 |    d = Jazz
+  214    4    3    2   26    0    5    0    0    0    1    0    0    1    0    0    0    0    0    0    0 |    e = Latin
+  113    2    9    1    2    0    1    1    0    3    0    0    0    0    0    0    0    0    0    0    0 |    f = RnB
+  101    4    8    5    8    1   13    1    0    0    0    0    0    4    1    0    0    0    0    0    0 |    g = International
+  140    0    2    1    1    0    0   27    1    0    2    0    0    0    1    0    0    0    0    0    0 |    h = Country
+  180    0    7    1    1    0    0    3    1    2    1    0    0    0    2    0    0    0    0    0    0 |    i = Religious
+   46    3   36    1    4    0    0    0    0   30    0    0    0    0    0    0    0    0    0    0    0 |    j = Reggae
+  101    0    0    3    1    0    0    4    0    0   16    0    0    0    1    0    0    0    0    0    0 |    k = Blues
+   29    0    0    1    0    0    0    4    0    0    1    0    0    0    1    0    0    0    0    0    0 |    l = Vocal
+   42    0    2    0    1    0    0    0    0    0    0    0    0    0    3    0    0    0    0    0    0 |    m = Folk
+   53    0    1    4    0    0    1    0    0    0    0    0    0   34    0    1    0    0    0    0    0 |    n = New
+   18    0    3    0    0    0    0    0    0    1    0    0    0    0   17    0    0    0    0    0    0 |    o = Comedy_Spoken
+   20    0    0    0    0    0    0    0    0    0    0    0    0    2    0    8    0    0    0    0    0 |    p = Stage
+   16    0    0    0    1    0    0    1    0    0    0    0    0    1    0    1    0    0    0    0    0 |    q = Easy_Listening
+    9    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    1    0    0    0 |    r = Avant_Garde
+    4    0    0    1    0    0    0    0    0    0    0    0    0    1    0    0    0    0    0    0    0 |    s = Classical
+    6    0    1    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 |    t = Children
+    2    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 |    u = Holiday
+
