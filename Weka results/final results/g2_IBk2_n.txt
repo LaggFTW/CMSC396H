@@ -1,0 +1,80 @@
+=== Run information ===
+
+Scheme:weka.classifiers.lazy.IBk -K 20 -W 0 -I -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     song-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    4011
+Attributes:   178
+[list of attributes omitted]
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 20 inverse-distance-weighted nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1976               49.2645 %
+Incorrectly Classified Instances      2035               50.7355 %
+Kappa statistic                          0.1507
+Mean absolute error                      0.0651
+Root mean squared error                  0.1796
+Relative absolute error                 91.3304 %
+Root relative squared error             95.2    %
+Total Number of Instances             4011     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.916     0.733      0.536     0.916     0.676      0.761    Pop_Rock
+                 0.018     0.001      0.571     0.018     0.034      0.756    Electronic
+                 0.356     0.028      0.44      0.356     0.393      0.883    Rap
+                 0.168     0.012      0.392     0.168     0.235      0.738    Jazz
+                 0.062     0.023      0.157     0.062     0.089      0.608    Latin
+                 0.045     0.003      0.316     0.045     0.079      0.679    RnB
+                 0.014     0.001      0.333     0.014     0.026      0.586    International
+                 0.086     0.022      0.153     0.086     0.11       0.759    Country
+                 0.081     0.024      0.15      0.081     0.105      0.648    Religious
+                 0.017     0.006      0.083     0.017     0.028      0.796    Reggae
+                 0.016     0.002      0.182     0.016     0.029      0.684    Blues
+                 0.111     0.003      0.25      0.111     0.154      0.67     Vocal
+                 0         0          0         0         0          0.607    Folk
+                 0.042     0.001      0.5       0.042     0.078      0.762    New
+                 0.692     0.007      0.5       0.692     0.581      0.829    Comedy_Spoken
+                 0         0          0         0         0          0.805    Stage
+                 0         0          0         0         0          0.503    Easy_Listening
+                 0         0          0         0         0          0.876    Avant_Garde
+                 0         0          0         0         0          0.62     Classical
+                 0         0          0         0         0          0.657    Children
+                 0         0          0         0         0          0.783    Holiday
+Weighted Avg.    0.493     0.358      0.407     0.493     0.39       0.738
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e    f    g    h    i    j    k    l    m    n    o    p    q    r    s    t    u   <-- classified as
+ 1765    2   37   12   26    0    1   36   30    7    0    3    1    0    6    0    0    0    0    0    0 |    a = Pop_Rock
+  184    4   24    5    1    1    0    1    4    4    0    0    0    0    0    0    0    0    0    0    0 |    b = Electronic
+  122    0   84    1    8    0    0    0    6    5    0    1    0    0    9    0    0    0    0    0    0 |    c = Rap
+  114    1    1   29   11    2    0    3    7    3    2    0    0    0    0    0    0    0    0    0    0 |    d = Jazz
+  218    0    1    4   16    3    1    3    5    2    0    2    0    1    1    0    0    0    0    0    0 |    e = Latin
+  104    0    6    0    5    6    0    1    9    0    1    0    0    0    0    0    0    0    0    0    0 |    f = RnB
+  115    0    6    4    6    1    2    4    4    1    1    1    0    0    2    0    0    0    0    0    0 |    g = International
+  141    0    2    2    2    0    0   15    8    0    1    2    0    0    2    0    0    0    0    0    0 |    h = Country
+  149    0    9    0    6    2    1    9   16    0    2    0    0    0    4    0    0    0    0    0    0 |    i = Religious
+   81    0   19    1    6    2    0    0    7    2    2    0    0    0    0    0    0    0    0    0    0 |    j = Reggae
+   98    0    0    4    5    0    1   13    2    0    2    1    0    0    0    0    0    0    0    0    0 |    k = Blues
+   23    0    0    2    2    0    0    3    2    0    0    4    0    0    0    0    0    0    0    0    0 |    l = Vocal
+   39    0    1    0    1    0    0    2    2    0    0    0    0    0    3    0    0    0    0    0    0 |    m = Folk
+   72    0    1    7    2    1    0    5    2    0    0    1    0    4    0    0    0    0    0    0    0 |    n = New
+   11    0    0    0    1    0    0    0    0    0    0    0    0    0   27    0    0    0    0    0    0 |    o = Comedy_Spoken
+   26    0    0    1    1    0    0    0    1    0    0    0    0    1    0    0    0    0    0    0    0 |    p = Stage
+   13    0    0    1    2    0    0    3    0    0    0    1    0    0    0    0    0    0    0    0    0 |    q = Easy_Listening
+    8    0    0    0    0    0    0    0    1    0    0    0    0    1    0    0    0    0    0    0    0 |    r = Avant_Garde
+    2    0    0    1    1    1    0    0    0    0    0    0    0    1    0    0    0    0    0    0    0 |    s = Classical
+    6    0    0    0    0    0    0    0    1    0    0    0    0    0    0    0    0    0    0    0    0 |    t = Children
+    2    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 |    u = Holiday
+
