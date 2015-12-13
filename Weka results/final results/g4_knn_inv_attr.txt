@@ -1,0 +1,119 @@
+=== Run information ===
+
+Scheme:weka.classifiers.lazy.IBk -K 20 -W 0 -X -E -I -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     song-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Remove-V-R3,86,92-93,108,112,118,120-121,129,132,136,143,150,155,157,164,170,179-181,193,200,202,210,217,219,225,265,271,304,337,349,385,390,436,441,589,601,178-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0
+Instances:    3997
+Attributes:   40
+              pitches0-var
+              timbre0-med
+              timbre1-mean
+              timbre1-med
+              timbre3-var
+              timbre3-krt
+              timbre4-skw
+              timbre5-mean
+              timbre5-med
+              timbre6-var
+              timbre6-skw
+              timbre7-var
+              timbre8-var
+              timbre9-var
+              timbre10-mean
+              timbre10-var
+              timbre11-var
+              loudmax-med
+              seglen-mean
+              seglen-med
+              seglen-var
+              chordsize-mean
+              chordfreq-mean
+              chordfreq-var
+              rep0-max
+              rep0-krt
+              intra0-posmax
+              intra0-negmax
+              inter1-posmean
+              inter1-negmean
+              inter2-negmean
+              inter3-negmean
+              rep4-krt
+              intra5-posmean
+              intra5-negmax
+              inter6-negmean
+              rep7-max
+              intra11-negmean
+              inter11-negmean
+              genre
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 20 inverse-distance-weighted nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        2074               51.8889 %
+Incorrectly Classified Instances      1923               48.1111 %
+Kappa statistic                          0.2209
+Mean absolute error                      0.0588
+Root mean squared error                  0.1742
+Relative absolute error                 82.4737 %
+Root relative squared error             92.3301 %
+Total Number of Instances             3997     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.911     0.648      0.565     0.911     0.698      0.794    Pop_Rock
+                 0.184     0.007      0.618     0.184     0.284      0.806    Electronic
+                 0.591     0.041      0.472     0.591     0.525      0.903    Rap
+                 0.162     0.012      0.378     0.162     0.227      0.779    Jazz
+                 0.109     0.024      0.237     0.109     0.15       0.699    Latin
+                 0.008     0.005      0.048     0.008     0.013      0.692    RnB
+                 0.007     0.001      0.2       0.007     0.013      0.65     International
+                 0.063     0.016      0.153     0.063     0.089      0.761    Country
+                 0.03      0.011      0.13      0.03      0.049      0.649    Religious
+                 0.167     0.009      0.364     0.167     0.229      0.878    Reggae
+                 0.048     0.007      0.182     0.048     0.075      0.717    Blues
+                 0         0          0         0         0          0.739    Vocal
+                 0         0.001      0         0         0          0.644    Folk
+                 0.213     0.011      0.328     0.213     0.258      0.877    New
+                 0.436     0.005      0.472     0.436     0.453      0.846    Comedy_Spoken
+                 0.267     0.003      0.421     0.267     0.327      0.894    Stage
+                 0         0          0         0         0          0.797    Easy_Listening
+                 0         0          0         0         0          0.861    Avant_Garde
+                 0         0          0         0         0          0.656    Classical
+                 0         0          0         0         0          0.76     Children
+                 0         0          0         0         0          0.789    Holiday
+Weighted Avg.    0.519     0.318      0.42      0.519     0.43       0.778
+
+=== Confusion Matrix ===
+
+    a    b    c    d    e    f    g    h    i    j    k    l    m    n    o    p    q    r    s    t    u   <-- classified as
+ 1749   18   38    6   34    7    1   15   14    7    8    1    0   12    4    5    0    0    0    0    0 |    a = Pop_Rock
+  160   42   10    2    2    1    0    0    1    1    1    0    0    8    0    0    0    0    0    0    0 |    b = Electronic
+   71    4  137    3    4    0    0    1    0    9    1    0    1    0    1    0    0    0    0    0    0 |    c = Rap
+  109    2    5   28    5    1    2    6    2    1    0    0    0   12    0    0    0    0    0    0    0 |    d = Jazz
+  194    1    8    3   28    3    0    7    4    6    1    0    0    0    1    0    0    0    0    0    0 |    e = Latin
+   96    1   12    0   10    1    0    4    4    4    0    0    0    0    0    0    0    0    0    0    0 |    f = RnB
+  103    0    9    7    8    2    1    6    1    4    2    0    0    2    1    0    0    0    0    0    0 |    g = International
+  133    0    4    2    5    1    0   11    8    0    9    0    0    0    2    0    0    0    0    0    0 |    h = Country
+  163    0    8    2    4    0    0    6    6    2    2    0    1    0    4    0    0    0    0    0    0 |    i = Religious
+   39    0   47    0    7    1    0    2    1   20    2    0    0    0    1    0    0    0    0    0    0 |    j = Reggae
+   98    0    1    5    5    3    0    7    0    0    6    0    0    1    0    0    0    0    0    0    0 |    k = Blues
+   28    0    0    0    2    0    0    1    2    0    1    0    0    0    2    0    0    0    0    0    0 |    l = Vocal
+   38    0    2    0    3    0    0    2    0    0    0    0    0    0    3    0    0    0    0    0    0 |    m = Folk
+   55    0    1   11    0    1    1    2    0    0    0    0    0   20    0    3    0    0    0    0    0 |    n = New
+   13    0    7    0    0    0    0    0    1    1    0    0    0    0   17    0    0    0    0    0    0 |    o = Comedy_Spoken
+   16    0    0    1    0    0    0    0    1    0    0    0    0    4    0    8    0    0    0    0    0 |    p = Stage
+   15    0    0    1    1    0    0    1    0    0    0    0    0    0    0    2    0    0    0    0    0 |    q = Easy_Listening
+    8    0    0    1    0    0    0    0    1    0    0    0    0    0    0    0    0    0    0    0    0 |    r = Avant_Garde
+    2    0    0    2    0    0    0    0    0    0    0    0    0    1    0    1    0    0    0    0    0 |    s = Classical
+    4    0    1    0    0    0    0    1    0    0    0    0    0    1    0    0    0    0    0    0    0 |    t = Children
+    2    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0 |    u = Holiday
+
